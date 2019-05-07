@@ -1,0 +1,2 @@
+"Name (System.String, required)",MaxSpeed (System.Single),AccelerationTime (System.Single),DecelerationTime (System.Single)
+Normal,250,.5,.3

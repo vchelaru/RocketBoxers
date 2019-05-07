@@ -1,0 +1,5 @@
+*.Generated.cs
+RocketBoxers/obj/
+RocketBoxers/bin/
+.vs/
+*.user
