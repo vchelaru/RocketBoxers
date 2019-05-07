@@ -11,8 +11,7 @@ using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
-
-
+using FlatRedBall.Math.Collision;
 
 namespace RocketBoxers.Screens
 {
@@ -21,7 +20,10 @@ namespace RocketBoxers.Screens
 
 		void CustomInitialize()
 		{
+            Player1.X = 1000;
+            Player1.Y = -500;
 
+            var playerVsGround = CollisionManager.Self.CreateTileRelationship(PlayerList, GroundCollision);
 
 		}
 

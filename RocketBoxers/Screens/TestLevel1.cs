@@ -20,9 +20,14 @@ namespace RocketBoxers.Screens
 
 		void CustomInitialize()
 		{
+            Camera.Main.X = 1000;
+            Camera.Main.Y = -500;
+
+            
+
             GroundCollision.AddCollisionFromTilesWithProperty(TestLevel, "Ground");
             WallCollision.AddCollisionFromTilesWithProperty(TestLevel, "Wall");
-
+            GroundCollision.Visible = true;
         }
 
 		void CustomActivity(bool firstTimeCalled)
