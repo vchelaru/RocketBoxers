@@ -44,6 +44,14 @@
       <Source>GLUE</Source>
       <BaseScreen>Screens\GameScreen</BaseScreen>
       <Name>Screens\TestLevel1</Name>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Name>Levels/TestLevel.tmx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.TileGraphics.LayeredTileMap</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+      </ReferencedFiles>
     </ScreenSave>
   </Screens>
   <Entities>
