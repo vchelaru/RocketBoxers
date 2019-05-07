@@ -188,7 +188,28 @@
   <ApplyToFixedResolutionPlatforms>true</ApplyToFixedResolutionPlatforms>
   <ExternallyBuiltFileDirectory>../../</ExternallyBuiltFileDirectory>
   <PluginData>
-    <RequiredPlugins />
+    <RequiredPlugins>
+      <PluginRequirement>
+        <Name>Top Down Plugin</Name>
+        <Version>1.0</Version>
+        <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
+      </PluginRequirement>
+      <PluginRequirement>
+        <Name>Tiled Plugin</Name>
+        <Version>2.1.3.0</Version>
+        <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
+      </PluginRequirement>
+      <PluginRequirement>
+        <Name>Gum Plugin</Name>
+        <Version>2.0.4.0</Version>
+        <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
+      </PluginRequirement>
+      <PluginRequirement>
+        <Name>RedGrin Networking Plugin</Name>
+        <Version>1.0.2</Version>
+        <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
+      </PluginRequirement>
+    </RequiredPlugins>
   </PluginData>
   <DisplaySettings>
     <Is2D>true</Is2D>
