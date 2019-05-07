@@ -31,9 +31,10 @@
             public static CameraSetupData Data = new CameraSetupData
             {
                 Scale = 100f,
-                ResolutionWidth = 800,
-                ResolutionHeight = 600,
+                ResolutionWidth = 960,
+                ResolutionHeight = 540,
                 Is2D = true,
+                AspectRatio = 1.7777777777777777777777777778m,
                 IsFullScreen = false,
                 AllowWidowResizing = false,
                 ResizeBehavior = ResizeBehavior.StretchVisibleArea,

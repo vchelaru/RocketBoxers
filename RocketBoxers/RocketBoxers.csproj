@@ -45,6 +45,11 @@
     <Compile Include="Entities\Player.Generated.cs">
       <DependentUpon>Player.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Respawn.cs" />
+    <Compile Include="Entities\Respawn.Generated.cs">
+      <DependentUpon>Respawn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\RespawnFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
