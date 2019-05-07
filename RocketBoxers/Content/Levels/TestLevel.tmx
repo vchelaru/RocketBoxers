@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="80" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="80" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" source="tilesheet.tsx"/>
  <layer id="1" name="Tile Layer 1" width="80" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt0NEJg0AAREGrMlZmUplantfDg+MgM7D/y9s2AID/tY99wo75l5dyjn3DfvMvL0W/Rr9Gv0a/Rr9Gv0a/Rr9Gv0a/Rr9Gv0a/Rr9Gv0a/5hq7w575lwEAAABY3AuKSpYm
+  </data>
+ </layer>
+ <layer id="2" name="CollisionLayer" width="80" height="40">
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAB4NjIAAAE=
   </data>
