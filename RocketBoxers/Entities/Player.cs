@@ -13,6 +13,7 @@ namespace RocketBoxers.Entities
 {
 	public partial class Player
 	{
+        public bool IsOnGround { get; set; }
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not

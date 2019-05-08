@@ -12,28 +12,70 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
 using FlatRedBall.Math.Collision;
+using RocketBoxers.Entities;
 
 namespace RocketBoxers.Screens
 {
 	public partial class GameScreen
 	{
+        CollisionRelationship playerVsGround;
 
-		void CustomInitialize()
+        void CustomInitialize()
 		{
             Player1.X = 1000;
             Player1.Y = -500;
 
-            var playerVsGround = CollisionManager.Self.CreateTileRelationship(PlayerList, GroundCollision);
+            var playerVsGroundCasted =
+                CollisionManager.Self.CreateTileRelationship(PlayerList, GroundCollision);
+            playerVsGroundCasted.CollisionOccurred += (player, ground) => player.IsOnGround = true;
+            playerVsGround = playerVsGroundCasted;
+            // inactivate so we can manually call collision
+            playerVsGround.IsActive = false;
 
 		}
 
-		void CustomActivity(bool firstTimeCalled)
+        #region Activity
+
+        void CustomActivity(bool firstTimeCalled)
 		{
-
+            CollisionActivity();
 
 		}
 
-		void CustomDestroy()
+        private void CollisionActivity()
+        {
+            foreach(var player in PlayerList)
+            {
+                player.IsOnGround = false;
+            }
+
+            playerVsGround.DoCollisions();
+
+            foreach(var player in PlayerList)
+            {
+                if(player.IsOnGround == false)
+                {
+                    DoFallOff(player);
+                }
+            }
+        }
+
+        private void DoFallOff(Player player)
+        {
+            var randomSpawn = FlatRedBallServices.Random.In(RespawnList);
+
+            player.XVelocity = 0;
+            player.YVelocity = 0;
+            player.XAcceleration = 0;
+            player.YAcceleration = 0;
+
+            player.X = randomSpawn.X;
+            player.Y = randomSpawn.Y;
+        }
+
+        #endregion
+
+        void CustomDestroy()
 		{
 
 
