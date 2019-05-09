@@ -41,6 +41,10 @@
   <ItemGroup>
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
     <Compile Include="DataTypes\TopDownValues.Generated.cs" />
+    <Compile Include="Entities\DamageArea.cs" />
+    <Compile Include="Entities\DamageArea.Generated.cs">
+      <DependentUpon>DamageArea.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Entities\Player.Generated.cs">
       <DependentUpon>Player.cs</DependentUpon>
@@ -49,6 +53,7 @@
     <Compile Include="Entities\Respawn.Generated.cs">
       <DependentUpon>Respawn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Factories\DamageAreaFactory.Generated.cs" />
     <Compile Include="Factories\RespawnFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Game1.cs" />

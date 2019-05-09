@@ -21,10 +21,16 @@ namespace RocketBoxers.Screens
         CollisionRelationship playerVsGround;
 
         void CustomInitialize()
-		{
+        {
             Player1.X = 1000;
             Player1.Y = -500;
 
+            InitializeCollisions();
+
+        }
+
+        private void InitializeCollisions()
+        {
             var playerVsGroundCasted =
                 CollisionManager.Self.CreateTileRelationship(PlayerList, GroundCollision);
             playerVsGroundCasted.CollisionOccurred += (player, ground) => player.IsOnGround = true;
@@ -32,7 +38,11 @@ namespace RocketBoxers.Screens
             // inactivate so we can manually call collision
             playerVsGround.IsActive = false;
 
-		}
+            var playerVsDamageArea = CollisionManager.Self.CreateRelationship(PlayerList, DamageAreaList);
+            playerVsDamageArea.CollisionOccurred += HandlePlayerVsDamageArea;
+
+        }
+
 
         #region Activity
 
@@ -58,6 +68,11 @@ namespace RocketBoxers.Screens
                     DoFallOff(player);
                 }
             }
+        }
+
+        private void HandlePlayerVsDamageArea(Player player, DamageArea damageArea)
+        {
+
         }
 
         private void DoFallOff(Player player)
