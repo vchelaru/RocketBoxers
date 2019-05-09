@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnimationChainArraySave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileRelativeTextures>true</FileRelativeTextures>
+  <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
+  <CoordinateType>Pixel</CoordinateType>
+  <AnimationChain>
+    <Name>AttackUp</Name>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>AttackDown</Name>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>IdleUp</Name>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>IdleDown</Name>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>WalkDown</Name>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>WalkUp</Name>
+  </AnimationChain>
+</AnimationChainArraySave>

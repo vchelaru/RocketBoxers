@@ -135,6 +135,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TopDownValues</Name>
     </None>
+    <None Include="content\entities\player\yellowcharacteranimations.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>YellowCharacterAnimations</Name>
+    </None>
     <None Include="content\levels\testlevel.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TestLevel</Name>

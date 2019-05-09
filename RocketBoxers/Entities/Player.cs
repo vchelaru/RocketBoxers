@@ -13,6 +13,11 @@ namespace RocketBoxers.Entities
 {
 	public partial class Player
 	{
+
+        AnimationController animationController;
+
+        AnimationLayer getHitAnimationLayer;
+
         public bool IsOnGround { get; set; }
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -24,13 +29,91 @@ namespace RocketBoxers.Entities
             this.InitializeInput();
             this.mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
 
+            InitializeAnimations();
+            
+
+
 		}
 
-		private void CustomActivity()
+        private void InitializeAnimations()
+        {
+            animationController = new AnimationController(SpriteInstance);
+
+            var idleAnimationLayer = new AnimationLayer();
+            idleAnimationLayer.EveryFrameAction = () =>
+            {
+                switch(this.DirectionFacing)
+                {
+                    case TopDownDirection.Up:
+                        return "IdleUp";
+                    case TopDownDirection.UpRight:
+                        return "IdleUpRight";
+                    case TopDownDirection.Right:
+                        return "IdleRight";
+                        // todo - continue here...
+                    default:
+                        return null;
+                }
+            };
+            animationController.Layers.Add(idleAnimationLayer);
+
+            const float WalkingDeadzone = .1f;
+            var walkAnimationLayer = new AnimationLayer();
+            walkAnimationLayer.EveryFrameAction = () =>
+            {
+                if (MovementInput.Magnitude > WalkingDeadzone)
+                {
+                    switch (this.DirectionFacing)
+                    {
+                        case TopDownDirection.Up:
+                            return "WalkUp";
+                        case TopDownDirection.UpRight:
+                            return "WalkUpRight";
+                        case TopDownDirection.Right:
+                            return "WalkRight";
+                        // todo - continue here...
+                        default:
+                            return null;
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            };
+            animationController.Layers.Add(walkAnimationLayer);
+
+
+            var attackAnimationLayer = new AnimationLayer();
+
+            animationController.Layers.Add(attackAnimationLayer);
+
+
+            getHitAnimationLayer = new AnimationLayer();
+
+            animationController.Layers.Add(getHitAnimationLayer);
+        }
+
+        private void CustomActivity()
 		{
 
 
 		}
+
+
+        public void TakeHit()
+        {
+            string animationToPlay = null;
+
+            switch(DirectionFacing)
+            {
+                case TopDownDirection.Right:
+                    animationToPlay = "GetHitFacingRight";
+                    break;
+            }
+
+            getHitAnimationLayer.PlayOnce(animationToPlay);
+        }
 
 		private void CustomDestroy()
 		{
