@@ -11,12 +11,19 @@ using FlatRedBall.Math.Geometry;
 
 namespace RocketBoxers.Entities
 {
+    public enum AttackCollisionShapeType
+    {
+        Circle,
+        Rectangle
+    }
+
 	public partial class Player
 	{
 
         AnimationController animationController;
 
         AnimationLayer getHitAnimationLayer;
+        AnimationLayer attackAnimationLayer;
 
         public bool IsOnGround { get; set; }
         /// <summary>
@@ -30,10 +37,36 @@ namespace RocketBoxers.Entities
             this.mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
 
             InitializeAnimations();
-            
+            InitializeAnimationInstructions();
+        }
 
+        private void InitializeAnimationInstructions()
+        {
+            foreach(var attack in AttackData)
+            {
+                foreach(var chain in SpriteInstance.AnimationChains.FindAll((x) => x.Name.Contains(attack.Name)))
+                {
+                    if (chain.TotalLength > attack.CollisionSpawnFrame && chain.TotalLength > attack.CollisionDestroyFrame)
+                    {
+                        chain[attack.CollisionSpawnFrame].Instructions.Add(new DelegateInstruction(() =>
+                        {
+                            var damageArea = Factories.DamageAreaFactory.CreateNew();
+                            SetupAttackDamageArea(damageArea, attack);
 
-		}
+                            chain[attack.CollisionDestroyFrame].Instructions.Clear();
+                            chain[attack.CollisionDestroyFrame].Instructions.Add(new DelegateInstruction(() =>
+                            {
+                                damageArea.Destroy();
+                            }));
+                        }));
+                    }
+                    else
+                    {
+                        throw new Exception("");
+                    }
+                }
+            }
+        }
 
         private void InitializeAnimations()
         {
@@ -42,18 +75,7 @@ namespace RocketBoxers.Entities
             var idleAnimationLayer = new AnimationLayer();
             idleAnimationLayer.EveryFrameAction = () =>
             {
-                switch(this.DirectionFacing)
-                {
-                    case TopDownDirection.Up:
-                        return "IdleUp";
-                    case TopDownDirection.UpRight:
-                        return "IdleUpRight";
-                    case TopDownDirection.Right:
-                        return "IdleRight";
-                        // todo - continue here...
-                    default:
-                        return null;
-                }
+                return MakeAnimationChainName("Idle");
             };
             animationController.Layers.Add(idleAnimationLayer);
 
@@ -63,28 +85,14 @@ namespace RocketBoxers.Entities
             {
                 if (MovementInput.Magnitude > WalkingDeadzone)
                 {
-                    switch (this.DirectionFacing)
-                    {
-                        case TopDownDirection.Up:
-                            return "WalkUp";
-                        case TopDownDirection.UpRight:
-                            return "WalkUpRight";
-                        case TopDownDirection.Right:
-                            return "WalkRight";
-                        // todo - continue here...
-                        default:
-                            return null;
-                    }
+                    return MakeAnimationChainName("Walk");
                 }
-                else
-                {
-                    return null;
-                }
+                return null;
             };
             animationController.Layers.Add(walkAnimationLayer);
 
 
-            var attackAnimationLayer = new AnimationLayer();
+            attackAnimationLayer = new AnimationLayer();
 
             animationController.Layers.Add(attackAnimationLayer);
 
@@ -96,23 +104,23 @@ namespace RocketBoxers.Entities
 
         private void CustomActivity()
 		{
-
-
-		}
-
+            //Uncomment once animations are created.
+            //animationController.Activity();
+        }
 
         public void TakeHit()
         {
-            string animationToPlay = null;
+            getHitAnimationLayer.PlayOnce(MakeAnimationChainName("TakeHit"));
+        }
 
-            switch(DirectionFacing)
-            {
-                case TopDownDirection.Right:
-                    animationToPlay = "GetHitFacingRight";
-                    break;
-            }
+        private void BeginAttack()
+        {
+            attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
+        }
 
-            getHitAnimationLayer.PlayOnce(animationToPlay);
+        private void SetupAttackDamageArea(DamageArea newDamageArea, DataTypes.AttackData attackData)
+        {
+
         }
 
 		private void CustomDestroy()
@@ -125,6 +133,31 @@ namespace RocketBoxers.Entities
         {
 
 
+        }
+
+        private string MakeAnimationChainName(string baseName)
+        {
+            switch (this.DirectionFacing)
+            {
+                case TopDownDirection.Up:
+                    return $"{baseName}Up";
+                case TopDownDirection.UpRight:
+                    return $"{baseName}UpRight";
+                case TopDownDirection.Right:
+                    return $"{baseName}Right";
+                case TopDownDirection.DownRight:
+                    return $"{baseName}DownRight";
+                case TopDownDirection.Down:
+                    return $"{baseName}Down";
+                case TopDownDirection.DownLeft:
+                    return $"{baseName}DownLeft";
+                case TopDownDirection.Left:
+                    return $"{baseName}Left";
+                case TopDownDirection.UpLeft:
+                    return $"{baseName}UpLeft";
+            }
+
+            return null;
         }
 	}
 }
