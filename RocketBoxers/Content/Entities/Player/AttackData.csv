@@ -1,2 +1,3 @@
 "Name (string, required)",CollisionSpawnFrame (int),CollisionDestroyFrame (int),CollsionShapeType (RocketBoxers.Entities.AttackCollisionShapeType),CollisionDimensions (Vector3),CollisionOffset (Vector3)
 LightAttack,0,0,Circle,"new Vector3(X=5, Y=5)","new Vector3(X=0, Y=0)"
+TestAttack,0,0,Circle,"new Vector3(X=5, Y=5)","new Vector3(X=0, Y=0)"

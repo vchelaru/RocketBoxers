@@ -10,6 +10,12 @@
   <OrthogonalHeight>600</OrthogonalHeight>
   <Screens>
     <ScreenSave>
+      <Properties>
+        <PropertySave>
+          <Name>IsNetworkScreen</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
       <Tags>
         <string>GLUE</string>
       </Tags>
@@ -209,6 +215,10 @@
         </PropertySave>
         <PropertySave>
           <Name>IsTopDown</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+        <PropertySave>
+          <Name>IsNetworkEntity</Name>
           <ValueAsBool>true</ValueAsBool>
         </PropertySave>
       </Properties>

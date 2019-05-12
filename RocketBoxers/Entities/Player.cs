@@ -42,7 +42,7 @@ namespace RocketBoxers.Entities
 
         private void InitializeAnimationInstructions()
         {
-            foreach(var attack in AttackData)
+            foreach(var attack in AttackData.Values)
             {
                 foreach(var chain in SpriteInstance.AnimationChains.FindAll((x) => x.Name.Contains(attack.Name)))
                 {
