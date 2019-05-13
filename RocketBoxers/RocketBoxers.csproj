@@ -232,7 +232,7 @@
     <None Include="content\entities\player\attackanimations.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>AttackAnimations</Name>
-      </None>
+    </None>
     <None Include="content\entities\player\attackdata.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>AttackData</Name>

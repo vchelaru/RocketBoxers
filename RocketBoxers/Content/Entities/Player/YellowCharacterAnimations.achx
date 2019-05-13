@@ -399,8 +399,32 @@
     </Frame>
   </AnimationChain>
   <AnimationChain>
+    <Name>DamageDownRight</Name>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>256</LeftCoordinate>
+      <RightCoordinate>288</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>32</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
     <Name>DamageLeft</Name>
     <Frame>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>256</LeftCoordinate>
+      <RightCoordinate>288</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>DamageRight</Name>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
       <LeftCoordinate>256</LeftCoordinate>
@@ -423,6 +447,18 @@
   <AnimationChain>
     <Name>DamageUpLeft</Name>
     <Frame>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>256</LeftCoordinate>
+      <RightCoordinate>288</RightCoordinate>
+      <TopCoordinate>32</TopCoordinate>
+      <BottomCoordinate>64</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>DamageUpRight</Name>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
       <LeftCoordinate>256</LeftCoordinate>
