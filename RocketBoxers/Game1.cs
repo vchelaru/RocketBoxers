@@ -56,10 +56,12 @@ namespace RocketBoxers
 
 			GlobalContent.Initialize();
 			CameraSetup.SetupCamera(SpriteManager.Camera, graphics);
-			FlatRedBall.Screens.ScreenManager.Start(typeof(RocketBoxers.Screens.NetworkLobby));
 
             var networkConfiguration = new GameNetworkConfiguration();
             RedGrin.NetworkManager.Self.Initialize(networkConfiguration, null);
+
+			FlatRedBall.Screens.ScreenManager.Start(typeof(RocketBoxers.Screens.NetworkLobby));
+
 
             base.Initialize();
         }

@@ -118,6 +118,10 @@
     </Compile>
     <Compile Include="GumRuntimes\DefaultForms\UserControlRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
+    <Compile Include="GumRuntimes\LobbyConnectedPlayerRuntime.cs" />
+    <Compile Include="GumRuntimes\LobbyConnectedPlayerRuntime.Generated.cs">
+      <DependentUpon>LobbyConnectedPlayerRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\NetworkLobbyGumRuntime.cs" />
     <Compile Include="GumRuntimes\NetworkLobbyGumRuntime.Generated.cs">
       <DependentUpon>NetworkLobbyGumRuntime.cs</DependentUpon>
@@ -128,6 +132,7 @@
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="Messages\ClaimEntityMessage.Generated.cs" />
+    <Compile Include="Network\NetworkLogger.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
     <Compile Include="Performance\PoolList.Generated.cs" />
     <Compile Include="Program.cs" />
@@ -307,6 +312,10 @@
     <None Include="content\gumproject\components\defaultforms\usercontrol.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>usercontrol</Name>
+    </None>
+    <None Include="content\gumproject\components\lobbyconnectedplayer.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>lobbyconnectedplayer</Name>
     </None>
     <None Include="content\gumproject\fontcache\font18arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
