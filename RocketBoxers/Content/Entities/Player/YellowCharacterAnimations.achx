@@ -164,6 +164,48 @@
     </Frame>
   </AnimationChain>
   <AnimationChain>
+    <Name>AttackRight</Name>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.15</FrameLength>
+      <LeftCoordinate>128</LeftCoordinate>
+      <RightCoordinate>160</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>AttackRightHold</Name>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>160</LeftCoordinate>
+      <RightCoordinate>192</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>192</LeftCoordinate>
+      <RightCoordinate>224</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>224</LeftCoordinate>
+      <RightCoordinate>256</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
     <Name>AttackUp</Name>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>

@@ -88,7 +88,9 @@
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\CountdownRuntime.cs" />
-    <Compile Include="GumRuntimes\CountdownRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CountdownRuntime.Generated.cs">
+      <DependentUpon>CountdownRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ButtonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\CheckBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ColoredFrameRuntime.cs" />
@@ -120,7 +122,9 @@
     </Compile>
     <Compile Include="GumRuntimes\DefaultForms\UserControlRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\GameHUDRuntime.cs" />
-    <Compile Include="GumRuntimes\GameHUDRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\GameHUDRuntime.Generated.cs">
+      <DependentUpon>GameHUDRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
     <Compile Include="GumRuntimes\LobbyConnectedPlayerRuntime.cs" />
     <Compile Include="GumRuntimes\LobbyConnectedPlayerRuntime.Generated.cs">
@@ -136,9 +140,13 @@
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\WarpUpSatsRuntime.cs" />
-    <Compile Include="GumRuntimes\WarpUpSatsRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\WarpUpSatsRuntime.Generated.cs">
+      <DependentUpon>WarpUpSatsRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\WrapUpRuntime.cs" />
-    <Compile Include="GumRuntimes\WrapUpRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\WrapUpRuntime.Generated.cs">
+      <DependentUpon>WrapUpRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Messages\ClaimEntityMessage.Generated.cs" />
     <Compile Include="Network\NetworkLogger.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />

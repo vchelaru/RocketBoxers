@@ -19,11 +19,20 @@ namespace RocketBoxers.Entities
 
 	public partial class Player
 	{
-
+        //SpriteInstance animation controller
         AnimationController animationController;
-
-        AnimationLayer getHitAnimationLayer;
+        AnimationLayer attackHoldAnimationLayer;
         AnimationLayer attackAnimationLayer;
+        AnimationLayer getHitAnimationLayer;
+
+        //AttackEffect animation controllerS
+        AnimationController attackSpriteAnimationController;
+        AnimationLayer attackEffectAnimationLayer;
+
+        IPressableInput attackInput;
+        //IPressableInput specialAttackInpt;
+        //IPressableInput dashInput;
+        IPressableInput blockInput;
 
         public bool IsOnGround { get; set; }
         /// <summary>
@@ -33,42 +42,50 @@ namespace RocketBoxers.Entities
         /// </summary>
 		private void CustomInitialize()
 		{
+            //DELETE THIS AFTER SETTING UP LAYERS
+            this.Z = 10;
             this.InitializeInput();
             this.mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
 
+            InitializeButtonInput();
             InitializeAnimations();
-            InitializeAnimationInstructions();
         }
 
-        private void InitializeAnimationInstructions()
+        private void InitializeButtonInput()
         {
-            foreach(var attack in AttackData.Values)
+            if (InputManager.Xbox360GamePads[0].IsConnected)
             {
-                foreach(var chain in SpriteInstance.AnimationChains.FindAll((x) => x.Name.Contains(attack.Name)))
-                {
-                    if (chain.TotalLength > attack.CollisionSpawnFrame && chain.TotalLength > attack.CollisionDestroyFrame)
-                    {
-                        chain[attack.CollisionSpawnFrame].Instructions.Add(new DelegateInstruction(() =>
-                        {
-                            var damageArea = Factories.DamageAreaFactory.CreateNew();
-                            SetupAttackDamageArea(damageArea, attack);
+                var gamePad = InputManager.Xbox360GamePads[0];
 
-                            chain[attack.CollisionDestroyFrame].Instructions.Clear();
-                            chain[attack.CollisionDestroyFrame].Instructions.Add(new DelegateInstruction(() =>
-                            {
-                                damageArea.Destroy();
-                            }));
-                        }));
-                    }
-                    else
-                    {
-                        throw new Exception("");
-                    }
-                }
+                attackInput = gamePad.GetButton(Xbox360GamePad.Button.A);
+                blockInput = gamePad.GetButton(Xbox360GamePad.Button.B);
+            }
+            else
+            {
+                attackInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.A);
+                blockInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.LeftShift);
             }
         }
 
         private void InitializeAnimations()
+        {
+            InitilizeSpriteInstanceController();
+            InitilizeAttackSpriteController();
+        }
+
+        private void InitilizeAttackSpriteController()
+        {
+            attackSpriteAnimationController = new AnimationController(AttackEffectSprite);
+
+            var attackEffectDefaultLayer = new AnimationLayer();
+            attackEffectDefaultLayer.EveryFrameAction = () => {return "NotActive";};
+            attackSpriteAnimationController.Layers.Add(attackEffectDefaultLayer);
+
+            attackEffectAnimationLayer = new AnimationLayer();
+            attackSpriteAnimationController.Layers.Add(attackEffectAnimationLayer);
+        }
+
+        private void InitilizeSpriteInstanceController()
         {
             animationController = new AnimationController(SpriteInstance);
 
@@ -92,30 +109,65 @@ namespace RocketBoxers.Entities
             animationController.Layers.Add(walkAnimationLayer);
 
 
-            attackAnimationLayer = new AnimationLayer();
+            attackHoldAnimationLayer = new AnimationLayer();
+            attackHoldAnimationLayer.EveryFrameAction = () =>
+            {
+                if(attackInput.IsDown)
+                {
+                    return MakeAnimationChainName("Attack", "Hold");
+                }
 
+                return null;
+            };
+            animationController.Layers.Add(attackHoldAnimationLayer);
+
+            attackAnimationLayer = new AnimationLayer();
             animationController.Layers.Add(attackAnimationLayer);
 
 
             getHitAnimationLayer = new AnimationLayer();
 
             animationController.Layers.Add(getHitAnimationLayer);
+
+            var blockingLayer = new AnimationLayer();
+            blockingLayer.EveryFrameAction = () =>
+            {
+                if (blockInput.IsDown)
+                {
+                    return MakeAnimationChainName("Block");
+                }
+
+                return null;
+            };
+
+            animationController.Layers.Add(blockingLayer);
         }
 
         private void CustomActivity()
 		{
             //Uncomment once animations are created.
-            //animationController.Activity();
+            InputActivity();
+            animationController.Activity();
+            attackSpriteAnimationController.Activity();
+        }
+
+        private void InputActivity()
+        {
+            if(attackInput.WasJustReleased && attackHoldAnimationLayer.HasPriority)
+            {
+                BginAttack();
+            }
+        }
+
+        private void BginAttack()
+        {
+            attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
+            attackEffectAnimationLayer.PlayOnce(MakeAnimationChainName("Flame"));
         }
 
         public void TakeHit()
         {
             getHitAnimationLayer.PlayOnce(MakeAnimationChainName("TakeHit"));
-        }
-
-        private void BeginAttack()
-        {
-            attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
         }
 
         private void SetupAttackDamageArea(DamageArea newDamageArea, DataTypes.AttackData attackData)
@@ -135,26 +187,26 @@ namespace RocketBoxers.Entities
 
         }
 
-        private string MakeAnimationChainName(string baseName)
+        private string MakeAnimationChainName(string prefix, string suffix = "")
         {
             switch (this.DirectionFacing)
             {
                 case TopDownDirection.Up:
-                    return $"{baseName}Up";
+                    return $"{prefix}Up{suffix}";
                 case TopDownDirection.UpRight:
-                    return $"{baseName}UpRight";
+                    return $"{prefix}UpRight{suffix}";
                 case TopDownDirection.Right:
-                    return $"{baseName}Right";
+                    return $"{prefix}Right{suffix}";
                 case TopDownDirection.DownRight:
-                    return $"{baseName}DownRight";
+                    return $"{prefix}DownRight{suffix}";
                 case TopDownDirection.Down:
-                    return $"{baseName}Down";
+                    return $"{prefix}Down{suffix}";
                 case TopDownDirection.DownLeft:
-                    return $"{baseName}DownLeft";
+                    return $"{prefix}DownLeft{suffix}";
                 case TopDownDirection.Left:
-                    return $"{baseName}Left";
+                    return $"{prefix}Left{suffix}";
                 case TopDownDirection.UpLeft:
-                    return $"{baseName}UpLeft";
+                    return $"{prefix}UpLeft{suffix}";
             }
 
             return null;
