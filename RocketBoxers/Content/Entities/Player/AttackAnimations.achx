@@ -188,6 +188,47 @@
     </Frame>
   </AnimationChain>
   <AnimationChain>
+    <Name>FlameRight</Name>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>288</LeftCoordinate>
+      <RightCoordinate>320</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>320</LeftCoordinate>
+      <RightCoordinate>352</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>352</LeftCoordinate>
+      <RightCoordinate>384</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+      <RelativeY>-2</RelativeY>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>384</LeftCoordinate>
+      <RightCoordinate>416</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+      <RelativeY>-2</RelativeY>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
     <Name>FlameDownRight</Name>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -301,6 +342,17 @@
       <RightCoordinate>256</RightCoordinate>
       <TopCoordinate>192</TopCoordinate>
       <BottomCoordinate>256</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>NotActive</Name>
+    <Frame>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>480</LeftCoordinate>
+      <RightCoordinate>481</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>1</BottomCoordinate>
     </Frame>
   </AnimationChain>
 </AnimationChainArraySave>
