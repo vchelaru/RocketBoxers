@@ -8,6 +8,7 @@ using FlatRedBall.AI.Pathfinding;
 using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
+using Microsoft.Xna.Framework;
 
 namespace RocketBoxers.Entities
 {
@@ -29,6 +30,8 @@ namespace RocketBoxers.Entities
         AnimationController attackSpriteAnimationController;
         AnimationLayer attackEffectAnimationLayer;
 
+        private Vector3 effectSpriteRelativeOffset;
+
         IPressableInput attackInput;
         //IPressableInput specialAttackInpt;
         //IPressableInput dashInput;
@@ -46,6 +49,7 @@ namespace RocketBoxers.Entities
             this.Z = 10;
             this.InitializeInput();
             this.mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
+            this.PossibleDirections = PossibleDirections.EightWay;
 
             InitializeButtonInput();
             InitializeAnimations();
@@ -149,11 +153,12 @@ namespace RocketBoxers.Entities
             InputActivity();
             animationController.Activity();
             attackSpriteAnimationController.Activity();
+            FlatRedBall.Debugging.Debugger.Write(AttackEffectSprite.RelativePosition);
         }
 
         private void InputActivity()
         {
-            if(attackInput.WasJustReleased && attackHoldAnimationLayer.HasPriority)
+            if(attackInput.WasJustReleased && !attackEffectAnimationLayer.HasPriority && attackHoldAnimationLayer.HasPriority)
             {
                 BginAttack();
             }
@@ -163,6 +168,7 @@ namespace RocketBoxers.Entities
         {
             attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
             attackEffectAnimationLayer.PlayOnce(MakeAnimationChainName("Flame"));
+            SetAttackOffset(AttackData[DataTypes.AttackData.Attack].CollisionOffset);
         }
 
         public void TakeHit()
@@ -185,6 +191,16 @@ namespace RocketBoxers.Entities
         {
 
 
+        }
+
+        public override void UpdateDependencies(double currentTime)
+        {
+            base.UpdateDependencies(currentTime);
+            var frameOffset = new Vector3();
+            frameOffset.X = AttackEffectSprite.CurrentChain[AttackEffectSprite.CurrentFrameIndex].RelativeX;
+            frameOffset.Y = AttackEffectSprite.CurrentChain[AttackEffectSprite.CurrentFrameIndex].RelativeY;
+
+            AttackEffectSprite.RelativePosition = effectSpriteRelativeOffset + frameOffset;
         }
 
         private string MakeAnimationChainName(string prefix, string suffix = "")
@@ -210,6 +226,42 @@ namespace RocketBoxers.Entities
             }
 
             return null;
+        }
+
+        private void SetAttackOffset(Vector3 attackOffsets)
+        {
+            var direction = new Vector3();
+
+            switch(mDirectionFacing)
+            {
+                case TopDownDirection.Down:
+                case TopDownDirection.DownLeft:
+                case TopDownDirection.DownRight:
+                    direction.Y = -1;
+                    break;
+                case TopDownDirection.Up:
+                case TopDownDirection.UpLeft:
+                case TopDownDirection.UpRight:
+                    direction.Y = 1;
+                    break;
+            }
+
+            switch(mDirectionFacing)
+            {
+                case TopDownDirection.Left:
+                case TopDownDirection.UpLeft:
+                case TopDownDirection.DownLeft:
+                    direction.X = -1;
+                    break;
+                case TopDownDirection.Right:
+                case TopDownDirection.UpRight:
+                case TopDownDirection.DownRight:
+                    direction.X = 1;
+                    break;
+            }
+
+            direction.Normalize();
+            effectSpriteRelativeOffset = direction * attackOffsets;
         }
 	}
 }

@@ -316,6 +316,11 @@
             <Member>Radius</Member>
             <ValueAsFloat>16</ValueAsFloat>
           </CustomProperty>
+          <CustomProperty>
+            <Type>bool</Type>
+            <Member>Visible</Member>
+            <ValueAsBool>false</ValueAsBool>
+          </CustomProperty>
           <SourceType>FlatRedBallType</SourceType>
           <SourceClassType>Circle</SourceClassType>
           <InstanceName>CircleInstance</InstanceName>
@@ -339,6 +344,11 @@
             <Type>string</Type>
             <Member>CurrentChainName</Member>
             <ValueAsString>NotActive</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>bool</Type>
+            <Member>UseAnimationRelativePosition</Member>
+            <ValueAsBool>false</ValueAsBool>
           </CustomProperty>
           <SourceType>FlatRedBallType</SourceType>
           <SourceFile />
