@@ -348,9 +348,9 @@
           <Name>Entities/Player/AttackAnimations.achx</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
-           <ProjectsToExcludeFrom />
+          <ProjectsToExcludeFrom />
         </ReferencedFileSave>
-<ReferencedFileSave>
+        <ReferencedFileSave>
           <Name>Entities/Player/AttackData.csv</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <CreatesDictionary>true</CreatesDictionary>
@@ -552,6 +552,7 @@
     <AllowWindowResizing>false</AllowWindowResizing>
     <Scale>100</Scale>
     <ResizeBehavior>StretchVisibleArea</ResizeBehavior>
+    <ResizeBehaviorGum>StretchVisibleArea</ResizeBehaviorGum>
     <DominantInternalCoordinates>Height</DominantInternalCoordinates>
   </DisplaySettings>
 </GlueProjectSave>

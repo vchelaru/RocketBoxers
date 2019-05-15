@@ -4882,6 +4882,32 @@
             <param name="numberOfYTiles">The number of nodes horizontally.</param>
             <param name="directionalType">Whether to create a Four-way or Eight-way node network. Eight creates diagonal links, enabling diagonal movement when following the node network.</param>
         </member>
+        <member name="M:FlatRedBall.AI.Pathfinding.TileNodeNetwork.AddAndLinkTiledNodeWorld(System.Single,System.Single)">
+            <summary>
+            Adds a new node at the world X and Y location. Internally the world coordinates are converted to x,y indexes and the node is stored
+            in a 2D grid.
+            </summary>
+            <param name="worldX">The world X units.</param>
+            <param name="worldY">The world Y units.</param>
+            <returns>The newly-created PositionedNode</returns>
+        </member>
+        <member name="M:FlatRedBall.AI.Pathfinding.TileNodeNetwork.AddAndLinkTiledNode(System.Int32,System.Int32)">
+            <summary>
+            Adds a new node at the tile index x, y.
+            </summary>
+            <param name="x">The x index of the tile.</param>
+            <param name="y">The y index of the tile.</param>
+            <returns>The newly-created PositionedNode</returns>
+        </member>
+        <member name="M:FlatRedBall.AI.Pathfinding.TileNodeNetwork.AddAndLinkTiledNode(System.Int32,System.Int32,FlatRedBall.AI.Pathfinding.DirectionalType)">
+            <summary>
+            Creates a new node at index x, y and links the node to adjacent nodes given the TileNodeNetwork's GridSpacing
+            </summary>
+            <param name="x">The X index</param>
+            <param name="y">The Y index</param>
+            <param name="directionalType">The DirectionalType, which is either Four or Eight way. Four will link in cardinal directions, while Eight will also link diagonally.</param>
+            <returns></returns>
+        </member>
         <member name="M:FlatRedBall.AI.Pathfinding.TileNodeNetwork.AddNode(FlatRedBall.AI.Pathfinding.PositionedNode)">
             <summary>
             Adds an already-positioned node to the node network.
