@@ -50,7 +50,13 @@ namespace RocketBoxers.Screens
 		{
             CollisionActivity();
 
+            DebugActivity();
 		}
+
+        private void DebugActivity()
+        {
+            //FlatRedBall.Debugging.Debugger.Write(DamageAreaList.Count);
+        }
 
         private void CollisionActivity()
         {
@@ -72,7 +78,10 @@ namespace RocketBoxers.Screens
 
         private void HandlePlayerVsDamageArea(Player player, DamageArea damageArea)
         {
-
+            if(player.TeamIndex != damageArea.TeamIndex)
+            {
+                //Do something
+            }
         }
 
         private void DoFallOff(Player player)

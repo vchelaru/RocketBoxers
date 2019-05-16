@@ -43,7 +43,13 @@
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
     <Compile Include="DataTypes\TopDownValues.Generated.cs" />
     <Compile Include="Entities\DamageArea.cs" />
+    <Compile Include="Entities\DamageArea.Event.cs">
+      <DependentUpon>DamageArea.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\DamageArea.Generated.cs">
+      <DependentUpon>DamageArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DamageArea.Generated.Event.cs">
       <DependentUpon>DamageArea.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\Player.cs" />

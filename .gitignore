@@ -4,3 +4,4 @@ RocketBoxers/bin/
 .vs/
 *.user
 *.aeproperties
+.Generated.Event.cs

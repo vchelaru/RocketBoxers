@@ -216,10 +216,33 @@
           <Name>TeamIndex</Name>
           <Type>int</Type>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>RocketBoxers.DataTypes.AttackData</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>CreatesProperties</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+          </Properties>
+          <Name>AttackData</Name>
+          <Type>RocketBoxers.DataTypes.AttackData</Type>
+          <CreatesEvent>true</CreatesEvent>
+        </CustomVariable>
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <Name>Entities\DamageArea</Name>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
+      <Events>
+        <EventResponseSave>
+          <EventName>AfterAttackDataSet</EventName>
+          <SourceVariable>AttackData</SourceVariable>
+          <BeforeOrAfter>After</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+      </Events>
       <Is2D>true</Is2D>
     </EntitySave>
     <EntitySave>
@@ -336,6 +359,11 @@
             <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
+            <Type>bool</Type>
+            <Member>UseAnimationRelativePosition</Member>
+            <ValueAsBool>false</ValueAsBool>
+          </CustomProperty>
+          <CustomProperty>
             <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
             <Member>AnimationChains</Member>
             <ValueAsString>AttackAnimations</ValueAsString>
@@ -344,11 +372,6 @@
             <Type>string</Type>
             <Member>CurrentChainName</Member>
             <ValueAsString>NotActive</ValueAsString>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>bool</Type>
-            <Member>UseAnimationRelativePosition</Member>
-            <ValueAsBool>false</ValueAsBool>
           </CustomProperty>
           <SourceType>FlatRedBallType</SourceType>
           <SourceFile />
