@@ -25,6 +25,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>CharacterGridTile</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>Countdown</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -114,6 +118,14 @@
   </ComponentReference>
   <ComponentReference>
     <Name>MainMenuSelectableText</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>SelectedCharacterFrame</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>SelectionMarker</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

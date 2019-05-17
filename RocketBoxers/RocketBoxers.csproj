@@ -92,6 +92,8 @@
     <Compile Include="GumRuntimes\Behaviors\IUserControlBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\CharacterGridRuntime.cs" />
     <Compile Include="GumRuntimes\CharacterGridRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CharacterGridTileRuntime.cs" />
+    <Compile Include="GumRuntimes\CharacterGridTileRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\CircleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
@@ -153,6 +155,10 @@
     <Compile Include="GumRuntimes\PlayerSelectScreenGumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\SelectedCharacterFrameRuntime.cs" />
+    <Compile Include="GumRuntimes\SelectedCharacterFrameRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\SelectionMarkerRuntime.cs" />
+    <Compile Include="GumRuntimes\SelectionMarkerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
@@ -293,6 +299,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>charactergrid</Name>
     </None>
+    <None Include="content\gumproject\components\charactergridtile.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>charactergridtile</Name>
+    </None>
     <None Include="content\gumproject\components\countdown.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>countdown</Name>
@@ -384,6 +394,14 @@
     <None Include="content\gumproject\components\mainmenuselectabletext.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>mainmenuselectabletext</Name>
+    </None>
+    <None Include="content\gumproject\components\selectedcharacterframe.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>selectedcharacterframe</Name>
+    </None>
+    <None Include="content\gumproject\components\selectionmarker.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>selectionmarker</Name>
     </None>
     <None Include="content\gumproject\components\warpupsats.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
