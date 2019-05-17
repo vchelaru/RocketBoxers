@@ -23,11 +23,28 @@ namespace RocketBoxers.Screens
         void CustomInitialize()
 		{
             castedGumScreen = (RocketBoxers.GumRuntimes.TitleScreenGumRuntime)TitleScreenGum;
-
+            castedGumScreen.OptionSelected += HandleOptionSelected;
 
         }
 
-		void CustomActivity(bool firstTimeCalled)
+        private void HandleOptionSelected(object sender, EventArgs e)
+        {
+            switch(castedGumScreen.SelectedOption)
+            {
+                case 0:
+                    MoveToScreen(typeof(PlayerSelectScreen));
+                    break;
+                case 1:
+
+                    break;
+
+                case 2:
+
+                    break;
+            }
+        }
+
+        void CustomActivity(bool firstTimeCalled)
 		{
             castedGumScreen.CustomActivity();
 
