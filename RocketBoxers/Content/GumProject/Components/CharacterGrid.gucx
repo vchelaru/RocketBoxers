@@ -5,9 +5,205 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>CharacterGridTileInstance.SourceFile</Name>
+      <Value xsi:type="xsd:string">RBUISheet.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>CharacterGridTileInstance.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance.Texture Height</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance.Texture Left</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance.Texture Top</Name>
+      <Value xsi:type="xsd:int">224</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance.Texture Width</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>CharacterGridTileInstance1.SourceFile</Name>
+      <Value xsi:type="xsd:string">RBUISheet.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>CharacterGridTileInstance1.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance1.Texture Height</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance1.Texture Left</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance1.Texture Top</Name>
+      <Value xsi:type="xsd:int">224</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance1.Texture Width</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>CharacterGridTileInstance1.X Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>CharacterGridTileInstance1.X Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>CharacterGridTileInstance2.SourceFile</Name>
+      <Value xsi:type="xsd:string">RBUISheet.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>CharacterGridTileInstance2.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance2.Texture Height</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance2.Texture Left</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance2.Texture Top</Name>
+      <Value xsi:type="xsd:int">288</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance2.Texture Width</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>CharacterGridTileInstance2.Y Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>CharacterGridTileInstance2.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>CharacterGridTileInstance3.SourceFile</Name>
+      <Value xsi:type="xsd:string">RBUISheet.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>CharacterGridTileInstance3.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance3.Texture Height</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance3.Texture Left</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance3.Texture Top</Name>
+      <Value xsi:type="xsd:int">288</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CharacterGridTileInstance3.Texture Width</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>CharacterGridTileInstance3.Wraps Children</Name>
       <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>CharacterGridTileInstance3.X Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>CharacterGridTileInstance3.X Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>CharacterGridTileInstance3.Y Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>CharacterGridTileInstance3.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -19,13 +215,13 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">135</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Height Units</Name>
-      <Value xsi:type="xsd:int">4</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -36,7 +232,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">121</Value>
+      <Value xsi:type="xsd:float">135</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -45,25 +241,32 @@
       <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <VariableList xsi:type="VariableListSaveOfString">
+      <Type>string</Type>
+      <Name>AnimationFrames</Name>
+      <IsFile>false</IsFile>
+      <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
+      <Value />
+    </VariableList>
   </State>
   <Instance>
     <Name>CharacterGridTileInstance</Name>
-    <BaseType>CharacterGridTile</BaseType>
+    <BaseType>Sprite</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
     <Name>CharacterGridTileInstance1</Name>
-    <BaseType>CharacterGridTile</BaseType>
+    <BaseType>Sprite</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
     <Name>CharacterGridTileInstance2</Name>
-    <BaseType>CharacterGridTile</BaseType>
+    <BaseType>Sprite</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
     <Name>CharacterGridTileInstance3</Name>
-    <BaseType>CharacterGridTile</BaseType>
+    <BaseType>Sprite</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

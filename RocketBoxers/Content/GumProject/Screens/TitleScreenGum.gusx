@@ -4,18 +4,6 @@
   <State>
     <Name>Default</Name>
     <Variable>
-      <Type>int</Type>
-      <Name>Background.Blue</Name>
-      <Value xsi:type="xsd:int">128</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Background.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>float</Type>
       <Name>Background.Height</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -28,9 +16,10 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>int</Type>
-      <Name>Background.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>Background.SourceFile</Name>
+      <Value xsi:type="xsd:string">MainMenuBG.jpg</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -82,6 +71,169 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>LocalMatchOption.ColoredRectangleInstanceVisible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LocalMatchOption.Contained Type</Name>
+      <Value xsi:type="xsd:string"></Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LocalMatchOption.Height</Name>
+      <Value xsi:type="xsd:float">25</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LocalMatchOption.MenuTextText</Name>
+      <Value xsi:type="xsd:string">LOCAL MATCH</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LocalMatchOption.Parent</Name>
+      <Value xsi:type="xsd:string">OptionsContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>SelectionCategoryState</Type>
+      <Name>LocalMatchOption.SelectionCategoryState</Name>
+      <Value xsi:type="xsd:string">Selected</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>SelectionStateState</Type>
+      <Name>LocalMatchOption.SelectionStateState</Name>
+      <Value xsi:type="xsd:string">Normal</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>LocalMatchOption.State</Name>
+      <Value xsi:type="xsd:string">Default</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LocalMatchOption.Text</Name>
+      <Value xsi:type="xsd:string">LOCAL MATCH
+</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>LocalMatchOption.Visible</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LocalMatchOption.Width</Name>
+      <Value xsi:type="xsd:float">250</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>LocalMatchOption.Width Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>LocalMatchOption.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LocalMatchOption.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>NetworkMatchOption.ColoredRectangleInstanceVisible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>NetworkMatchOption.Height</Name>
+      <Value xsi:type="xsd:float">25</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>NetworkMatchOption.MenuTextText</Name>
+      <Value xsi:type="xsd:string">NETWORK MATCH</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>NetworkMatchOption.Parent</Name>
+      <Value xsi:type="xsd:string">OptionsContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>SelectionCategoryState</Type>
+      <Name>NetworkMatchOption.SelectionCategoryState</Name>
+      <Value xsi:type="xsd:string">Normal</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>NetworkMatchOption.State</Name>
+      <Value xsi:type="xsd:string">Default</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>NetworkMatchOption.Text</Name>
+      <Value xsi:type="xsd:string">NETWORK MATCH</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>NetworkMatchOption.Width Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>NetworkMatchOption.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>NetworkMatchOption.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>NetworkMatchOption.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>NetworkMatchOption.Y Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>NetworkMatchOption.Y Units</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>OptionsContainer.Children Layout</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -90,7 +242,7 @@
     <Variable>
       <Type>float</Type>
       <Name>OptionsContainer.Height</Name>
-      <Value xsi:type="xsd:float">157</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -120,7 +272,7 @@
     <Variable>
       <Type>float</Type>
       <Name>OptionsContainer.Y</Name>
-      <Value xsi:type="xsd:float">129</Value>
+      <Value xsi:type="xsd:float">115</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -136,63 +288,33 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>string</Type>
-      <Name>LocalMatchOption.Parent</Name>
-      <Value xsi:type="xsd:string">OptionsContainer</Value>
+      <Type>bool</Type>
+      <Name>OptionsOption.ColoredRectangleInstanceVisible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>SelectionCategoryState</Type>
-      <Name>LocalMatchOption.SelectionCategoryState</Name>
-      <Value xsi:type="xsd:string">Selected</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>LocalMatchOption.Text</Name>
-      <Value xsi:type="xsd:string">LOCAL MATCH</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>LocalMatchOption.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>LocalMatchOption.X Units</Name>
-      <Value xsi:type="xsd:int">6</Value>
+      <Type>float</Type>
+      <Name>OptionsOption.Height</Name>
+      <Value xsi:type="xsd:float">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>NetworkMatchOption.Parent</Name>
-      <Value xsi:type="xsd:string">OptionsContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>NetworkMatchOption.Text</Name>
-      <Value xsi:type="xsd:string">NETWORK MATCH</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>NetworkMatchOption.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>NetworkMatchOption.X Units</Name>
-      <Value xsi:type="xsd:int">6</Value>
+      <Name>OptionsOption.MenuTextText</Name>
+      <Value xsi:type="xsd:string">OPTIONS</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>OptionsOption.Parent</Name>
       <Value xsi:type="xsd:string">OptionsContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>OptionsOption.State</Name>
+      <Value xsi:type="xsd:string">Default</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -214,15 +336,27 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>int</Type>
-      <Name>TextInstance.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Type>float</Type>
+      <Name>OptionsOption.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>int</Type>
-      <Name>TextInstance.Green</Name>
-      <Value xsi:type="xsd:int">165</Value>
+      <Type>VerticalAlignment</Type>
+      <Name>OptionsOption.Y Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>OptionsOption.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.Height</Name>
+      <Value xsi:type="xsd:float">200</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -232,9 +366,10 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>int</Type>
-      <Name>TextInstance.Red</Name>
-      <Value xsi:type="xsd:int">255</Value>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>TextInstance.SourceFile</Name>
+      <Value xsi:type="xsd:string">RBUISheet.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -245,9 +380,45 @@ Boxers</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>TextureAddress</Type>
+      <Name>TextInstance.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.Texture Height</Name>
+      <Value xsi:type="xsd:int">76</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.Texture Left</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.Texture Top</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.Texture Width</Name>
+      <Value xsi:type="xsd:int">212</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>VerticalAlignment</Type>
       <Name>TextInstance.VerticalAlignment</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.Width</Name>
+      <Value xsi:type="xsd:float">200</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -286,15 +457,22 @@ Boxers</Value>
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <VariableList xsi:type="VariableListSaveOfString">
+      <Type>string</Type>
+      <Name>AnimationFrames</Name>
+      <IsFile>false</IsFile>
+      <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
+      <Value />
+    </VariableList>
   </State>
   <Instance>
     <Name>Background</Name>
-    <BaseType>ColoredRectangle</BaseType>
+    <BaseType>Sprite</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
     <Name>TextInstance</Name>
-    <BaseType>Text</BaseType>
+    <BaseType>Sprite</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>

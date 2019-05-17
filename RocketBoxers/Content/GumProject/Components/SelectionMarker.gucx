@@ -5,9 +5,52 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>ColoredRectangleInstance.SourceFile</Name>
+      <Value xsi:type="xsd:string">RBUISheet.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>ColoredRectangleInstance.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Texture Height</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Texture Left</Name>
+      <Value xsi:type="xsd:int">192</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Texture Top</Name>
+      <Value xsi:type="xsd:int">160</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Texture Width</Name>
+      <Value xsi:type="xsd:int">32</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ColoredRectangleInstance.Width Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">55</Value>
+      <Value xsi:type="xsd:float">64</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -23,9 +66,16 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">55</Value>
+      <Value xsi:type="xsd:float">64</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <VariableList xsi:type="VariableListSaveOfString">
+      <Type>string</Type>
+      <Name>AnimationFrames</Name>
+      <IsFile>false</IsFile>
+      <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
+      <Value />
+    </VariableList>
   </State>
   <Category>
     <Name>PlayerCategory</Name>
@@ -45,14 +95,21 @@
       </Variable>
       <Variable>
         <Type>float</Type>
+        <Name>ColoredRectangleInstance.Rotation</Name>
+        <Value xsi:type="xsd:float">180</Value>
+        <Category>Flip and Rotation</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
         <Name>ColoredRectangleInstance.Width</Name>
-        <Value xsi:type="xsd:float">10</Value>
+        <Value xsi:type="xsd:float">40</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>DimensionUnitType</Type>
         <Name>ColoredRectangleInstance.Width Units</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Value xsi:type="xsd:int">3</Value>
         <Category>Dimensions</Category>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -65,7 +122,7 @@
       <Variable>
         <Type>HorizontalAlignment</Type>
         <Name>ColoredRectangleInstance.X Origin</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Value xsi:type="xsd:int">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -92,26 +149,64 @@
         <Value xsi:type="xsd:int">7</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">192</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>Two</Name>
       <Variable>
         <Type>float</Type>
         <Name>ColoredRectangleInstance.Height</Name>
-        <Value xsi:type="xsd:float">10</Value>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>DimensionUnitType</Type>
+        <Name>ColoredRectangleInstance.Height Units</Name>
+        <Value xsi:type="xsd:int">2</Value>
+        <Category>Dimensions</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ColoredRectangleInstance.Rotation</Name>
+        <Value xsi:type="xsd:float">90</Value>
+        <Category>Flip and Rotation</Category>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>ColoredRectangleInstance.Width</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Value xsi:type="xsd:float">40</Value>
         <Category>Dimensions</Category>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>DimensionUnitType</Type>
         <Name>ColoredRectangleInstance.Width Units</Name>
-        <Value xsi:type="xsd:int">2</Value>
+        <Value xsi:type="xsd:int">3</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -123,7 +218,7 @@
       <Variable>
         <Type>HorizontalAlignment</Type>
         <Name>ColoredRectangleInstance.X Origin</Name>
-        <Value xsi:type="xsd:int">1</Value>
+        <Value xsi:type="xsd:int">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -141,13 +236,37 @@
       <Variable>
         <Type>VerticalAlignment</Type>
         <Name>ColoredRectangleInstance.Y Origin</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Value xsi:type="xsd:int">1</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>PositionUnitType</Type>
         <Name>ColoredRectangleInstance.Y Units</Name>
         <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">128</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">64</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -168,15 +287,22 @@
       </Variable>
       <Variable>
         <Type>float</Type>
+        <Name>ColoredRectangleInstance.Rotation</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <Category>Flip and Rotation</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
         <Name>ColoredRectangleInstance.Width</Name>
-        <Value xsi:type="xsd:float">10</Value>
+        <Value xsi:type="xsd:float">40</Value>
         <Category>Dimensions</Category>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>DimensionUnitType</Type>
         <Name>ColoredRectangleInstance.Width Units</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Value xsi:type="xsd:int">3</Value>
         <Category>Dimensions</Category>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -216,27 +342,63 @@
         <Value xsi:type="xsd:int">7</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">127</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>Four</Name>
       <Variable>
         <Type>float</Type>
         <Name>ColoredRectangleInstance.Height</Name>
-        <Value xsi:type="xsd:float">10</Value>
-        <Category>Dimensions</Category>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>ColoredRectangleInstance.Width</Name>
         <Value xsi:type="xsd:float">0</Value>
         <Category>Dimensions</Category>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>DimensionUnitType</Type>
-        <Name>ColoredRectangleInstance.Width Units</Name>
+        <Name>ColoredRectangleInstance.Height Units</Name>
         <Value xsi:type="xsd:int">2</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ColoredRectangleInstance.Rotation</Name>
+        <Value xsi:type="xsd:float">270</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ColoredRectangleInstance.Width</Name>
+        <Value xsi:type="xsd:float">40</Value>
+        <Category>Dimensions</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>DimensionUnitType</Type>
+        <Name>ColoredRectangleInstance.Width Units</Name>
+        <Value xsi:type="xsd:int">3</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -248,13 +410,13 @@
       <Variable>
         <Type>HorizontalAlignment</Type>
         <Name>ColoredRectangleInstance.X Origin</Name>
-        <Value xsi:type="xsd:int">1</Value>
+        <Value xsi:type="xsd:int">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>PositionUnitType</Type>
         <Name>ColoredRectangleInstance.X Units</Name>
-        <Value xsi:type="xsd:int">6</Value>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -275,11 +437,35 @@
         <Value xsi:type="xsd:int">5</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">193</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
   </Category>
   <Instance>
     <Name>ColoredRectangleInstance</Name>
-    <BaseType>ColoredRectangle</BaseType>
+    <BaseType>Sprite</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />
