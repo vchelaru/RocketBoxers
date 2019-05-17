@@ -228,15 +228,15 @@
     <State>
       <Name>Selected</Name>
       <Variable>
-        <Type>float</Type>
-        <Name>Font Scale</Name>
-        <Value xsi:type="xsd:float">1.5</Value>
+        <Type>int</Type>
+        <Name>Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>int</Type>
-        <Name>Red</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Type>float</Type>
+        <Name>Font Scale</Name>
+        <Value xsi:type="xsd:float">1.5</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -247,13 +247,19 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>Blue</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Name>Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
       <Name>Normal</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Font Scale</Name>
@@ -263,14 +269,14 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>Red</Name>
+        <Name>Green</Name>
         <Value xsi:type="xsd:int">255</Value>
         <Category>Rendering</Category>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>Green</Name>
+        <Name>Red</Name>
         <Value xsi:type="xsd:int">255</Value>
         <Category>Rendering</Category>
         <SetsValue>true</SetsValue>

@@ -13,9 +13,17 @@
     <ElementType>Screen</ElementType>
   </ScreenReference>
   <ScreenReference>
+    <Name>PlayerSelectScreenGum</Name>
+    <ElementType>Screen</ElementType>
+  </ScreenReference>
+  <ScreenReference>
     <Name>TitleScreenGum</Name>
     <ElementType>Screen</ElementType>
   </ScreenReference>
+  <ComponentReference>
+    <Name>CharacterGrid</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
   <ComponentReference>
     <Name>Countdown</Name>
     <ElementType>Component</ElementType>
@@ -94,6 +102,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>GameHUD</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>LevelSelector</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

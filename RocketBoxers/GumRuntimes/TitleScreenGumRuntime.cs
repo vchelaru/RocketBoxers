@@ -7,6 +7,8 @@ namespace RocketBoxers.GumRuntimes
 {
     public partial class TitleScreenGumRuntime
     {
+        public event EventHandler OptionSelected;
+
         public int? SelectedOption
         {
             get
@@ -45,6 +47,7 @@ namespace RocketBoxers.GumRuntimes
                 }
             }
         }
+
         partial void CustomInitialize()
         {
         }
@@ -62,6 +65,29 @@ namespace RocketBoxers.GumRuntimes
                 {
                     newValue = 2; // hardcode this? Sure, prob won't change...
                 }
+                SelectedOption = newValue;
+            }
+
+            if(PushedSelect())
+            {
+                OptionSelected?.Invoke(this, null);
+            }
+        }
+
+        private bool PushedSelect()
+        {
+            var keyboard = InputManager.Keyboard;
+
+            if (keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Enter))
+            {
+                return true;
+            }
+            else
+            {
+                return InputManager.Xbox360GamePads
+                    .Any(item =>
+                        item.ButtonPushed(Xbox360GamePad.Button.Start) ||
+                        item.ButtonPushed(Xbox360GamePad.Button.A));
             }
         }
 

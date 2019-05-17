@@ -90,6 +90,8 @@
     <Compile Include="GumRuntimes\Behaviors\ITreeViewBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\ITreeViewItemBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IUserControlBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\CharacterGridRuntime.cs" />
+    <Compile Include="GumRuntimes\CharacterGridRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\CircleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
@@ -132,6 +134,8 @@
       <DependentUpon>GameHUDRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
+    <Compile Include="GumRuntimes\LevelSelectorRuntime.cs" />
+    <Compile Include="GumRuntimes\LevelSelectorRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\LobbyConnectedPlayerRuntime.cs" />
     <Compile Include="GumRuntimes\LobbyConnectedPlayerRuntime.Generated.cs">
       <DependentUpon>LobbyConnectedPlayerRuntime.cs</DependentUpon>
@@ -145,6 +149,8 @@
       <DependentUpon>NetworkLobbyGumRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\PlayerSelectScreenGumRuntime.cs" />
+    <Compile Include="GumRuntimes\PlayerSelectScreenGumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
@@ -180,6 +186,10 @@
     <Compile Include="Screens\NetworkLobby.cs" />
     <Compile Include="Screens\NetworkLobby.Generated.cs">
       <DependentUpon>NetworkLobby.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\PlayerSelectScreen.cs" />
+    <Compile Include="Screens\PlayerSelectScreen.Generated.cs">
+      <DependentUpon>PlayerSelectScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\TestLevel1.cs" />
     <Compile Include="Screens\TestLevel1.Generated.cs">
@@ -279,6 +289,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>YellowCharacterAnimations</Name>
     </None>
+    <None Include="content\gumproject\components\charactergrid.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>charactergrid</Name>
+    </None>
     <None Include="content\gumproject\components\countdown.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>countdown</Name>
@@ -359,6 +373,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>gamehud</Name>
     </None>
+    <None Include="content\gumproject\components\levelselector.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>levelselector</Name>
+    </None>
     <None Include="content\gumproject\components\lobbyconnectedplayer.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>lobbyconnectedplayer</Name>
@@ -390,6 +408,10 @@
     <None Include="content\gumproject\screens\networklobbygum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>NetworkLobbyGum</Name>
+    </None>
+    <None Include="content\gumproject\screens\playerselectscreengum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PlayerSelectScreenGum</Name>
     </None>
     <None Include="content\gumproject\screens\titlescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
