@@ -33,9 +33,11 @@ namespace RocketBoxers.Entities
         private Vector3 effectSpriteRelativeOffset;
 
         IPressableInput attackInput;
-        //IPressableInput specialAttackInpt;
+        IPressableInput specialAttackInpt;
         //IPressableInput dashInput;
         IPressableInput blockInput;
+
+        DamageArea currentAttackDamageArea;
 
         public bool IsOnGround { get; set; }
         /// <summary>
@@ -63,11 +65,13 @@ namespace RocketBoxers.Entities
 
                 attackInput = gamePad.GetButton(Xbox360GamePad.Button.A);
                 blockInput = gamePad.GetButton(Xbox360GamePad.Button.B);
+                specialAttackInpt = gamePad.GetButton(Xbox360GamePad.Button.X);
             }
             else
             {
                 attackInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.A);
                 blockInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.LeftShift);
+                specialAttackInpt = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.S);
             }
         }
 
@@ -120,14 +124,13 @@ namespace RocketBoxers.Entities
                 {
                     return MakeAnimationChainName("Attack", "Hold");
                 }
-
                 return null;
             };
             animationController.Layers.Add(attackHoldAnimationLayer);
 
             attackAnimationLayer = new AnimationLayer();
-            animationController.Layers.Add(attackAnimationLayer);
 
+            animationController.Layers.Add(attackAnimationLayer);
 
             getHitAnimationLayer = new AnimationLayer();
 
@@ -153,32 +156,55 @@ namespace RocketBoxers.Entities
             InputActivity();
             animationController.Activity();
             attackSpriteAnimationController.Activity();
-            FlatRedBall.Debugging.Debugger.Write(AttackEffectSprite.RelativePosition);
         }
 
         private void InputActivity()
         {
             if(attackInput.WasJustReleased && !attackEffectAnimationLayer.HasPriority && attackHoldAnimationLayer.HasPriority)
             {
-                BginAttack();
+                BeginAttackBasicAttack();
+            }
+
+            if (specialAttackInpt.WasJustPressed && !attackEffectAnimationLayer.HasPriority)
+            {
+                BeginSpecialAttack();
             }
         }
 
-        private void BginAttack()
+        private void BeginAttackBasicAttack()
         {
             attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
-            attackEffectAnimationLayer.PlayOnce(MakeAnimationChainName("Flame"));
-            SetAttackOffset(AttackData[DataTypes.AttackData.Attack].CollisionOffset);
+            var effectChainName = MakeAnimationChainName("Flame");
+            attackEffectAnimationLayer.PlayOnce(effectChainName);
+            var attackData = AttackData[DataTypes.AttackData.Attack];
+            SetAttackOffset(attackData.CollisionOffset);
+            CreateAttackDamageArea(attackData, AttackAnimations[effectChainName]);
+        }
+
+        private void CreateAttackDamageArea(DataTypes.AttackData attackData,AnimationChain animationToRun, int animaionLoops = 1)
+        {
+            currentAttackDamageArea = Factories.DamageAreaFactory.CreateNew();
+            currentAttackDamageArea.AttackData = attackData;
+            currentAttackDamageArea.TeamIndex = TeamIndex;
+            
+            this.Call(() =>
+            {
+                currentAttackDamageArea.Destroy();
+            }).After(animationToRun.TotalLength * animaionLoops);
+        }
+
+        private void BeginSpecialAttack()
+        {
+            attackAnimationLayer.PlayOnce("Special");
+            attackEffectAnimationLayer.PlayOnce("FlameSpecial");
+            var attackData = AttackData[DataTypes.AttackData.Special];
+            SetAttackOffset(attackData.CollisionOffset);
+            CreateAttackDamageArea(attackData, AttackAnimations["FlameSpecial"]);
         }
 
         public void TakeHit()
         {
             getHitAnimationLayer.PlayOnce(MakeAnimationChainName("TakeHit"));
-        }
-
-        private void SetupAttackDamageArea(DamageArea newDamageArea, DataTypes.AttackData attackData)
-        {
-
         }
 
 		private void CustomDestroy()
@@ -201,6 +227,10 @@ namespace RocketBoxers.Entities
             frameOffset.Y = AttackEffectSprite.CurrentChain[AttackEffectSprite.CurrentFrameIndex].RelativeY;
 
             AttackEffectSprite.RelativePosition = effectSpriteRelativeOffset + frameOffset;
+            if(currentAttackDamageArea != null)
+            {
+                currentAttackDamageArea.Position = AttackEffectSprite.Position;
+            }
         }
 
         private string MakeAnimationChainName(string prefix, string suffix = "")

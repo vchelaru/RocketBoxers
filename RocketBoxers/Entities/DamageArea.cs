@@ -20,14 +20,11 @@ namespace RocketBoxers.Entities
         /// </summary>
 		private void CustomInitialize()
 		{
-            // for example, you might do this:
-            //this.Collision.Add(new Circle());
-
+            Collision.Visible = true;
 		}
 
 		private void CustomActivity()
 		{
-
 
 		}
 

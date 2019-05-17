@@ -231,10 +231,33 @@
           <Name>TeamIndex</Name>
           <Type>int</Type>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>RocketBoxers.DataTypes.AttackData</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>CreatesProperties</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+          </Properties>
+          <Name>AttackData</Name>
+          <Type>RocketBoxers.DataTypes.AttackData</Type>
+          <CreatesEvent>true</CreatesEvent>
+        </CustomVariable>
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <Name>Entities\DamageArea</Name>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
+      <Events>
+        <EventResponseSave>
+          <EventName>AfterAttackDataSet</EventName>
+          <SourceVariable>AttackData</SourceVariable>
+          <BeforeOrAfter>After</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+      </Events>
       <Is2D>true</Is2D>
     </EntitySave>
     <EntitySave>
