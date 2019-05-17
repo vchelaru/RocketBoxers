@@ -130,6 +130,10 @@
     <Compile Include="GumRuntimes\LobbyConnectedPlayerRuntime.Generated.cs">
       <DependentUpon>LobbyConnectedPlayerRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\MainMenuSelectableTextRuntime.cs" />
+    <Compile Include="GumRuntimes\MainMenuSelectableTextRuntime.Generated.cs">
+      <DependentUpon>MainMenuSelectableTextRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\NetworkLobbyGumRuntime.cs" />
     <Compile Include="GumRuntimes\NetworkLobbyGumRuntime.Generated.cs">
       <DependentUpon>NetworkLobbyGumRuntime.cs</DependentUpon>
@@ -139,6 +143,10 @@
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
+    <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs">
+      <DependentUpon>TitleScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\WarpUpSatsRuntime.cs" />
     <Compile Include="GumRuntimes\WarpUpSatsRuntime.Generated.cs">
       <DependentUpon>WarpUpSatsRuntime.cs</DependentUpon>
@@ -170,6 +178,10 @@
     <Compile Include="Screens\TestLevel1.cs" />
     <Compile Include="Screens\TestLevel1.Generated.cs">
       <DependentUpon>TestLevel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\TitleScreen.cs" />
+    <Compile Include="Screens\TitleScreen.Generated.cs">
+      <DependentUpon>TitleScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup\CameraSetup.cs" />
     <Compile Include="Setup\GameNetworkConfiguration.Generated.cs" />
@@ -345,6 +357,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>lobbyconnectedplayer</Name>
     </None>
+    <None Include="content\gumproject\components\mainmenuselectabletext.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>mainmenuselectabletext</Name>
+    </None>
     <None Include="content\gumproject\components\warpupsats.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>warpupsats</Name>
@@ -368,6 +384,10 @@
     <None Include="content\gumproject\screens\networklobbygum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>NetworkLobbyGum</Name>
+    </None>
+    <None Include="content\gumproject\screens\titlescreengum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TitleScreenGum</Name>
     </None>
     <None Include="content\gumproject\standards\circle.gutx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

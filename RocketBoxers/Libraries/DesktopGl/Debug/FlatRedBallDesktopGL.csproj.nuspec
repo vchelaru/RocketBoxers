@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FlatRedBallDesktopGL</id>
+    <version>2019.1.13</version>
+    <authors>Victor Chelaru</authors>
+    <owners>Victor Chelaru</owners>
+    <licenseUrl>https://github.com/vchelaru/FlatRedBall/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/vchelaru/flatredball</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>FlatRedBall Game Engine using MonoGame DesktopGL</description>
+    <releaseNotes>Initial NuGet Release.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>MonoGame</tags>
+    <dependencies>
+      <dependency id="MonoGame.Framework.DesktopGL" version="3.7.1.189" />
+    </dependencies>
+  </metadata>
+</package>

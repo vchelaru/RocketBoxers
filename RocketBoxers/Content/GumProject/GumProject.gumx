@@ -12,6 +12,10 @@
     <Name>NetworkLobbyGum</Name>
     <ElementType>Screen</ElementType>
   </ScreenReference>
+  <ScreenReference>
+    <Name>TitleScreenGum</Name>
+    <ElementType>Screen</ElementType>
+  </ScreenReference>
   <ComponentReference>
     <Name>Countdown</Name>
     <ElementType>Component</ElementType>
@@ -94,6 +98,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>LobbyConnectedPlayer</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>MainMenuSelectableText</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
