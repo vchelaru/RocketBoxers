@@ -1,3 +1,3 @@
-"Name (string, required)",CollsionShapeType (RocketBoxers.Entities.AttackCollisionShapeType),CollisionDimensions (Vector3),CollisionOffset (Vector3)
-Attack,Rectangle,"new Vector3(X=32, Y=32)","new Vector3(X=16, Y=16)"
-Special,Circle,"new Vector3(X=32, Y=5)","new Vector3(X=0, Y=0)"
+"Name (string, required)",CollsionShapeType (RocketBoxers.Entities.AttackCollisionShapeType),AnimationLoopCount (int),CollisionDimensions (Vector3),CollisionOffset (Vector3)
+Attack,Rectangle,2,"new Vector3(X=32, Y=32)","new Vector3(X=16, Y=16)"
+Special,Circle,4,"new Vector3(X=32, Y=5)","new Vector3(X=0, Y=0)"
