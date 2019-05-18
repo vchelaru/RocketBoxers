@@ -90,12 +90,6 @@
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>LocalMatchOption.MenuTextText</Name>
-      <Value xsi:type="xsd:string">LOCAL MATCH</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
       <Name>LocalMatchOption.Parent</Name>
       <Value xsi:type="xsd:string">OptionsContainer</Value>
       <SetsValue>true</SetsValue>
@@ -121,8 +115,7 @@
     <Variable>
       <Type>string</Type>
       <Name>LocalMatchOption.Text</Name>
-      <Value xsi:type="xsd:string">LOCAL MATCH
-</Value>
+      <Value xsi:type="xsd:string">LOCAL MATCH</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -165,12 +158,6 @@
       <Type>float</Type>
       <Name>NetworkMatchOption.Height</Name>
       <Value xsi:type="xsd:float">25</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>NetworkMatchOption.MenuTextText</Name>
-      <Value xsi:type="xsd:string">NETWORK MATCH</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -297,12 +284,6 @@
       <Type>float</Type>
       <Name>OptionsOption.Height</Name>
       <Value xsi:type="xsd:float">25</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>OptionsOption.MenuTextText</Name>
-      <Value xsi:type="xsd:string">OPTIONS</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

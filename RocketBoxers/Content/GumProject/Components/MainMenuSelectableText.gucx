@@ -221,7 +221,7 @@
       <Type>string</Type>
       <Name>MenuText.Text</Name>
       <Value xsi:type="xsd:string">REPLACE TEXT</Value>
-      <ExposedAsName>MenuTextText</ExposedAsName>
+      <ExposedAsName>Text</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -299,8 +299,8 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>SelectionStateState</Type>
-      <Name>SelectionStateState</Name>
+      <Type>SelectionCategoryState</Type>
+      <Name>SelectionCategoryState</Name>
       <Value xsi:type="xsd:string">Selected</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -308,13 +308,6 @@
       <Type>State</Type>
       <Name>State</Name>
       <Value xsi:type="xsd:string">Default</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>Text</Name>
-      <Value xsi:type="xsd:string">REPLACE TEXT</Value>
-      <Category>Text</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -409,7 +402,7 @@
     </Variable>
   </State>
   <Category>
-    <Name>SelectionState</Name>
+    <Name>SelectionCategory</Name>
     <State>
       <Name>Normal</Name>
       <Variable>
