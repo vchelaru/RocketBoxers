@@ -91,9 +91,13 @@
     <Compile Include="GumRuntimes\Behaviors\ITreeViewItemBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IUserControlBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\CharacterGridRuntime.cs" />
-    <Compile Include="GumRuntimes\CharacterGridRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CharacterGridRuntime.Generated.cs">
+      <DependentUpon>CharacterGridRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\CharacterGridTileRuntime.cs" />
-    <Compile Include="GumRuntimes\CharacterGridTileRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CharacterGridTileRuntime.Generated.cs">
+      <DependentUpon>CharacterGridTileRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\CircleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
@@ -137,7 +141,9 @@
     </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
     <Compile Include="GumRuntimes\LevelSelectorRuntime.cs" />
-    <Compile Include="GumRuntimes\LevelSelectorRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\LevelSelectorRuntime.Generated.cs">
+      <DependentUpon>LevelSelectorRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\LobbyConnectedPlayerRuntime.cs" />
     <Compile Include="GumRuntimes\LobbyConnectedPlayerRuntime.Generated.cs">
       <DependentUpon>LobbyConnectedPlayerRuntime.cs</DependentUpon>
@@ -152,14 +158,22 @@
     </Compile>
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PlayerSelectScreenGumRuntime.cs" />
-    <Compile Include="GumRuntimes\PlayerSelectScreenGumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\PlayerSelectScreenGumRuntime.Generated.cs">
+      <DependentUpon>PlayerSelectScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SelectedCharacterFrameRuntime.cs" />
-    <Compile Include="GumRuntimes\SelectedCharacterFrameRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\SelectedCharacterFrameRuntime.Generated.cs">
+      <DependentUpon>SelectedCharacterFrameRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\SelectionMarkerRuntime.cs" />
-    <Compile Include="GumRuntimes\SelectionMarkerRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\SelectionMarkerRuntime.Generated.cs">
+      <DependentUpon>SelectionMarkerRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.cs" />
+    <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs">
@@ -295,6 +309,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>YellowCharacterAnimations</Name>
     </None>
+    <None Include="content\gumproject\characterselectbg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>characterselectbg</Name>
+    </None>
     <None Include="content\gumproject\components\charactergrid.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>charactergrid</Name>
@@ -419,9 +437,25 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Arial_0</Name>
     </None>
+    <None Include="content\gumproject\fontcache\font24arial.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font24arial</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font24arial_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font24Arial_0</Name>
+    </None>
     <None Include="content\gumproject\gumproject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumProject</Name>
+    </None>
+    <None Include="content\gumproject\mainmenubg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>mainmenubg</Name>
+    </None>
+    <None Include="content\gumproject\rbuisheet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>rbuisheet</Name>
     </None>
     <None Include="content\gumproject\screens\networklobbygum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -430,6 +464,10 @@
     <None Include="content\gumproject\screens\playerselectscreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PlayerSelectScreenGum</Name>
+    </None>
+    <None Include="content\gumproject\screens\testscreengumonly.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>testscreengumonly</Name>
     </None>
     <None Include="content\gumproject\screens\titlescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

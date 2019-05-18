@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ElementAnimationsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Animations>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>CountdownThree</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/ThreeStart</StateName>
+          <Time>0</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/ThreeOn</StateName>
+          <Time>0.5</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/ThreeOff</StateName>
+          <Time>0.65</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>CountdownTwo</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/TwoStart</StateName>
+          <Time>0</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/TwoOn</StateName>
+          <Time>0.5</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/TwoOff</StateName>
+          <Time>0.65</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>CountdownOne</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/OneStart</StateName>
+          <Time>0</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/OneOn</StateName>
+          <Time>0.5</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/OneOff</StateName>
+          <Time>0.65</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>CountdownGo</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/GoStart</StateName>
+          <Time>0</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/GoOn</StateName>
+          <Time>0.25</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>In</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>AnimationStates/GoOff</StateName>
+          <Time>0.65</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+  </Animations>
+</ElementAnimationsSave>
