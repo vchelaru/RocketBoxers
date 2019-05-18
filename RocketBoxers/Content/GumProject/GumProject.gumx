@@ -109,6 +109,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>GameCountdown</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>GameHUD</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -130,6 +134,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>SelectionMarker</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>SelectScreenReady</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
