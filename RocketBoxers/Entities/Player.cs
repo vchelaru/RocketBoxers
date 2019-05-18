@@ -116,24 +116,18 @@ namespace RocketBoxers.Entities
             };
             animationController.Layers.Add(walkAnimationLayer);
 
+            attackAnimationLayer = new AnimationLayer();
+            attackAnimationLayer.OnAnimationFinished = () => BeginBasicAttack();
+            animationController.Layers.Add(attackAnimationLayer);
 
             attackHoldAnimationLayer = new AnimationLayer();
-            attackHoldAnimationLayer.EveryFrameAction = () =>
+            attackHoldAnimationLayer.OnAnimationFinished = () =>
             {
-                if(attackInput.IsDown)
-                {
-                    return MakeAnimationChainName("Attack", "Hold");
-                }
-                return null;
+                mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
             };
             animationController.Layers.Add(attackHoldAnimationLayer);
 
-            attackAnimationLayer = new AnimationLayer();
-
-            animationController.Layers.Add(attackAnimationLayer);
-
             getHitAnimationLayer = new AnimationLayer();
-
             animationController.Layers.Add(getHitAnimationLayer);
 
             var blockingLayer = new AnimationLayer();
@@ -141,7 +135,12 @@ namespace RocketBoxers.Entities
             {
                 if (blockInput.IsDown)
                 {
+                    mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Stopped];
                     return MakeAnimationChainName("Block");
+                }
+                else if(blockInput.WasJustReleased)
+                {
+                    mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
                 }
 
                 return null;
@@ -156,50 +155,57 @@ namespace RocketBoxers.Entities
             InputActivity();
             animationController.Activity();
             attackSpriteAnimationController.Activity();
+
+            FlatRedBall.Debugging.Debugger.Write(mCurrentMovement.Name);
         }
 
         private void InputActivity()
         {
-            if(attackInput.WasJustReleased && !attackEffectAnimationLayer.HasPriority && attackHoldAnimationLayer.HasPriority)
+            if (attackInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
             {
-                BeginAttackBasicAttack();
+                attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
+                mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Stopped];
             }
-
-            if (specialAttackInpt.WasJustPressed && !attackEffectAnimationLayer.HasPriority)
+            if (specialAttackInpt.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
             {
                 BeginSpecialAttack();
+                mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Stopped];
             }
         }
 
-        private void BeginAttackBasicAttack()
+        private void BeginBasicAttack()
         {
-            attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
+            var attackData = AttackData[DataTypes.AttackData.Attack];
+            attackHoldAnimationLayer.PlayLoop(MakeAnimationChainName("Attack", "Hold"), attackData.AnimationLoopCount);
+
             var effectChainName = MakeAnimationChainName("Flame");
             attackEffectAnimationLayer.PlayOnce(effectChainName);
-            var attackData = AttackData[DataTypes.AttackData.Attack];
+
             SetAttackOffset(attackData.CollisionOffset);
             CreateAttackDamageArea(attackData, AttackAnimations[effectChainName]);
+
         }
 
-        private void CreateAttackDamageArea(DataTypes.AttackData attackData,AnimationChain animationToRun, int animaionLoops = 1)
+        private void CreateAttackDamageArea(DataTypes.AttackData attackData, AnimationChain animationToRun, int loopCount = 1)
         {
-            currentAttackDamageArea = Factories.DamageAreaFactory.CreateNew();
+            var newDamageArea = Factories.DamageAreaFactory.CreateNew();
+            currentAttackDamageArea = newDamageArea;
             currentAttackDamageArea.AttackData = attackData;
             currentAttackDamageArea.TeamIndex = TeamIndex;
             
             this.Call(() =>
             {
-                currentAttackDamageArea.Destroy();
-            }).After(animationToRun.TotalLength * animaionLoops);
+                newDamageArea.Destroy();
+            }).After(animationToRun.TotalLength * loopCount);
         }
 
         private void BeginSpecialAttack()
         {
-            attackAnimationLayer.PlayOnce("Special");
-            attackEffectAnimationLayer.PlayOnce("FlameSpecial");
             var attackData = AttackData[DataTypes.AttackData.Special];
+            attackHoldAnimationLayer.PlayLoop("Special", attackData.AnimationLoopCount);
+            attackEffectAnimationLayer.PlayLoop("FlameSpecial", attackData.AnimationLoopCount);
             SetAttackOffset(attackData.CollisionOffset);
-            CreateAttackDamageArea(attackData, AttackAnimations["FlameSpecial"]);
+            CreateAttackDamageArea(attackData, AttackAnimations["FlameSpecial"], attackData.AnimationLoopCount);
         }
 
         public void TakeHit()

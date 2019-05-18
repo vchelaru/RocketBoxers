@@ -232,6 +232,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>AnimationStatesState</Type>
+      <Name>SelectScreenReadyInstance.AnimationStatesState</Name>
+      <Value xsi:type="xsd:string">Off</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <IsFile>true</IsFile>
       <Type>string</Type>
       <Name>SpriteInstance.SourceFile</Name>
@@ -304,6 +310,11 @@
   <Instance>
     <Name>MarkerP4</Name>
     <BaseType>SelectionMarker</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>SelectScreenReadyInstance</Name>
+    <BaseType>SelectScreenReady</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
 </ScreenSave>
