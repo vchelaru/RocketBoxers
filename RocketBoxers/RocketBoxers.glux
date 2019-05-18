@@ -182,6 +182,21 @@
         <string>GLUE</string>
       </Tags>
       <Source>GLUE</Source>
+      <Name>Screens\TestScreen</Name>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Name>GumProject/Screens/TestScreenGum.gusx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Gum.Wireframe.GraphicalUiElement</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+      </ReferencedFiles>
+    </ScreenSave>
+    <ScreenSave>
+      <Tags>
+        <string>GLUE</string>
+      </Tags>
+      <Source>GLUE</Source>
       <Name>Screens\TitleScreen</Name>
       <ReferencedFiles>
         <ReferencedFileSave>
