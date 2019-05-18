@@ -107,12 +107,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>State</Type>
-      <Name>LocalMatchOption.State</Name>
-      <Value xsi:type="xsd:string">Default</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
       <Name>LocalMatchOption.Text</Name>
       <Value xsi:type="xsd:string">LOCAL MATCH</Value>
@@ -170,12 +164,6 @@
       <Type>SelectionCategoryState</Type>
       <Name>NetworkMatchOption.SelectionCategoryState</Name>
       <Value xsi:type="xsd:string">Normal</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>State</Type>
-      <Name>NetworkMatchOption.State</Name>
-      <Value xsi:type="xsd:string">Default</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -290,12 +278,6 @@
       <Type>string</Type>
       <Name>OptionsOption.Parent</Name>
       <Value xsi:type="xsd:string">OptionsContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>State</Type>
-      <Name>OptionsOption.State</Name>
-      <Value xsi:type="xsd:string">Default</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

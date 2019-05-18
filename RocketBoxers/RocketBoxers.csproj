@@ -172,6 +172,8 @@
       <DependentUpon>SelectionMarkerRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.cs" />
+    <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs">
@@ -462,6 +464,10 @@
     <None Include="content\gumproject\screens\playerselectscreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PlayerSelectScreenGum</Name>
+    </None>
+    <None Include="content\gumproject\screens\testscreengumonly.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>testscreengumonly</Name>
     </None>
     <None Include="content\gumproject\screens\titlescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

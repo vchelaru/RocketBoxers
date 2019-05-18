@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScreenSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>TestScreenGumOnly</Name>
+  <State>
+    <Name>Default</Name>
+    <Variable>
+      <Type>SelectionCategoryState</Type>
+      <Name>MainMenuSelectableTextInstance.SelectionCategoryState</Name>
+      <Value xsi:type="xsd:string">Normal</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+  </State>
+  <Instance>
+    <Name>MainMenuSelectableTextInstance</Name>
+    <BaseType>MainMenuSelectableText</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+</ScreenSave>
