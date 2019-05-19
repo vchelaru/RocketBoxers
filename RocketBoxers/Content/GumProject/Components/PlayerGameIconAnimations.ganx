@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ElementAnimationsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Animations>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>PercentDamageBounce</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>DamageStateAnimation/Normal</StateName>
+          <Time>0</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>DamageStateAnimation/DownOffset</StateName>
+          <Time>0.1</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>DamageStateAnimation/UpOffset</StateName>
+          <Time>0.2</Time>
+          <InterpolationType>Back</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>DamageStateAnimation/Normal</StateName>
+          <Time>0.4</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+  </Animations>
+</ElementAnimationsSave>

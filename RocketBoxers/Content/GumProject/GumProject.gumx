@@ -133,6 +133,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>PlayerGameIcon</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>SelectedCharacterFrame</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
