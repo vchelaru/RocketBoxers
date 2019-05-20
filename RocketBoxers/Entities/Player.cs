@@ -34,7 +34,7 @@ namespace RocketBoxers.Entities
 
         IPressableInput attackInput;
         IPressableInput specialAttackInpt;
-        //IPressableInput dashInput;
+        IPressableInput dashInput;
         IPressableInput blockInput;
 
         DamageArea currentAttackDamageArea;
@@ -66,12 +66,14 @@ namespace RocketBoxers.Entities
                 attackInput = gamePad.GetButton(Xbox360GamePad.Button.A);
                 blockInput = gamePad.GetButton(Xbox360GamePad.Button.B);
                 specialAttackInpt = gamePad.GetButton(Xbox360GamePad.Button.X);
+                dashInput = gamePad.GetButton(Xbox360GamePad.Button.Y);
             }
             else
             {
                 attackInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.A);
                 blockInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.LeftShift);
                 specialAttackInpt = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.S);
+                dashInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.D);
             }
         }
 
@@ -123,30 +125,32 @@ namespace RocketBoxers.Entities
             attackHoldAnimationLayer = new AnimationLayer();
             attackHoldAnimationLayer.OnAnimationFinished = () =>
             {
-                mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
+                SetMovement(DataTypes.TopDownValues.Normal);
             };
             animationController.Layers.Add(attackHoldAnimationLayer);
-
-            getHitAnimationLayer = new AnimationLayer();
-            animationController.Layers.Add(getHitAnimationLayer);
 
             var blockingLayer = new AnimationLayer();
             blockingLayer.EveryFrameAction = () =>
             {
                 if (blockInput.IsDown)
                 {
-                    mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Stopped];
+                    if (blockInput.WasJustPressed)
+                    {
+                        SetMovement(DataTypes.TopDownValues.Stopped);
+                    }
                     return MakeAnimationChainName("Block");
                 }
                 else if(blockInput.WasJustReleased)
                 {
-                    mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
+                   SetMovement(DataTypes.TopDownValues.Normal);
                 }
 
                 return null;
             };
-
             animationController.Layers.Add(blockingLayer);
+
+            getHitAnimationLayer = new AnimationLayer();
+            animationController.Layers.Add(getHitAnimationLayer);
         }
 
         private void CustomActivity()
@@ -155,22 +159,37 @@ namespace RocketBoxers.Entities
             InputActivity();
             animationController.Activity();
             attackSpriteAnimationController.Activity();
-
-            FlatRedBall.Debugging.Debugger.Write(mCurrentMovement.Name);
         }
 
         private void InputActivity()
         {
-            if (attackInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
+            if (!blockInput.IsDown && !getHitAnimationLayer.HasPriority)
             {
-                attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
-                mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Stopped];
+                if (attackInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
+                {
+                    attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
+                    SetMovement(DataTypes.TopDownValues.Stopped);
+                }
+                //else if (dashInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
+                //{
+                //    BeginDashAttack();
+                //    SetMovement(DataTypes.TopDownValues.DashAttack);
+                //}
+                else if (specialAttackInpt.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
+                {
+                    BeginSpecialAttack();
+                    SetMovement(DataTypes.TopDownValues.Stopped);
+                }
             }
-            if (specialAttackInpt.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
-            {
-                BeginSpecialAttack();
-                mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Stopped];
-            }
+        }
+
+        private void BeginDashAttack()
+        {
+            var attackData = AttackData[DataTypes.AttackData.Dash];
+            attackHoldAnimationLayer.PlayLoop(MakeAnimationChainName("Dash"), attackData.AnimationLoopCount);
+
+            SetAttackOffset(attackData.CollisionOffset);
+            //CreateAttackDamageArea(attackData, );
         }
 
         private void BeginBasicAttack()
@@ -186,7 +205,7 @@ namespace RocketBoxers.Entities
 
         }
 
-        private void CreateAttackDamageArea(DataTypes.AttackData attackData, AnimationChain animationToRun, int loopCount = 1)
+        private void CreateAttackDamageArea(DataTypes.AttackData attackData, AnimationChain animationToRun = null, int loopCount = 1)
         {
             var newDamageArea = Factories.DamageAreaFactory.CreateNew();
             currentAttackDamageArea = newDamageArea;
@@ -204,6 +223,7 @@ namespace RocketBoxers.Entities
             var attackData = AttackData[DataTypes.AttackData.Special];
             attackHoldAnimationLayer.PlayLoop("Special", attackData.AnimationLoopCount);
             attackEffectAnimationLayer.PlayLoop("FlameSpecial", attackData.AnimationLoopCount);
+            AttackEffectSprite.CurrentFrameIndex = 0;
             SetAttackOffset(attackData.CollisionOffset);
             CreateAttackDamageArea(attackData, AttackAnimations["FlameSpecial"], attackData.AnimationLoopCount);
         }
@@ -298,6 +318,13 @@ namespace RocketBoxers.Entities
 
             direction.Normalize();
             effectSpriteRelativeOffset = direction * attackOffsets;
+        }
+
+        private void SetMovement(string movement)
+        {
+            mCurrentMovement = TopDownValues[movement];
+
+            InputEnabled = !mCurrentMovement.DisablesInput;
         }
 	}
 }

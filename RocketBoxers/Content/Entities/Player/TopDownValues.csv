@@ -1,3 +1,4 @@
-"Name (System.String, required)",MaxSpeed (System.Single),AccelerationTime (System.Single),DecelerationTime (System.Single)
-Normal,250,.5,.3
-Stopped,0,0,.1
+"Name (System.String, required)",MaxSpeed (System.Single),AccelerationTime (System.Single),DecelerationTime (System.Single),DisablesInput (bool)
+Normal,250,.5,.3,false
+Stopped,0,0,0,true
+DashAttack,300,0,1,true
