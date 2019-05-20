@@ -1,3 +1,5 @@
+xcopy C:\Users\Victor\Documents\Gum\Gum\bin\Debug\Data Tools\Gum /E /I /Y
+
 xcopy C:\Users\Victor\Documents\FlatRedBall\Engines\FlatRedBallXNA\FlatRedBall\bin\DesktopGL RocketBoxers\Libraries\DesktopGl  /E /I /Y
 
 
@@ -21,3 +23,4 @@ xcopy C:\Users\Victor\Documents\FlatRedBall\Engines\Forms\FlatRedBall.Forms\Flat
 xcopy C:\Users\Victor\Documents\FlatRedBall\Engines\Forms\FlatRedBall.Forms\FlatRedBall.Forms\bin\DesktopGL\Debug\FlatRedBall.Forms.pdb RocketBoxers\Libraries\DesktopGl\Debug\FlatRedBall.Forms.pdb /E /I /Y
 xcopy C:\Users\Victor\Documents\FlatRedBall\Engines\Forms\FlatRedBall.Forms\FlatRedBall.Forms\bin\DesktopGL\Debug\GumCoreXnaPc.pdb RocketBoxers\Libraries\DesktopGl\Debug\GumCoreXnaPc.pdb /E /I /Y
 xcopy C:\Users\Victor\Documents\FlatRedBall\Engines\Forms\FlatRedBall.Forms\FlatRedBall.Forms\bin\DesktopGL\Debug\StateInterpolation.pdb RocketBoxers\Libraries\DesktopGl\Debug\StateInterpolation.pdb /E /I /Y
+
