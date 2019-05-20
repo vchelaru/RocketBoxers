@@ -330,6 +330,42 @@ namespace RocketBoxers.Entities
 
             if(mCurrentMovement.ShouldSetToMaxSpeed)
             {
+                if(Velocity.X == 0 && Velocity.Y == 0)
+                {
+                    // apply velocity in the given direction. Even though diagonals
+                    // result in length > 1, normalize will handle it
+                    switch(this.DirectionFacing)
+                    {
+                        case TopDownDirection.Left:
+                            Velocity.X = -1;
+                            break;
+                        case TopDownDirection.UpLeft:
+                            Velocity.X = -1;
+                            Velocity.Y = 1;
+                            break;
+                        case TopDownDirection.Up:
+                            YVelocity = 1;
+                            break;
+                        case TopDownDirection.UpRight:
+                            Velocity.X = 1;
+                            Velocity.Y = 1;
+                            break;
+                        case TopDownDirection.Right:
+                            XVelocity = 1;
+                            break;
+                        case TopDownDirection.DownRight:
+                            XVelocity = 1;
+                            YVelocity = -1;
+                            break;
+                        case TopDownDirection.Down:
+                            YVelocity = -1;
+                            break;
+                        case TopDownDirection.DownLeft:
+                            YVelocity = -1;
+                            XVelocity = -1;
+                            break;
+                    }
+                }
                 Velocity.Normalize();
                 Velocity *= mCurrentMovement.MaxSpeed;
             }
