@@ -135,6 +135,10 @@
       <DependentUpon>TreeViewToggleButtonRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\DefaultForms\UserControlRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\GameCountdownRuntime.cs" />
+    <Compile Include="GumRuntimes\GameCountdownRuntime.Generated.cs">
+      <DependentUpon>GameCountdownRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\GameHUDRuntime.cs" />
     <Compile Include="GumRuntimes\GameHUDRuntime.Generated.cs">
       <DependentUpon>GameHUDRuntime.cs</DependentUpon>
@@ -157,6 +161,10 @@
       <DependentUpon>NetworkLobbyGumRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\PlayerGameIconRuntime.cs" />
+    <Compile Include="GumRuntimes\PlayerGameIconRuntime.Generated.cs">
+      <DependentUpon>PlayerGameIconRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\PlayerSelectScreenGumRuntime.cs" />
     <Compile Include="GumRuntimes\PlayerSelectScreenGumRuntime.Generated.cs">
       <DependentUpon>PlayerSelectScreenGumRuntime.cs</DependentUpon>
@@ -170,6 +178,10 @@
     <Compile Include="GumRuntimes\SelectionMarkerRuntime.cs" />
     <Compile Include="GumRuntimes\SelectionMarkerRuntime.Generated.cs">
       <DependentUpon>SelectionMarkerRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\SelectScreenReadyRuntime.cs" />
+    <Compile Include="GumRuntimes\SelectScreenReadyRuntime.Generated.cs">
+      <DependentUpon>SelectScreenReadyRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.cs" />
@@ -407,6 +419,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>usercontrol</Name>
     </None>
+    <None Include="content\gumproject\components\gamecountdown.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>gamecountdown</Name>
+    </None>
     <None Include="content\gumproject\components\gamehud.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>gamehud</Name>
@@ -423,6 +439,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>mainmenuselectabletext</Name>
     </None>
+    <None Include="content\gumproject\components\playergameicon.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>playergameicon</Name>
+    </None>
     <None Include="content\gumproject\components\selectedcharacterframe.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>selectedcharacterframe</Name>
@@ -430,6 +450,10 @@
     <None Include="content\gumproject\components\selectionmarker.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>selectionmarker</Name>
+    </None>
+    <None Include="content\gumproject\components\selectscreenready.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>selectscreenready</Name>
     </None>
     <None Include="content\gumproject\components\warpupsats.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -447,6 +471,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Arial_0</Name>
     </None>
+    <None Include="content\gumproject\fontcache\font18arial_o2.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font18arial_o2</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font18arial_o2_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font18Arial_o2_0</Name>
+    </None>
     <None Include="content\gumproject\fontcache\font24arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>font24arial</Name>
@@ -454,6 +486,18 @@
     <None Include="content\gumproject\fontcache\font24arial_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font24Arial_0</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font46arial_o2.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font46arial_o2</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font46arial_o2_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font46Arial_o2_0</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font46arial_o2_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font46Arial_o2_1</Name>
     </None>
     <None Include="content\gumproject\gumproject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
