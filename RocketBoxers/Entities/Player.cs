@@ -170,11 +170,11 @@ namespace RocketBoxers.Entities
                     attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
                     SetMovement(DataTypes.TopDownValues.Stopped);
                 }
-                //else if (dashInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
-                //{
-                //    BeginDashAttack();
-                //    SetMovement(DataTypes.TopDownValues.DashAttack);
-                //}
+                else if (dashInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
+                {
+                    BeginDashAttack();
+                    SetMovement(DataTypes.TopDownValues.DashAttack);
+                }
                 else if (specialAttackInpt.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
                 {
                     BeginSpecialAttack();
@@ -186,10 +186,12 @@ namespace RocketBoxers.Entities
         private void BeginDashAttack()
         {
             var attackData = AttackData[DataTypes.AttackData.Dash];
-            attackHoldAnimationLayer.PlayLoop(MakeAnimationChainName("Dash"), attackData.AnimationLoopCount);
+            var chainName = MakeAnimationChainName("Dash");
+            var movement = TopDownValues[DataTypes.TopDownValues.DashAttack];
+            attackHoldAnimationLayer.PlayDuration(chainName, movement.DecelerationTime);
 
             SetAttackOffset(attackData.CollisionOffset);
-            //CreateAttackDamageArea(attackData, );
+            CreateAttackDamageArea(attackData, movement.DecelerationTime);
         }
 
         private void BeginBasicAttack()
@@ -201,11 +203,11 @@ namespace RocketBoxers.Entities
             attackEffectAnimationLayer.PlayOnce(effectChainName);
 
             SetAttackOffset(attackData.CollisionOffset);
-            CreateAttackDamageArea(attackData, AttackAnimations[effectChainName]);
+            CreateAttackDamageArea(attackData, AttackAnimations[effectChainName].TotalLength);
 
         }
 
-        private void CreateAttackDamageArea(DataTypes.AttackData attackData, AnimationChain animationToRun = null, int loopCount = 1)
+        private void CreateAttackDamageArea(DataTypes.AttackData attackData, float animationDuration, int loopCount = 1)
         {
             var newDamageArea = Factories.DamageAreaFactory.CreateNew();
             currentAttackDamageArea = newDamageArea;
@@ -215,7 +217,7 @@ namespace RocketBoxers.Entities
             this.Call(() =>
             {
                 newDamageArea.Destroy();
-            }).After(animationToRun.TotalLength * loopCount);
+            }).After(animationDuration * loopCount);
         }
 
         private void BeginSpecialAttack()
@@ -225,7 +227,7 @@ namespace RocketBoxers.Entities
             attackEffectAnimationLayer.PlayLoop("FlameSpecial", attackData.AnimationLoopCount);
             AttackEffectSprite.CurrentFrameIndex = 0;
             SetAttackOffset(attackData.CollisionOffset);
-            CreateAttackDamageArea(attackData, AttackAnimations["FlameSpecial"], attackData.AnimationLoopCount);
+            CreateAttackDamageArea(attackData, AttackAnimations["FlameSpecial"].TotalLength, attackData.AnimationLoopCount);
         }
 
         public void TakeHit()
@@ -325,6 +327,12 @@ namespace RocketBoxers.Entities
             mCurrentMovement = TopDownValues[movement];
 
             InputEnabled = !mCurrentMovement.DisablesInput;
+
+            if(mCurrentMovement.ShouldSetToMaxSpeed)
+            {
+                Velocity.Normalize();
+                Velocity *= mCurrentMovement.MaxSpeed;
+            }
         }
 	}
 }
