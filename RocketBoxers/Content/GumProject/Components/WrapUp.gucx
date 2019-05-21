@@ -34,6 +34,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>SlideDownStatesState</Type>
+      <Name>WarpUpSatsInstance.SlideDownStatesState</Name>
+      <Value xsi:type="xsd:string">OffScreen</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>WarpUpSatsInstance.State</Name>
+      <Value xsi:type="xsd:string">Default</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>WarpUpSatsInstance.Width</Name>
       <Value xsi:type="xsd:float">200</Value>
@@ -67,6 +79,42 @@
       <Type>PositionUnitType</Type>
       <Name>WarpUpSatsInstance.Y Units</Name>
       <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WarpUpSatsInstance1.X</Name>
+      <Value xsi:type="xsd:float">38.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>WarpUpSatsInstance1.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WarpUpSatsInstance2.X</Name>
+      <Value xsi:type="xsd:float">62</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>WarpUpSatsInstance2.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WarpUpSatsInstance3.X</Name>
+      <Value xsi:type="xsd:float">85.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>WarpUpSatsInstance3.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -120,6 +168,21 @@
   </State>
   <Instance>
     <Name>WarpUpSatsInstance</Name>
+    <BaseType>WarpUpSats</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>WarpUpSatsInstance1</Name>
+    <BaseType>WarpUpSats</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>WarpUpSatsInstance2</Name>
+    <BaseType>WarpUpSats</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>WarpUpSatsInstance3</Name>
     <BaseType>WarpUpSats</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
