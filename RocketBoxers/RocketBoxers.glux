@@ -31,9 +31,32 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <ContainedObjects>
             <NamedObjectSave>
+              <CustomProperty>
+                <Type>int</Type>
+                <Member>TeamIndex</Member>
+                <ValueAsInt>0</ValueAsInt>
+              </CustomProperty>
               <SourceType>Entity</SourceType>
               <SourceClassType>Entities\Player</SourceClassType>
               <InstanceName>Player1</InstanceName>
+              <AttachToContainer>true</AttachToContainer>
+              <GenerateTimedEmit>true</GenerateTimedEmit>
+              <IndependentOfCamera>true</IndependentOfCamera>
+            </NamedObjectSave>
+            <NamedObjectSave>
+              <CustomProperty>
+                <Type>int</Type>
+                <Member>TeamIndex</Member>
+                <ValueAsInt>1</ValueAsInt>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>bool</Type>
+                <Member>DEBUG_IgnoreInput</Member>
+                <ValueAsBool>true</ValueAsBool>
+              </CustomProperty>
+              <SourceType>Entity</SourceType>
+              <SourceClassType>Entities\Player</SourceClassType>
+              <InstanceName>Player2</InstanceName>
               <AttachToContainer>true</AttachToContainer>
               <GenerateTimedEmit>true</GenerateTimedEmit>
               <IndependentOfCamera>true</IndependentOfCamera>
@@ -349,6 +372,38 @@
           </Properties>
           <Name>TeamIndex</Name>
           <Type>int</Type>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>bool</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>DEBUG_IgnoreInput</Name>
+          <Type>bool</Type>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>DamageTaken</Name>
+          <Type>float</Type>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>OnDamageLaunchDuration</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">1</DefaultValue>
+          <IsShared>true</IsShared>
         </CustomVariable>
       </CustomVariables>
       <ImplementsIVisible>true</ImplementsIVisible>

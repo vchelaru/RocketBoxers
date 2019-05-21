@@ -80,7 +80,7 @@ namespace RocketBoxers.Screens
         {
             if(player.TeamIndex != damageArea.TeamIndex)
             {
-                //Do something
+                damageArea.TryToDamagePlayer(player);
             }
         }
 
