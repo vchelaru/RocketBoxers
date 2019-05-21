@@ -205,6 +205,7 @@
     <Compile Include="GumRuntimes\WrapUpRuntime.Generated.cs">
       <DependentUpon>WrapUpRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Input\UiInputDevice.cs" />
     <Compile Include="Messages\ClaimEntityMessage.Generated.cs" />
     <Compile Include="Network\NetworkLogger.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
