@@ -3,17 +3,17 @@
   <Animations>
     <AnimationSave>
       <Loops>false</Loops>
-      <Name>SlideDown</Name>
+      <Name>CharacterSelection</Name>
       <States>
         <AnimatedStateSave>
-          <StateName>SlideDownStates/OffScreen</StateName>
+          <StateName>CharacterSelectAnimationStates/NoSelection</StateName>
           <Time>0</Time>
-          <InterpolationType>Back</InterpolationType>
+          <InterpolationType>Exponential</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
-          <StateName>SlideDownStates/OnScreen</StateName>
-          <Time>0.5</Time>
+          <StateName>CharacterSelectAnimationStates/Selection</StateName>
+          <Time>0.3</Time>
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>

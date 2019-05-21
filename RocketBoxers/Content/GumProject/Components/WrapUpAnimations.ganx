@@ -14,6 +14,14 @@
           <Name>WarpUpSatsInstance1.SlideDown</Name>
           <Time>1</Time>
         </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>WarpUpSatsInstance.SlideDown</Name>
+          <Time>2</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>WarpUpSatsInstance.SlideDown</Name>
+          <Time>3</Time>
+        </AnimationReferenceSave>
       </Animations>
       <Events />
     </AnimationSave>
