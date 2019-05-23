@@ -29,7 +29,7 @@ namespace RocketBoxers.Screens
             GroundCollision.AddMergedCollisionFromTilesWithProperty(TestLevel, "Ground");
             WallCollision.AddCollisionFromTilesWithProperty(TestLevel, "Wall");
 
-            GroundCollision.Visible = true;
+            GroundCollision.Visible = false;
         }
 
 		void CustomActivity(bool firstTimeCalled)

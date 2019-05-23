@@ -12,14 +12,20 @@ using Microsoft.Xna.Framework;
 
 namespace RocketBoxers.Entities
 {
+    #region Enums
+
     public enum AttackCollisionShapeType
     {
         Circle,
         Rectangle
     }
 
-	public partial class Player
+    #endregion
+
+    public partial class Player
 	{
+        #region Fields/Properties
+
         //SpriteInstance animation controller
         AnimationController animationController;
         AnimationLayer attackHoldAnimationLayer;
@@ -39,8 +45,14 @@ namespace RocketBoxers.Entities
 
         DamageArea currentAttackDamageArea;
 
+        static AnimationChainList P2Animations;
+        static AnimationChainList P3Animations;
+        static AnimationChainList P4Animations;
+
         public bool IsInvincible => isInvincible;
         bool isInvincible = false;
+
+        static List<AnimationChainList> AllAnimationChains;
 
         public bool IsOnGround { get; set; }
         /// <summary>
@@ -48,7 +60,12 @@ namespace RocketBoxers.Entities
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
         /// added to managers will not have this method called.
         /// </summary>
-		private void CustomInitialize()
+
+        #endregion
+
+        #region Initialize Methods
+
+        private void CustomInitialize()
 		{
             //DELETE THIS AFTER SETTING UP LAYERS
             this.Z = 10;
@@ -86,6 +103,25 @@ namespace RocketBoxers.Entities
         {
             InitilizeSpriteInstanceController();
             InitilizeAttackSpriteController();
+        }
+
+        public void SetAnimationsFromPlayerIndex(int index)
+        {
+            switch(index)
+            {
+                case 0:
+                    SpriteInstance.AnimationChains = YellowCharacterAnimations;
+                    break;
+                case 1:
+                    SpriteInstance.AnimationChains = P2Animations;
+                    break;
+                case 2:
+                    SpriteInstance.AnimationChains = P3Animations;
+                    break;
+                case 3:
+                    SpriteInstance.AnimationChains = P4Animations;
+                    break;
+            }
         }
 
         private void InitilizeAttackSpriteController()
@@ -163,6 +199,10 @@ namespace RocketBoxers.Entities
             };
             animationController.Layers.Add(getHitAnimationLayer);
         }
+
+        #endregion
+
+        #region Activity Methods
 
         private void CustomActivity()
 		{
@@ -285,17 +325,54 @@ namespace RocketBoxers.Entities
             this.Call(() => { isInvincible = false; }).After(RespawnInvincibilityTime);
         }
 
+        #endregion
+
         private void CustomDestroy()
 		{
 
 
 		}
 
+        #region Custom Load Static Content
+
         private static void CustomLoadStaticContent(string contentManagerName)
         {
+            if(P2Animations == null)
+            {
+                P2Animations = YellowCharacterAnimations.Clone();
+                foreach(var animation in P2Animations)
+                {
+                    foreach(var frame in animation)
+                    {
+                        frame.TopCoordinate += 256.0f / frame.Texture.Height;
+                        frame.BottomCoordinate += 256.0f / frame.Texture.Height;
+                    }
+                }
 
+                P3Animations = YellowCharacterAnimations.Clone();
+                foreach (var animation in P3Animations)
+                {
+                    foreach (var frame in animation)
+                    {
+                        frame.TopCoordinate += 2 * 256.0f / frame.Texture.Height;
+                        frame.BottomCoordinate += 2 * 256.0f / frame.Texture.Height;
+                    }
+                }
+
+                P4Animations = YellowCharacterAnimations.Clone();
+                foreach (var animation in P4Animations)
+                {
+                    foreach (var frame in animation)
+                    {
+                        frame.TopCoordinate += 3 * 256.0f / frame.Texture.Height;
+                        frame.BottomCoordinate += 3 * 256.0f / frame.Texture.Height;
+                    }
+                }
+            }
 
         }
+
+        #endregion
 
         public override void UpdateDependencies(double currentTime)
         {

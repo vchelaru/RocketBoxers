@@ -6,7 +6,7 @@
    H4sIAAAAAAAAC+3Q0QmDQABEQasyVmZSmVqe18OD4yAzsP/L2zYAgP+1j33CjvmXl3KOfcN+8y8vRb9Gv0a/Rr9Gv0a/Rr9Gv0a/Rr9Gv0a/Rr9Gv0a/Rr/mGrvDnvmXAQAAAFjcC3usFvkAMgAA
   </data>
  </layer>
- <layer id="2" name="CollisionLayer" width="80" height="40">
+ <layer id="2" name="CollisionLayer" width="80" height="40" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAC+3QQREAIAzAsOEM/6oQUX5L7mqgMwAAe93T28y/xr/Gv8a/xr/Gv8a/xr/Gv8a/xr/Gv8a/xr/Gv8a/xr/GPwAAAAB+eyOySWgAMgAA
   </data>

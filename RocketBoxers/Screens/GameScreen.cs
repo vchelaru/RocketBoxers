@@ -25,6 +25,9 @@ namespace RocketBoxers.Screens
             Player1.X = 1000;
             Player1.Y = -500;
 
+            Player1.SetAnimationsFromPlayerIndex(2);
+            Player2.SetAnimationsFromPlayerIndex(3);
+
             InitializeCollisions();
 
         }
