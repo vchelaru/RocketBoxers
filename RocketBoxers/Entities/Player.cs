@@ -39,6 +39,9 @@ namespace RocketBoxers.Entities
 
         DamageArea currentAttackDamageArea;
 
+        public bool IsInvincible => isInvincible;
+        bool isInvincible = false;
+
         public bool IsOnGround { get; set; }
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -138,7 +141,7 @@ namespace RocketBoxers.Entities
                 {
                     if (blockInput.WasJustPressed)
                     {
-                        SetMovement(DataTypes.TopDownValues.Stopped);
+                        SetMovement(DataTypes.TopDownValues.Blocking);
                     }
                     return MakeAnimationChainName("Block");
                 }
@@ -164,7 +167,7 @@ namespace RocketBoxers.Entities
         private void CustomActivity()
 		{
             //Uncomment once animations are created.
-            if(!DEBUG_IgnoreInput)
+            if (!DEBUG_IgnoreInput)
                 InputActivity();
             animationController.Activity();
             attackSpriteAnimationController.Activity();
@@ -222,6 +225,7 @@ namespace RocketBoxers.Entities
             currentAttackDamageArea = newDamageArea;
             currentAttackDamageArea.AttackData = attackData;
             currentAttackDamageArea.TeamIndex = TeamIndex;
+            currentAttackDamageArea.OwningPlayer = this;
             
             this.Call(() =>
             {
@@ -239,24 +243,46 @@ namespace RocketBoxers.Entities
             CreateAttackDamageArea(attackData, AttackAnimations["FlameSpecial"].TotalLength, attackData.AnimationLoopCount);
         }
 
-        public void TakeHit(DataTypes.AttackData attackData, Vector3 colliderLocation)
+        public void TakeHit(DataTypes.AttackData attackData, Vector3 attackerLocation)
         {
-            SetMovement(DataTypes.TopDownValues.Damaged);
-
-            DamageTaken += attackData.DamageToDeal;
-            ReactToDamage( attackData, colliderLocation);
+            var damageToDeal = blockInput.IsDown ? attackData.DamageToDeal * BaseBlockDamageReduction : attackData.DamageToDeal;
+            DamageTaken += damageToDeal;
+            ReactToDamage( attackData, attackerLocation);
         }
 
         private void ReactToDamage(DataTypes.AttackData attackData, Vector3 colliderLocation)
         {
-            var launchVector = Position - colliderLocation;
-            launchVector.Normalize();
-            Velocity = launchVector;
-            var launchDuration = OnDamageLaunchDuration * DamageTaken;
-            getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
+            if (!blockInput.IsDown)
+            {
+                SetMovement(DataTypes.TopDownValues.Damaged);
+                var launchVector = Position - colliderLocation;
+                launchVector.Normalize();
+                Velocity = launchVector;
+                var launchDuration = OnDamageLaunchDuration * DamageTaken;
+                Velocity = launchVector;
+                SetMovement(DataTypes.TopDownValues.Damaged);
 
-            Velocity = launchVector;
-            SetMovement(DataTypes.TopDownValues.Damaged);
+                var launchDirection = TopDownDirectionExtensions.FromDirection(new Vector2(launchVector.X, launchVector.Y), PossibleDirections.EightWay);
+                mDirectionFacing = TopDownDirectionExtensions.Mirror(launchDirection);
+
+                getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
+            }
+        }
+
+        public void TryToRespawn(Respawn respawnLocation)
+        {
+            XVelocity = 0;
+            YVelocity = 0;
+            XAcceleration = 0;
+            YAcceleration = 0;
+            DamageTaken = 0;
+
+            X = respawnLocation.X;
+            Y = respawnLocation.Y;
+            getHitAnimationLayer.StopPlay();
+
+            isInvincible = true;
+            this.Call(() => { isInvincible = false; }).After(RespawnInvincibilityTime);
         }
 
         private void CustomDestroy()

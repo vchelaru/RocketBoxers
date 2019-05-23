@@ -3,7 +3,7 @@
   <Animations>
     <AnimationSave>
       <Loops>false</Loops>
-      <Name>SlideStatsOn</Name>
+      <Name>AnimateInStats</Name>
       <States />
       <Animations>
         <AnimationReferenceSave>
@@ -12,15 +12,15 @@
         </AnimationReferenceSave>
         <AnimationReferenceSave>
           <Name>WarpUpSatsInstance1.SlideDown</Name>
-          <Time>1</Time>
+          <Time>0.05</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>WarpUpSatsInstance.SlideDown</Name>
-          <Time>2</Time>
+          <Name>WarpUpSatsInstance2.SlideDown</Name>
+          <Time>0.1</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>WarpUpSatsInstance.SlideDown</Name>
-          <Time>3</Time>
+          <Name>WarpUpSatsInstance3.SlideDown</Name>
+          <Time>0.15</Time>
         </AnimationReferenceSave>
       </Animations>
       <Events />

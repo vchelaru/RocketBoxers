@@ -540,6 +540,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Y</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -551,6 +557,12 @@
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Y Units</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
   <Category>
     <Name>SlideDownStates</Name>
@@ -559,7 +571,7 @@
       <Variable>
         <Type>float</Type>
         <Name>Y</Name>
-        <Value xsi:type="xsd:float">-481</Value>
+        <Value xsi:type="xsd:float">-520</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
