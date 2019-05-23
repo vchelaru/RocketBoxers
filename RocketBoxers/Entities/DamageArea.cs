@@ -13,6 +13,8 @@ namespace RocketBoxers.Entities
 {
 	public partial class DamageArea
 	{
+        List<Player> damagedPlayers = new List<Player>();
+        public Player OwningPlayer;
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
@@ -33,6 +35,20 @@ namespace RocketBoxers.Entities
 
 
 		}
+
+        public bool TryToDamagePlayer(Player player)
+        {
+            bool toReturn = false;
+
+            if(!damagedPlayers.Contains(player) && !player.IsInvincible)
+            {
+                toReturn = true;
+                damagedPlayers.Add(player);
+                player.TakeHit(AttackData, OwningPlayer.Position);
+            }
+
+            return toReturn;
+        }
 
         private static void CustomLoadStaticContent(string contentManagerName)
         {

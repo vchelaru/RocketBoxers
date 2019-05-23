@@ -39,6 +39,9 @@ namespace RocketBoxers.Entities
 
         DamageArea currentAttackDamageArea;
 
+        public bool IsInvincible => isInvincible;
+        bool isInvincible = false;
+
         public bool IsOnGround { get; set; }
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -55,6 +58,8 @@ namespace RocketBoxers.Entities
 
             InitializeButtonInput();
             InitializeAnimations();
+
+            InputEnabled = !DEBUG_IgnoreInput;
         }
 
         private void InitializeButtonInput()
@@ -150,13 +155,20 @@ namespace RocketBoxers.Entities
             animationController.Layers.Add(blockingLayer);
 
             getHitAnimationLayer = new AnimationLayer();
+            getHitAnimationLayer.OnAnimationFinished = () =>
+            {
+                SetMovement(DataTypes.TopDownValues.Normal);
+                if (DEBUG_IgnoreInput)
+                    InputEnabled = false;
+            };
             animationController.Layers.Add(getHitAnimationLayer);
         }
 
         private void CustomActivity()
 		{
             //Uncomment once animations are created.
-            InputActivity();
+            if (!DEBUG_IgnoreInput)
+                InputActivity();
             animationController.Activity();
             attackSpriteAnimationController.Activity();
         }
@@ -213,6 +225,7 @@ namespace RocketBoxers.Entities
             currentAttackDamageArea = newDamageArea;
             currentAttackDamageArea.AttackData = attackData;
             currentAttackDamageArea.TeamIndex = TeamIndex;
+            currentAttackDamageArea.OwningPlayer = this;
             
             this.Call(() =>
             {
@@ -230,12 +243,46 @@ namespace RocketBoxers.Entities
             CreateAttackDamageArea(attackData, AttackAnimations["FlameSpecial"].TotalLength, attackData.AnimationLoopCount);
         }
 
-        public void TakeHit()
+        public void TakeHit(DataTypes.AttackData attackData, Vector3 attackerLocation)
         {
-            getHitAnimationLayer.PlayOnce(MakeAnimationChainName("TakeHit"));
+            SetMovement(DataTypes.TopDownValues.Damaged);
+
+            DamageTaken += attackData.DamageToDeal;
+            ReactToDamage( attackData, attackerLocation);
         }
 
-		private void CustomDestroy()
+        private void ReactToDamage(DataTypes.AttackData attackData, Vector3 colliderLocation)
+        {
+            var launchVector = Position - colliderLocation;
+            launchVector.Normalize();
+            Velocity = launchVector;
+            var launchDuration = OnDamageLaunchDuration * DamageTaken;
+            Velocity = launchVector;
+            SetMovement(DataTypes.TopDownValues.Damaged);
+
+            var launchDirection = TopDownDirectionExtensions.FromDirection(new Vector2(launchVector.X, launchVector.Y), PossibleDirections.EightWay);
+            mDirectionFacing = TopDownDirectionExtensions.Mirror(launchDirection);
+
+            getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
+        }
+
+        public void TryToRespawn(Respawn respawnLocation)
+        {
+            XVelocity = 0;
+            YVelocity = 0;
+            XAcceleration = 0;
+            YAcceleration = 0;
+            DamageTaken = 0;
+
+            X = respawnLocation.X;
+            Y = respawnLocation.Y;
+            getHitAnimationLayer.StopPlay();
+
+            isInvincible = true;
+            this.Call(() => { isInvincible = false; }).After(RespawnInvincibilityTime);
+        }
+
+        private void CustomDestroy()
 		{
 
 

@@ -80,7 +80,7 @@ namespace RocketBoxers.Screens
         {
             if(player.TeamIndex != damageArea.TeamIndex)
             {
-                //Do something
+                damageArea.TryToDamagePlayer(player);
             }
         }
 
@@ -88,13 +88,7 @@ namespace RocketBoxers.Screens
         {
             var randomSpawn = FlatRedBallServices.Random.In(RespawnList);
 
-            player.XVelocity = 0;
-            player.YVelocity = 0;
-            player.XAcceleration = 0;
-            player.YAcceleration = 0;
-
-            player.X = randomSpawn.X;
-            player.Y = randomSpawn.Y;
+            player.TryToRespawn(randomSpawn);
         }
 
         #endregion
