@@ -155,6 +155,35 @@
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
       </ReferencedFiles>
+      <NamedObjects>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/PlayerSelectScreenGum.gusx</SourceFile>
+          <SourceName>MarkerContainer (RocketBoxers.GumRuntimes.ContainerRuntime)</SourceName>
+          <InstanceName>MarkerContainer</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/PlayerSelectScreenGum.gusx</SourceFile>
+          <SourceName>CharacterGridInstance (RocketBoxers.GumRuntimes.CharacterGridRuntime)</SourceName>
+          <InstanceName>CharacterGridInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/PlayerSelectScreenGum.gusx</SourceFile>
+          <SourceName>BottomFrameContainer (RocketBoxers.GumRuntimes.ContainerRuntime)</SourceName>
+          <InstanceName>BottomFrameContainer</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+      </NamedObjects>
     </ScreenSave>
     <ScreenSave>
       <Tags>
@@ -628,7 +657,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
-  <StartUpScreen>Screens\TestLevel1</StartUpScreen>
+  <StartUpScreen>Screens\TitleScreen</StartUpScreen>
   <ResolutionPresets />
   <PerformanceSettingsSave>
     <ThrowExceptionOnPostInitializeContentLoad>false</ThrowExceptionOnPostInitializeContentLoad>

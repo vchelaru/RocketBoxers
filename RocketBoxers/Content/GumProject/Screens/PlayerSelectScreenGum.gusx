@@ -4,6 +4,60 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>BottomFrameContainer.Children Layout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BottomFrameContainer.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BottomFrameContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BottomFrameContainer.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>BottomFrameContainer.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>BottomFrameContainer.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BottomFrameContainer.Y</Name>
+      <Value xsi:type="xsd:float">-11</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>BottomFrameContainer.Y Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>BottomFrameContainer.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>CharacterGridInstance.Width</Name>
       <Value xsi:type="xsd:float">135</Value>
@@ -46,60 +100,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>ChildrenLayout</Type>
-      <Name>ContainerInstance.Children Layout</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ContainerInstance.Width</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>ContainerInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">4</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ContainerInstance.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>ContainerInstance.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>ContainerInstance.X Units</Name>
-      <Value xsi:type="xsd:int">6</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ContainerInstance.Y</Name>
-      <Value xsi:type="xsd:float">-11</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>ContainerInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>ContainerInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>float</Type>
       <Name>LevelSelectorInstance.X</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -136,6 +136,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>MarkerP1.Parent</Name>
+      <Value xsi:type="xsd:string">MarkerContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>PlayerCategoryState</Type>
       <Name>MarkerP1.PlayerCategoryState</Name>
       <Value xsi:type="xsd:string">One</Value>
@@ -144,13 +150,19 @@
     <Variable>
       <Type>float</Type>
       <Name>MarkerP1.X</Name>
-      <Value xsi:type="xsd:float">224</Value>
+      <Value xsi:type="xsd:float">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>MarkerP1.Y</Name>
-      <Value xsi:type="xsd:float">314</Value>
+      <Value xsi:type="xsd:float">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>MarkerP2.Parent</Name>
+      <Value xsi:type="xsd:string">MarkerContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -162,13 +174,19 @@
     <Variable>
       <Type>float</Type>
       <Name>MarkerP2.X</Name>
-      <Value xsi:type="xsd:float">375</Value>
+      <Value xsi:type="xsd:float">77</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>MarkerP2.Y</Name>
-      <Value xsi:type="xsd:float">317</Value>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>MarkerP3.Parent</Name>
+      <Value xsi:type="xsd:string">MarkerContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -180,13 +198,19 @@
     <Variable>
       <Type>float</Type>
       <Name>MarkerP3.X</Name>
-      <Value xsi:type="xsd:float">534</Value>
+      <Value xsi:type="xsd:float">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>MarkerP3.Y</Name>
-      <Value xsi:type="xsd:float">317</Value>
+      <Value xsi:type="xsd:float">81</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>MarkerP4.Parent</Name>
+      <Value xsi:type="xsd:string">MarkerContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -198,37 +222,85 @@
     <Variable>
       <Type>float</Type>
       <Name>MarkerP4.X</Name>
-      <Value xsi:type="xsd:float">678</Value>
+      <Value xsi:type="xsd:float">79</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>MarkerP4.Y</Name>
-      <Value xsi:type="xsd:float">324</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>SelectedCharacterFrameInstance.Parent</Name>
-      <Value xsi:type="xsd:string">ContainerInstance</Value>
+      <Value xsi:type="xsd:string">BottomFrameContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PlayerNumberState</Type>
+      <Name>SelectedCharacterFrameInstance.PlayerNumberState</Name>
+      <Value xsi:type="xsd:string">Character1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>SelectedCharacterFrameInstance1.Parent</Name>
-      <Value xsi:type="xsd:string">ContainerInstance</Value>
+      <Value xsi:type="xsd:string">BottomFrameContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PlayerNumberState</Type>
+      <Name>SelectedCharacterFrameInstance1.PlayerNumberState</Name>
+      <Value xsi:type="xsd:string">P2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectedCharacterFrameInstance1.ShadowText</Name>
+      <Value xsi:type="xsd:string">P2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectedCharacterFrameInstance1.WhiteText</Name>
+      <Value xsi:type="xsd:string">P2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>SelectedCharacterFrameInstance2.Parent</Name>
-      <Value xsi:type="xsd:string">ContainerInstance</Value>
+      <Value xsi:type="xsd:string">BottomFrameContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectedCharacterFrameInstance2.ShadowText</Name>
+      <Value xsi:type="xsd:string">P3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectedCharacterFrameInstance2.WhiteText</Name>
+      <Value xsi:type="xsd:string">P3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>SelectedCharacterFrameInstance3.Parent</Name>
-      <Value xsi:type="xsd:string">ContainerInstance</Value>
+      <Value xsi:type="xsd:string">BottomFrameContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectedCharacterFrameInstance3.ShadowText</Name>
+      <Value xsi:type="xsd:string">P4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectedCharacterFrameInstance3.WhiteText</Name>
+      <Value xsi:type="xsd:string">P4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -268,7 +340,7 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>ContainerInstance</Name>
+    <Name>BottomFrameContainer</Name>
     <BaseType>Container</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
@@ -315,6 +387,11 @@
   <Instance>
     <Name>SelectScreenReadyInstance</Name>
     <BaseType>SelectScreenReady</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>MarkerContainer</Name>
+    <BaseType>Container</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
 </ScreenSave>

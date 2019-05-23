@@ -5,6 +5,11 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>CharacterNumberState</Type>
+      <Name>CharacterNumberState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>CharacterPortraitInstance.Alpha</Name>
       <Value xsi:type="xsd:int">255</Value>
@@ -13,13 +18,13 @@
     <Variable>
       <Type>float</Type>
       <Name>CharacterPortraitInstance.Height</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>CharacterPortraitInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -62,13 +67,13 @@
     <Variable>
       <Type>float</Type>
       <Name>CharacterPortraitInstance.Width</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>CharacterPortraitInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -80,13 +85,13 @@
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>CharacterPortraitInstance.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>CharacterPortraitInstance.X Units</Name>
-      <Value xsi:type="xsd:int">6</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -98,13 +103,13 @@
     <Variable>
       <Type>VerticalAlignment</Type>
       <Name>CharacterPortraitInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>CharacterPortraitInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">7</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -113,9 +118,26 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>Clips Children</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Height</Name>
+      <Value xsi:type="xsd:float">168</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>JoinStateState</Type>
+      <Name>JoinStateState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>NineSliceInstance.Height</Name>
-      <Value xsi:type="xsd:float">105</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -164,7 +186,7 @@
     <Variable>
       <Type>float</Type>
       <Name>NineSliceInstance.Width</Name>
-      <Value xsi:type="xsd:float">105</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -187,139 +209,80 @@
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>PlayerNumberTextInstance.FontSize</Name>
-      <Value xsi:type="xsd:int">24</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>PlayerNumberTextInstance.Height</Name>
-      <Value xsi:type="xsd:float">20</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>PlayerNumberTextInstance.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>PlayerNumberTextInstance.Text</Name>
-      <Value xsi:type="xsd:string">P1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>PlayerNumberTextInstance.VerticalAlignment</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>PlayerNumberTextInstance.Width</Name>
-      <Value xsi:type="xsd:float">50</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>PlayerNumberTextInstance.X</Name>
-      <Value xsi:type="xsd:float">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>PlayerNumberTextInstance.Y</Name>
-      <Value xsi:type="xsd:float">-5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>PlayerNumberTextInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>PlayerNumberTextInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>PlayerNumberTextInstance1.Blue</Name>
+      <Name>ShadowTextInstance.Blue</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>PlayerNumberTextInstance1.FontSize</Name>
+      <Name>ShadowTextInstance.FontSize</Name>
       <Value xsi:type="xsd:int">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>PlayerNumberTextInstance1.Green</Name>
+      <Name>ShadowTextInstance.Green</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>PlayerNumberTextInstance1.Height</Name>
+      <Name>ShadowTextInstance.Height</Name>
       <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>PlayerNumberTextInstance1.OutlineThickness</Name>
+      <Name>ShadowTextInstance.OutlineThickness</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>PlayerNumberTextInstance1.Red</Name>
+      <Name>ShadowTextInstance.Red</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>PlayerNumberTextInstance1.Text</Name>
+      <Name>ShadowTextInstance.Text</Name>
       <Value xsi:type="xsd:string">P1</Value>
+      <ExposedAsName>ShadowText</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>PlayerNumberTextInstance1.VerticalAlignment</Name>
+      <Name>ShadowTextInstance.VerticalAlignment</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>PlayerNumberTextInstance1.Width</Name>
+      <Name>ShadowTextInstance.Width</Name>
       <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>PlayerNumberTextInstance1.X</Name>
+      <Name>ShadowTextInstance.X</Name>
       <Value xsi:type="xsd:float">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>PlayerNumberTextInstance1.Y</Name>
+      <Name>ShadowTextInstance.Y</Name>
       <Value xsi:type="xsd:float">-4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>PlayerNumberTextInstance1.Y Origin</Name>
+      <Name>ShadowTextInstance.Y Origin</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>PlayerNumberTextInstance1.Y Units</Name>
+      <Name>ShadowTextInstance.Y Units</Name>
       <Value xsi:type="xsd:int">5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -377,6 +340,133 @@
       <Name>State</Name>
       <SetsValue>true</SetsValue>
     </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>TextInstance.HorizontalAlignment</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TextInstance.Text</Name>
+      <Value xsi:type="xsd:string">Press Start or Enter to join</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>TextInstance.VerticalAlignment</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.Width</Name>
+      <Value xsi:type="xsd:float">120</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>TextInstance.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TextInstance.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.Y</Name>
+      <Value xsi:type="xsd:float">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>TextInstance.Y Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TextInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WhiteTextInstance.FontSize</Name>
+      <Value xsi:type="xsd:int">24</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WhiteTextInstance.Height</Name>
+      <Value xsi:type="xsd:float">20</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WhiteTextInstance.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>WhiteTextInstance.Text</Name>
+      <Value xsi:type="xsd:string">P1</Value>
+      <ExposedAsName>WhiteText</ExposedAsName>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>WhiteTextInstance.VerticalAlignment</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WhiteTextInstance.Width</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WhiteTextInstance.X</Name>
+      <Value xsi:type="xsd:float">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WhiteTextInstance.Y</Name>
+      <Value xsi:type="xsd:float">-5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>WhiteTextInstance.Y Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>WhiteTextInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Width</Name>
+      <Value xsi:type="xsd:float">167</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
     <VariableList xsi:type="VariableListSaveOfString">
       <Type>string</Type>
       <Name>AnimationFrames</Name>
@@ -391,56 +481,14 @@
       <Name>NoSelection</Name>
       <Variable>
         <Type>float</Type>
-        <Name>CharacterPortraitInstance.Height</Name>
-        <Value xsi:type="xsd:float">22</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>DimensionUnitType</Type>
-        <Name>CharacterPortraitInstance.Height Units</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>CharacterPortraitInstance.Texture Height</Name>
-        <Value xsi:type="xsd:int">22</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>CharacterPortraitInstance.Texture Left</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>CharacterPortraitInstance.Texture Top</Name>
-        <Value xsi:type="xsd:int">352</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>CharacterPortraitInstance.Texture Width</Name>
-        <Value xsi:type="xsd:int">160</Value>
+        <Name>CharacterPortraitInstance.X</Name>
+        <Value xsi:type="xsd:float">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>CharacterPortraitInstance.Y</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>VerticalAlignment</Type>
-        <Name>CharacterPortraitInstance.Y Origin</Name>
-        <Value xsi:type="xsd:int">2</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>PositionUnitType</Type>
-        <Name>CharacterPortraitInstance.Y Units</Name>
-        <Value xsi:type="xsd:int">5</Value>
+        <Value xsi:type="xsd:float">164</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -448,22 +496,55 @@
       <Name>Selection</Name>
       <Variable>
         <Type>float</Type>
-        <Name>CharacterPortraitInstance.Height</Name>
-        <Value xsi:type="xsd:float">150</Value>
+        <Name>CharacterPortraitInstance.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>DimensionUnitType</Type>
-        <Name>CharacterPortraitInstance.Height Units</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Type>float</Type>
+        <Name>CharacterPortraitInstance.X</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>JoinState</Name>
+    <State>
+      <Name>NotJoined</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>CharacterPortraitInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>int</Type>
-        <Name>CharacterPortraitInstance.Texture Height</Name>
-        <Value xsi:type="xsd:int">161</Value>
+        <Type>bool</Type>
+        <Name>TextInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+    </State>
+    <State>
+      <Name>Joined</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>CharacterPortraitInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TextInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>CharacterNumber</Name>
+    <State>
+      <Name>Character1</Name>
       <Variable>
         <Type>int</Type>
         <Name>CharacterPortraitInstance.Texture Left</Name>
@@ -476,28 +557,49 @@
         <Value xsi:type="xsd:int">352</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+    </State>
+    <State>
+      <Name>Character2</Name>
       <Variable>
         <Type>int</Type>
-        <Name>CharacterPortraitInstance.Texture Width</Name>
+        <Name>CharacterPortraitInstance.Texture Left</Name>
         <Value xsi:type="xsd:int">160</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>float</Type>
-        <Name>CharacterPortraitInstance.Y</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">352</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Character3</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>VerticalAlignment</Type>
-        <Name>CharacterPortraitInstance.Y Origin</Name>
-        <Value xsi:type="xsd:int">2</Value>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">512</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Character4</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">160</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>PositionUnitType</Type>
-        <Name>CharacterPortraitInstance.Y Units</Name>
-        <Value xsi:type="xsd:int">5</Value>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">512</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -518,12 +620,17 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>PlayerNumberTextInstance1</Name>
+    <Name>ShadowTextInstance</Name>
     <BaseType>Text</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>PlayerNumberTextInstance</Name>
+    <Name>WhiteTextInstance</Name>
+    <BaseType>Text</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>TextInstance</Name>
     <BaseType>Text</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
