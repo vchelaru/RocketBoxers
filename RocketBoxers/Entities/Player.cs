@@ -39,6 +39,9 @@ namespace RocketBoxers.Entities
 
         DamageArea currentAttackDamageArea;
 
+        public bool IsInvincible => isInvincible;
+        bool isInvincible = false;
+
         public bool IsOnGround { get; set; }
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -274,6 +277,9 @@ namespace RocketBoxers.Entities
             X = respawnLocation.X;
             Y = respawnLocation.Y;
             getHitAnimationLayer.StopPlay();
+
+            isInvincible = true;
+            this.Call(() => { isInvincible = false; }).After(RespawnInvincibilityTime);
         }
 
         private void CustomDestroy()

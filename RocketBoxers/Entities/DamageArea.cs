@@ -40,7 +40,7 @@ namespace RocketBoxers.Entities
         {
             bool toReturn = false;
 
-            if(!damagedPlayers.Contains(player))
+            if(!damagedPlayers.Contains(player) && !player.IsInvincible)
             {
                 toReturn = true;
                 damagedPlayers.Add(player);
