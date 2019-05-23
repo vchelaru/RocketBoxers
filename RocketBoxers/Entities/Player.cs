@@ -164,7 +164,7 @@ namespace RocketBoxers.Entities
         private void CustomActivity()
 		{
             //Uncomment once animations are created.
-            if(!DEBUG_IgnoreInput)
+            if (!DEBUG_IgnoreInput)
                 InputActivity();
             animationController.Activity();
             attackSpriteAnimationController.Activity();
@@ -222,6 +222,7 @@ namespace RocketBoxers.Entities
             currentAttackDamageArea = newDamageArea;
             currentAttackDamageArea.AttackData = attackData;
             currentAttackDamageArea.TeamIndex = TeamIndex;
+            currentAttackDamageArea.OwningPlayer = this;
             
             this.Call(() =>
             {
@@ -239,12 +240,12 @@ namespace RocketBoxers.Entities
             CreateAttackDamageArea(attackData, AttackAnimations["FlameSpecial"].TotalLength, attackData.AnimationLoopCount);
         }
 
-        public void TakeHit(DataTypes.AttackData attackData, Vector3 colliderLocation)
+        public void TakeHit(DataTypes.AttackData attackData, Vector3 attackerLocation)
         {
             SetMovement(DataTypes.TopDownValues.Damaged);
 
             DamageTaken += attackData.DamageToDeal;
-            ReactToDamage( attackData, colliderLocation);
+            ReactToDamage( attackData, attackerLocation);
         }
 
         private void ReactToDamage(DataTypes.AttackData attackData, Vector3 colliderLocation)
@@ -253,10 +254,13 @@ namespace RocketBoxers.Entities
             launchVector.Normalize();
             Velocity = launchVector;
             var launchDuration = OnDamageLaunchDuration * DamageTaken;
-            getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
-
             Velocity = launchVector;
             SetMovement(DataTypes.TopDownValues.Damaged);
+
+            var launchDirection = TopDownDirectionExtensions.FromDirection(new Vector2(launchVector.X, launchVector.Y), PossibleDirections.EightWay);
+            mDirectionFacing = TopDownDirectionExtensions.Mirror(launchDirection);
+
+            getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
         }
 
         private void CustomDestroy()

@@ -2,4 +2,4 @@
 Normal,250,.5,.3,false,false,true
 Stopped,0,0,0,true,false,true
 DashAttack,600,0,.5,true,true,true
-Damaged,300,0,0,true,true,true
+Damaged,300,0,9999999999,true,true,true
