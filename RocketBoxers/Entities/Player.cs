@@ -263,6 +263,19 @@ namespace RocketBoxers.Entities
             getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
         }
 
+        public void TryToRespawn(Respawn respawnLocation)
+        {
+            XVelocity = 0;
+            YVelocity = 0;
+            XAcceleration = 0;
+            YAcceleration = 0;
+            DamageTaken = 0;
+
+            X = respawnLocation.X;
+            Y = respawnLocation.Y;
+            getHitAnimationLayer.StopPlay();
+        }
+
         private void CustomDestroy()
 		{
 
