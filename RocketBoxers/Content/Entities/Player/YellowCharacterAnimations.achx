@@ -480,8 +480,8 @@
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>96</LeftCoordinate>
-      <RightCoordinate>128</RightCoordinate>
+      <LeftCoordinate>256</LeftCoordinate>
+      <RightCoordinate>288</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
     </Frame>
@@ -892,8 +892,16 @@
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>0</LeftCoordinate>
-      <RightCoordinate>32</RightCoordinate>
+      <LeftCoordinate>480</LeftCoordinate>
+      <RightCoordinate>512</RightCoordinate>
+      <TopCoordinate>64</TopCoordinate>
+      <BottomCoordinate>96</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>512</LeftCoordinate>
+      <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
     </Frame>
@@ -903,8 +911,16 @@
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>0</LeftCoordinate>
-      <RightCoordinate>32</RightCoordinate>
+      <LeftCoordinate>480</LeftCoordinate>
+      <RightCoordinate>512</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>32</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>512</LeftCoordinate>
+      <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
     </Frame>
@@ -915,8 +931,17 @@
       <FlipHorizontal>true</FlipHorizontal>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>0</LeftCoordinate>
-      <RightCoordinate>32</RightCoordinate>
+      <LeftCoordinate>480</LeftCoordinate>
+      <RightCoordinate>512</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>32</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>512</LeftCoordinate>
+      <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
     </Frame>
@@ -926,8 +951,16 @@
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>0</LeftCoordinate>
-      <RightCoordinate>32</RightCoordinate>
+      <LeftCoordinate>480</LeftCoordinate>
+      <RightCoordinate>512</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>512</LeftCoordinate>
+      <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
     </Frame>
@@ -938,8 +971,17 @@
       <FlipHorizontal>true</FlipHorizontal>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>0</LeftCoordinate>
-      <RightCoordinate>32</RightCoordinate>
+      <LeftCoordinate>480</LeftCoordinate>
+      <RightCoordinate>512</RightCoordinate>
+      <TopCoordinate>96</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>512</LeftCoordinate>
+      <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
     </Frame>
@@ -949,8 +991,16 @@
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>0</LeftCoordinate>
-      <RightCoordinate>32</RightCoordinate>
+      <LeftCoordinate>480</LeftCoordinate>
+      <RightCoordinate>512</RightCoordinate>
+      <TopCoordinate>128</TopCoordinate>
+      <BottomCoordinate>160</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>512</LeftCoordinate>
+      <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
     </Frame>
@@ -960,8 +1010,16 @@
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>0</LeftCoordinate>
-      <RightCoordinate>32</RightCoordinate>
+      <LeftCoordinate>480</LeftCoordinate>
+      <RightCoordinate>512</RightCoordinate>
+      <TopCoordinate>32</TopCoordinate>
+      <BottomCoordinate>64</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>512</LeftCoordinate>
+      <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
     </Frame>
@@ -972,8 +1030,17 @@
       <FlipHorizontal>true</FlipHorizontal>
       <TextureName>../../levels/tilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>0</LeftCoordinate>
-      <RightCoordinate>32</RightCoordinate>
+      <LeftCoordinate>480</LeftCoordinate>
+      <RightCoordinate>512</RightCoordinate>
+      <TopCoordinate>32</TopCoordinate>
+      <BottomCoordinate>64</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>../../levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>512</LeftCoordinate>
+      <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
     </Frame>
