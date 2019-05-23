@@ -12,11 +12,14 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
 using RocketBoxers.Input;
+using Gum.Wireframe;
+using RocketBoxers.GumRuntimes;
 
 namespace RocketBoxers.Screens
 {
 	public partial class PlayerSelectScreen
 	{
+        #region Fields/Properties
 
         // It's easier to just make them all
         // up front and check if they've joined
@@ -24,13 +27,40 @@ namespace RocketBoxers.Screens
         List<UiInputDevice> AllInputDevices;
         List<UiInputDevice> JoinedInputDevices;
 
-		void CustomInitialize()
+        List<SelectionMarkerRuntime> SelectionMarkers;
+
+        #endregion
+
+        #region Initialize
+
+        void CustomInitialize()
 		{
             CreateAllInputDevices();
+
+            InitializeUi();
 
             JoinedInputDevices = new List<UiInputDevice>();
 
 		}
+
+        private void InitializeUi()
+        {
+            // So we can access them regardless of parent:
+            SelectionMarkers = MarkerContainer
+                .Children
+                .Select(item => (SelectionMarkerRuntime)item).ToList();
+            foreach(GraphicalUiElement marker in SelectionMarkers)
+            {
+                marker.Visible = false;
+                marker.X = 0;
+                marker.Y = 0;
+            }
+
+            foreach(SelectedCharacterFrameRuntime item in BottomFrameContainer.Children)
+            {
+                item.CurrentJoinStateState = SelectedCharacterFrameRuntime.JoinState.NotJoined;
+            }
+        }
 
         private void CreateAllInputDevices()
         {
@@ -44,13 +74,33 @@ namespace RocketBoxers.Screens
             AllInputDevices.Add(UiInputDevice.FromGamepad(InputManager.Xbox360GamePads[3]));
         }
 
+        #endregion
+
+        #region Activity
+
         void CustomActivity(bool firstTimeCalled)
 		{
-            CheckForJoiningCharacters();
 
+            DoCursorMoveActivity();
+
+            // check for locking in before checking for joining or else joining will do both join and lock in
+            CheckForLockingIn();
+
+            CheckForJoiningInputDevices();
 		}
 
-        private void CheckForJoiningCharacters()
+        private void DoCursorMoveActivity()
+        {
+            foreach(var marker in SelectionMarkers)
+            {
+                if(marker.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.Selecting)
+                {
+                    marker.CustomActivity();
+                }
+            }
+        }
+
+        private void CheckForJoiningInputDevices()
         {
             var possibleList = AllInputDevices.Except(JoinedInputDevices).ToList();
             foreach (var possible in possibleList)
@@ -64,11 +114,50 @@ namespace RocketBoxers.Screens
 
         private void JoinWith(UiInputDevice device)
         {
-            // todo: turn on the matching object:
+            var firstAvailableMarker = SelectionMarkers
+                .FirstOrDefault(item => 
+                    item.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.Invisible);
 
+            var firstAvailableFrame = BottomFrameContainer
+                .Children
+                .FirstOrDefault(item => ((SelectedCharacterFrameRuntime)item).CurrentJoinStateState == SelectedCharacterFrameRuntime.JoinState.NotJoined)
+                as SelectedCharacterFrameRuntime;
 
-            JoinedInputDevices.Add(device);
+            // If there are no markers available, the player can't join because we only support 4 characters
+            if (firstAvailableMarker != null)
+            {
+                firstAvailableMarker.CurrentSelectionState = SelectionMarkerRuntime.SelectionState.Selecting;
+                JoinedInputDevices.Add(device);
+                firstAvailableMarker.InputDevice = device;
+
+                firstAvailableMarker.Parent = CharacterGridInstance.Children[0];
+                firstAvailableMarker.CharacterFrame = firstAvailableFrame;
+
+                firstAvailableFrame.CurrentJoinStateState = SelectedCharacterFrameRuntime.JoinState.Joined;
+                firstAvailableFrame.CurrentCharacterSelectAnimationStatesState = SelectedCharacterFrameRuntime.CharacterSelectAnimationStates.NoSelection;
+                firstAvailableFrame.CharacterSelectionAnimation.Play();
+            }
+
         }
+
+        private void CheckForLockingIn()
+        {
+            foreach (var marker in SelectionMarkers)
+            {
+                if (marker.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.Selecting &&
+                    marker.InputDevice.Confirm.WasJustPressed)
+                {
+                    LockInCharacter(marker);
+                }
+            }
+        }
+
+        private void LockInCharacter(SelectionMarkerRuntime marker)
+        {
+            marker.CurrentSelectionState = SelectionMarkerRuntime.SelectionState.LockedIn;
+        }
+
+        #endregion
 
         void CustomDestroy()
 		{
