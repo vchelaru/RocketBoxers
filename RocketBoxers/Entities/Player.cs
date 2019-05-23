@@ -141,7 +141,7 @@ namespace RocketBoxers.Entities
                 {
                     if (blockInput.WasJustPressed)
                     {
-                        SetMovement(DataTypes.TopDownValues.Stopped);
+                        SetMovement(DataTypes.TopDownValues.Blocking);
                     }
                     return MakeAnimationChainName("Block");
                 }
@@ -245,25 +245,28 @@ namespace RocketBoxers.Entities
 
         public void TakeHit(DataTypes.AttackData attackData, Vector3 attackerLocation)
         {
-            SetMovement(DataTypes.TopDownValues.Damaged);
-
-            DamageTaken += attackData.DamageToDeal;
+            var damageToDeal = blockInput.IsDown ? attackData.DamageToDeal * BaseBlockDamageReduction : attackData.DamageToDeal;
+            DamageTaken += damageToDeal;
             ReactToDamage( attackData, attackerLocation);
         }
 
         private void ReactToDamage(DataTypes.AttackData attackData, Vector3 colliderLocation)
         {
-            var launchVector = Position - colliderLocation;
-            launchVector.Normalize();
-            Velocity = launchVector;
-            var launchDuration = OnDamageLaunchDuration * DamageTaken;
-            Velocity = launchVector;
-            SetMovement(DataTypes.TopDownValues.Damaged);
+            if (!blockInput.IsDown)
+            {
+                SetMovement(DataTypes.TopDownValues.Damaged);
+                var launchVector = Position - colliderLocation;
+                launchVector.Normalize();
+                Velocity = launchVector;
+                var launchDuration = OnDamageLaunchDuration * DamageTaken;
+                Velocity = launchVector;
+                SetMovement(DataTypes.TopDownValues.Damaged);
 
-            var launchDirection = TopDownDirectionExtensions.FromDirection(new Vector2(launchVector.X, launchVector.Y), PossibleDirections.EightWay);
-            mDirectionFacing = TopDownDirectionExtensions.Mirror(launchDirection);
+                var launchDirection = TopDownDirectionExtensions.FromDirection(new Vector2(launchVector.X, launchVector.Y), PossibleDirections.EightWay);
+                mDirectionFacing = TopDownDirectionExtensions.Mirror(launchDirection);
 
-            getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
+                getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
+            }
         }
 
         public void TryToRespawn(Respawn respawnLocation)
