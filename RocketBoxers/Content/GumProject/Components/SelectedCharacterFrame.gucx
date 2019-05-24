@@ -135,6 +135,11 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>LockedInStateState</Type>
+      <Name>LockedInStateState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>NineSliceInstance.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
@@ -496,13 +501,13 @@
       <Name>Selection</Name>
       <Variable>
         <Type>float</Type>
-        <Name>CharacterPortraitInstance.Y</Name>
+        <Name>CharacterPortraitInstance.X</Name>
         <Value xsi:type="xsd:float">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>CharacterPortraitInstance.X</Name>
+        <Name>CharacterPortraitInstance.Y</Name>
         <Value xsi:type="xsd:float">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -600,6 +605,63 @@
         <Type>int</Type>
         <Name>CharacterPortraitInstance.Texture Top</Name>
         <Value xsi:type="xsd:int">512</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>LockedInState</Name>
+    <State>
+      <Name>NotLockedIn</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>NineSliceInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">130</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NineSliceInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">80</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NineSliceInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">30</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NineSliceInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">30</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>LockedIn</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>NineSliceInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">30</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NineSliceInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">161</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NineSliceInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">80</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NineSliceInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">30</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

@@ -29,6 +29,8 @@ namespace RocketBoxers.Screens
 
         List<SelectionMarkerRuntime> SelectionMarkers;
 
+        bool haveAllLockedIn;
+
         #endregion
 
         #region Initialize
@@ -81,15 +83,15 @@ namespace RocketBoxers.Screens
         void CustomActivity(bool firstTimeCalled)
 		{
 
-            DoCursorMoveActivity();
+            DoMarkerActivity();
 
             // check for locking in before checking for joining or else joining will do both join and lock in
-            CheckForLockingIn();
+            LockInActivity();
 
             CheckForJoiningInputDevices();
 		}
 
-        private void DoCursorMoveActivity()
+        private void DoMarkerActivity()
         {
             foreach(var marker in SelectionMarkers)
             {
@@ -140,22 +142,71 @@ namespace RocketBoxers.Screens
 
         }
 
-        private void CheckForLockingIn()
+        private void LockInActivity()
         {
             foreach (var marker in SelectionMarkers)
             {
                 if (marker.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.Selecting &&
                     marker.InputDevice.Confirm.WasJustPressed)
                 {
-                    LockInCharacter(marker);
+                    marker.CurrentSelectionState = SelectionMarkerRuntime.SelectionState.LockedIn;
+                    marker.CharacterFrame.LockedInAnimation.Play();
+
+                    TestForReadyOnAnimation();
+
+                }
+                else if(marker.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.LockedIn &&
+                    marker.InputDevice.Back.WasJustPressed)
+                {
+                    marker.CurrentSelectionState = SelectionMarkerRuntime.SelectionState.Selecting;
+                    marker.CharacterFrame.StopAnimations();
+                    marker.CharacterFrame.CurrentLockedInStateState = SelectedCharacterFrameRuntime.LockedInState.NotLockedIn;
+
+                    TestForReadyOffAnimation();
+                }
+                else if(marker.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.Selecting &&
+                    marker.InputDevice.Back.WasJustPressed)
+                {
+                    marker.CurrentSelectionState = SelectionMarkerRuntime.SelectionState.Invisible;
+                    marker.CharacterFrame.CurrentJoinStateState = SelectedCharacterFrameRuntime.JoinState.NotJoined;
+                    marker.CharacterFrame = null;
+
+                    JoinedInputDevices.Remove(marker.InputDevice);
+
+                    marker.InputDevice = null;
                 }
             }
         }
 
-        private void LockInCharacter(SelectionMarkerRuntime marker)
+        private void TestForReadyOnAnimation()
         {
-            marker.CurrentSelectionState = SelectionMarkerRuntime.SelectionState.LockedIn;
+            if(haveAllLockedIn == false)
+            {
+                var areAnySelecting = SelectionMarkers.Any(item => item.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.Selecting);
+
+                if(areAnySelecting == false)
+                {
+                    ReadyInstance.AnimateOnAnimation.Play();
+                    haveAllLockedIn = true;
+                }
+            }
         }
+
+        private void TestForReadyOffAnimation()
+        {
+            if(haveAllLockedIn)
+            {
+                var areAnySelecting = SelectionMarkers.Any(item => item.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.Selecting);
+
+                if(areAnySelecting)
+                {
+                    ReadyInstance.AnimateOffAnimation.Play();
+                    haveAllLockedIn = false;
+                }
+            }
+        }
+
+
 
         #endregion
 
