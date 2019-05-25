@@ -115,6 +115,7 @@
       <Type>string</Type>
       <Name>DamageText.Text</Name>
       <Value xsi:type="xsd:string">0</Value>
+      <ExposedAsName>DisplayedPercentage</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -302,6 +303,7 @@
       <Type>string</Type>
       <Name>PlayerLabel.Text</Name>
       <Value xsi:type="xsd:string">PLAYER 1</Value>
+      <ExposedAsName>PlayerLabelText</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -333,6 +335,11 @@
       <Name>PlayerLabel.Y Units</Name>
       <Value xsi:type="xsd:int">5</Value>
       <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PlayerNumberCategoryState</Type>
+      <Name>PlayerNumberCategoryState</Name>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>State</Type>
@@ -371,14 +378,14 @@
       <Name>Normal</Name>
       <Variable>
         <Type>float</Type>
-        <Name>DamageText.Y</Name>
-        <Value xsi:type="xsd:float">34</Value>
+        <Name>DamageText.X</Name>
+        <Value xsi:type="xsd:float">67</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>DamageText.X</Name>
-        <Value xsi:type="xsd:float">67</Value>
+        <Name>DamageText.Y</Name>
+        <Value xsi:type="xsd:float">34</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -409,6 +416,48 @@
         <Type>float</Type>
         <Name>DamageText.Y</Name>
         <Value xsi:type="xsd:float">21</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>PlayerNumberCategory</Name>
+    <State>
+      <Name>Player1</Name>
+      <Variable>
+        <Type>string</Type>
+        <Name>PlayerLabel.Text</Name>
+        <Value xsi:type="xsd:string">PLAYER 1</Value>
+        <ExposedAsName>PlayerLabelText</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Player2</Name>
+      <Variable>
+        <Type>string</Type>
+        <Name>PlayerLabel.Text</Name>
+        <Value xsi:type="xsd:string">PLAYER 2</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Player3</Name>
+      <Variable>
+        <Type>string</Type>
+        <Name>PlayerLabel.Text</Name>
+        <Value xsi:type="xsd:string">PLAYER 3</Value>
+        <ExposedAsName>PlayerLabelText</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Player4</Name>
+      <Variable>
+        <Type>string</Type>
+        <Name>PlayerLabel.Text</Name>
+        <Value xsi:type="xsd:string">PLAYER 4</Value>
+        <ExposedAsName>PlayerLabelText</ExposedAsName>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

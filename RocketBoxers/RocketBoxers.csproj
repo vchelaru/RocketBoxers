@@ -143,6 +143,8 @@
     <Compile Include="GumRuntimes\GameHUDRuntime.Generated.cs">
       <DependentUpon>GameHUDRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\GameScreenGumRuntime.cs" />
+    <Compile Include="GumRuntimes\GameScreenGumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
     <Compile Include="GumRuntimes\LevelSelectorRuntime.cs" />
     <Compile Include="GumRuntimes\LevelSelectorRuntime.Generated.cs">
@@ -519,6 +521,10 @@
     <None Include="content\gumproject\rbuisheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>rbuisheet</Name>
+    </None>
+    <None Include="content\gumproject\screens\gamescreengum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>gamescreengum</Name>
     </None>
     <None Include="content\gumproject\screens\networklobbygum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
