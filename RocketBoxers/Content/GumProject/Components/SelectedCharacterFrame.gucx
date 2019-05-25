@@ -213,6 +213,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>PlayerNumberState</Type>
+      <Name>PlayerNumberState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>ShadowTextInstance.Blue</Name>
       <Value xsi:type="xsd:int">0</Value>
@@ -276,7 +281,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ShadowTextInstance.Y</Name>
-      <Value xsi:type="xsd:float">-4</Value>
+      <Value xsi:type="xsd:float">-11</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -326,6 +331,18 @@
       <Type>int</Type>
       <Name>SpriteInstance.Texture Width</Name>
       <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SpriteInstance.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SpriteInstance.Y</Name>
+      <Value xsi:type="xsd:float">-8</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -451,7 +468,7 @@
     <Variable>
       <Type>float</Type>
       <Name>WhiteTextInstance.Y</Name>
-      <Value xsi:type="xsd:float">-5</Value>
+      <Value xsi:type="xsd:float">-12</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -615,6 +632,12 @@
       <Name>NotLockedIn</Name>
       <Variable>
         <Type>int</Type>
+        <Name>NineSliceInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">30</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
         <Name>NineSliceInstance.Texture Left</Name>
         <Value xsi:type="xsd:int">130</Value>
         <SetsValue>true</SetsValue>
@@ -628,12 +651,6 @@
       <Variable>
         <Type>int</Type>
         <Name>NineSliceInstance.Texture Width</Name>
-        <Value xsi:type="xsd:int">30</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>NineSliceInstance.Texture Height</Name>
         <Value xsi:type="xsd:int">30</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -662,6 +679,171 @@
         <Type>int</Type>
         <Name>NineSliceInstance.Texture Width</Name>
         <Value xsi:type="xsd:int">30</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>PlayerNumber</Name>
+    <State>
+      <Name>Player1</Name>
+      <Variable>
+        <Type>string</Type>
+        <Name>WhiteTextInstance.Text</Name>
+        <Value xsi:type="xsd:string">P1</Value>
+        <ExposedAsName>WhiteText</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>ShadowTextInstance.Text</Name>
+        <Value xsi:type="xsd:string">P1</Value>
+        <ExposedAsName>ShadowText</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">96</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Player2</Name>
+      <Variable>
+        <Type>string</Type>
+        <Name>ShadowTextInstance.Text</Name>
+        <Value xsi:type="xsd:string">P2</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>WhiteTextInstance.Text</Name>
+        <Value xsi:type="xsd:string">P2</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Player3</Name>
+      <Variable>
+        <Type>string</Type>
+        <Name>ShadowTextInstance.Text</Name>
+        <Value xsi:type="xsd:string">P3</Value>
+        <ExposedAsName>ShadowText</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>WhiteTextInstance.Text</Name>
+        <Value xsi:type="xsd:string">P3</Value>
+        <ExposedAsName>WhiteText</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">96</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Player4</Name>
+      <Variable>
+        <Type>string</Type>
+        <Name>ShadowTextInstance.Text</Name>
+        <Value xsi:type="xsd:string">P4</Value>
+        <ExposedAsName>ShadowText</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>WhiteTextInstance.Text</Name>
+        <Value xsi:type="xsd:string">P4</Value>
+        <ExposedAsName>WhiteText</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>SpriteInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">64</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
