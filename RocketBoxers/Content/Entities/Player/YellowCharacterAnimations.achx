@@ -12,6 +12,7 @@
       <RightCoordinate>160</RightCoordinate>
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
+      <RelativeY>9</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -23,6 +24,7 @@
       <RightCoordinate>192</RightCoordinate>
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
+      <RelativeY>9</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -32,6 +34,7 @@
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
       <RelativeX>-1</RelativeX>
+      <RelativeY>9</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -41,6 +44,7 @@
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
       <RelativeX>1</RelativeX>
+      <RelativeY>9</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -52,6 +56,8 @@
       <RightCoordinate>160</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>-3</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -63,6 +69,8 @@
       <RightCoordinate>192</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>-3</RelativeX>
+      <RelativeY>13</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -71,6 +79,8 @@
       <RightCoordinate>224</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>-3</RelativeX>
+      <RelativeY>13</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -79,7 +89,8 @@
       <RightCoordinate>256</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
-      <RelativeX>1</RelativeX>
+      <RelativeX>-2</RelativeX>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -92,6 +103,8 @@
       <RightCoordinate>160</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>4</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -104,6 +117,8 @@
       <RightCoordinate>192</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>2</RelativeX>
+      <RelativeY>13</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -113,6 +128,8 @@
       <RightCoordinate>224</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>2</RelativeX>
+      <RelativeY>13</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -122,7 +139,8 @@
       <RightCoordinate>256</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
-      <RelativeX>-1</RelativeX>
+      <RelativeX>1</RelativeX>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -134,6 +152,8 @@
       <RightCoordinate>160</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>-6</RelativeX>
+      <RelativeY>15</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -145,6 +165,8 @@
       <RightCoordinate>192</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>-4</RelativeX>
+      <RelativeY>15</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -153,6 +175,8 @@
       <RightCoordinate>224</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>-4</RelativeX>
+      <RelativeY>15</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -161,6 +185,8 @@
       <RightCoordinate>256</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>-4</RelativeX>
+      <RelativeY>15</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -173,6 +199,8 @@
       <RightCoordinate>160</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>6</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -185,6 +213,8 @@
       <RightCoordinate>192</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>4</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -194,6 +224,8 @@
       <RightCoordinate>224</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>4</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -203,6 +235,8 @@
       <RightCoordinate>256</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>4</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -214,6 +248,7 @@
       <RightCoordinate>160</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>192</BottomCoordinate>
+      <RelativeY>16</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -225,7 +260,8 @@
       <RightCoordinate>192</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
-      <RelativeX>-3</RelativeX>
+      <RelativeX>-1</RelativeX>
+      <RelativeY>12</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -234,7 +270,8 @@
       <RightCoordinate>224</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
-      <RelativeX>-3</RelativeX>
+      <RelativeX>-2</RelativeX>
+      <RelativeY>12</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -243,8 +280,8 @@
       <RightCoordinate>256</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
-      <RelativeX>-2</RelativeX>
-      <RelativeY>1</RelativeY>
+      <RelativeX>-1</RelativeX>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -256,6 +293,7 @@
       <RightCoordinate>160</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>11</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -267,6 +305,7 @@
       <RightCoordinate>192</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>11</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -275,6 +314,7 @@
       <RightCoordinate>224</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>11</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -283,6 +323,7 @@
       <RightCoordinate>256</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>11</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -295,6 +336,7 @@
       <RightCoordinate>160</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>11</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -307,6 +349,7 @@
       <RightCoordinate>192</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>11</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -316,6 +359,7 @@
       <RightCoordinate>224</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>11</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -325,6 +369,7 @@
       <RightCoordinate>256</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>11</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -336,6 +381,7 @@
       <RightCoordinate>128</RightCoordinate>
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
+      <RelativeY>11</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -347,6 +393,7 @@
       <RightCoordinate>128</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -359,6 +406,7 @@
       <RightCoordinate>128</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -370,6 +418,7 @@
       <RightCoordinate>128</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -382,6 +431,7 @@
       <RightCoordinate>128</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -393,6 +443,7 @@
       <RightCoordinate>128</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -404,6 +455,7 @@
       <RightCoordinate>128</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -416,6 +468,7 @@
       <RightCoordinate>128</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -427,6 +480,7 @@
       <RightCoordinate>288</RightCoordinate>
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -438,6 +492,8 @@
       <RightCoordinate>288</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>5</RelativeX>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -450,6 +506,8 @@
       <RightCoordinate>288</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>-5</RelativeX>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -461,6 +519,8 @@
       <RightCoordinate>288</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>6</RelativeX>
+      <RelativeY>15</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -473,6 +533,8 @@
       <RightCoordinate>288</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>-6</RelativeX>
+      <RelativeY>15</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -484,6 +546,7 @@
       <RightCoordinate>288</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -495,6 +558,8 @@
       <RightCoordinate>288</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeX>7</RelativeX>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -507,6 +572,8 @@
       <RightCoordinate>288</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeX>-7</RelativeX>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -519,6 +586,7 @@
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
       <RelativeX>-1</RelativeX>
+      <RelativeY>10</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -527,6 +595,7 @@
       <RightCoordinate>96</RightCoordinate>
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
+      <RelativeY>10</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -538,6 +607,8 @@
       <RightCoordinate>64</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>-3</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -546,6 +617,8 @@
       <RightCoordinate>96</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>-3</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -558,6 +631,8 @@
       <RightCoordinate>64</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>3</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -567,6 +642,8 @@
       <RightCoordinate>96</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>3</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -578,6 +655,8 @@
       <RightCoordinate>64</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>-5</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -586,6 +665,8 @@
       <RightCoordinate>96</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>-5</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -598,6 +679,8 @@
       <RightCoordinate>64</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>5</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -607,6 +690,8 @@
       <RightCoordinate>96</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>5</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -619,6 +704,7 @@
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
       <RelativeX>-1</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -627,6 +713,7 @@
       <RightCoordinate>96</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -638,6 +725,8 @@
       <RightCoordinate>64</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeX>-4</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -646,6 +735,8 @@
       <RightCoordinate>96</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeX>-4</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -658,6 +749,8 @@
       <RightCoordinate>64</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeX>4</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -667,6 +760,8 @@
       <RightCoordinate>96</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeX>4</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -770,6 +865,7 @@
       <RightCoordinate>32</RightCoordinate>
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -781,6 +877,7 @@
       <RightCoordinate>32</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -793,6 +890,7 @@
       <RightCoordinate>32</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -804,6 +902,7 @@
       <RightCoordinate>32</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -816,6 +915,7 @@
       <RightCoordinate>32</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -827,6 +927,7 @@
       <RightCoordinate>32</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -838,6 +939,7 @@
       <RightCoordinate>32</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -850,6 +952,7 @@
       <RightCoordinate>32</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>13</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -861,6 +964,7 @@
       <RightCoordinate>32</RightCoordinate>
       <TopCoordinate>160</TopCoordinate>
       <BottomCoordinate>192</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -869,6 +973,7 @@
       <RightCoordinate>64</RightCoordinate>
       <TopCoordinate>160</TopCoordinate>
       <BottomCoordinate>192</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -877,6 +982,7 @@
       <RightCoordinate>96</RightCoordinate>
       <TopCoordinate>160</TopCoordinate>
       <BottomCoordinate>192</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -885,6 +991,7 @@
       <RightCoordinate>128</RightCoordinate>
       <TopCoordinate>160</TopCoordinate>
       <BottomCoordinate>192</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -896,6 +1003,7 @@
       <RightCoordinate>512</RightCoordinate>
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
+      <RelativeY>10</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -904,6 +1012,7 @@
       <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>64</TopCoordinate>
       <BottomCoordinate>96</BottomCoordinate>
+      <RelativeY>10</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -915,6 +1024,8 @@
       <RightCoordinate>512</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>-2</RelativeX>
+      <RelativeY>12</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -923,6 +1034,8 @@
       <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>-2</RelativeX>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -935,6 +1048,8 @@
       <RightCoordinate>512</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>2</RelativeX>
+      <RelativeY>12</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -944,6 +1059,8 @@
       <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>32</BottomCoordinate>
+      <RelativeX>2</RelativeX>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -955,6 +1072,8 @@
       <RightCoordinate>512</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>-2</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -963,6 +1082,8 @@
       <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>-2</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -975,6 +1096,8 @@
       <RightCoordinate>512</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>2</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -984,6 +1107,8 @@
       <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>96</TopCoordinate>
       <BottomCoordinate>128</BottomCoordinate>
+      <RelativeX>2</RelativeX>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -995,6 +1120,7 @@
       <RightCoordinate>512</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -1003,6 +1129,7 @@
       <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>128</TopCoordinate>
       <BottomCoordinate>160</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -1014,6 +1141,7 @@
       <RightCoordinate>512</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../levels/tilesheet.png</TextureName>
@@ -1022,6 +1150,7 @@
       <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -1034,6 +1163,7 @@
       <RightCoordinate>512</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>12</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -1042,6 +1172,26 @@
       <LeftCoordinate>512</LeftCoordinate>
       <RightCoordinate>544</RightCoordinate>
       <TopCoordinate>32</TopCoordinate>
+      <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>12</RelativeY>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Falling</Name>
+    <Frame>
+      <TextureName>../../Levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>416</LeftCoordinate>
+      <RightCoordinate>448</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>64</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../Levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>448</LeftCoordinate>
+      <RightCoordinate>480</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
     </Frame>
   </AnimationChain>
