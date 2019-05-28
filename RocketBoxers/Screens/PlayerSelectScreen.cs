@@ -85,11 +85,35 @@ namespace RocketBoxers.Screens
 
             DoMarkerActivity();
 
+            // Check for proceeding to the next screen before locking in or else locking in may do both lock and proceed
+            ProceedToNextScreenActivity();
+
             // check for locking in before checking for joining or else joining will do both join and lock in
             LockInActivity();
 
             CheckForJoiningInputDevices();
 		}
+
+        private void ProceedToNextScreenActivity()
+        {
+            var haveAllJoined = SelectionMarkers.Any(item => item.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.Selecting) == false &&
+                SelectionMarkers.Any(item => item.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.LockedIn);
+
+            if(haveAllJoined && SelectionMarkers.Any(item =>item.InputDevice?.Confirm.WasJustPressed == true))
+            {
+                // todo - mark the joined players
+                GameScreen.PlayerInputDevices.Clear();
+
+                var joinedInputDevices = SelectionMarkers
+                    .Where(item => item.InputDevice != null)
+                    .Select(item => item.InputDevice);
+
+                GameScreen.PlayerInputDevices.AddRange(
+                    joinedInputDevices);
+
+                MoveToScreen(typeof(TestLevel1));
+            }
+        }
 
         private void DoMarkerActivity()
         {

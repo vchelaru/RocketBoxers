@@ -40,14 +40,7 @@ namespace RocketBoxers.Screens
         {
             switch(claim.EntityName)
             {
-                case  "Player1":
-                    Player1.OwnerId = claim.OwnerId;
-                    Player1.EntityId = claim.EntityId;
-                    break;
-                case  "Player2":
-                    Player2.OwnerId = claim.OwnerId;
-                    Player2.EntityId = claim.EntityId;
-                    break;
+
             }
         }
     }

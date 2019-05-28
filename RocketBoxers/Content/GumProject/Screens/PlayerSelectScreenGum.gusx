@@ -238,21 +238,9 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>PlayerNumberState</Type>
-      <Name>SelectedCharacterFrameInstance.PlayerNumberState</Name>
-      <Value xsi:type="xsd:string">Character1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
       <Name>SelectedCharacterFrameInstance1.Parent</Name>
       <Value xsi:type="xsd:string">BottomFrameContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PlayerNumberState</Type>
-      <Name>SelectedCharacterFrameInstance1.PlayerNumberState</Name>
-      <Value xsi:type="xsd:string">P2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

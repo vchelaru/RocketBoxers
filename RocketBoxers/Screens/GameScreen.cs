@@ -13,23 +13,62 @@ using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
 using FlatRedBall.Math.Collision;
 using RocketBoxers.Entities;
+using RocketBoxers.Input;
 
 namespace RocketBoxers.Screens
 {
 	public partial class GameScreen
 	{
+        public static List<UiInputDevice> PlayerInputDevices = new List<UiInputDevice>();
+
         CollisionRelationship playerVsGround;
 
         void CustomInitialize()
         {
-            Player1.X = 1000;
-            Player1.Y = -500;
+            AddInputDevicesIfEmpty();
 
-            Player1.SetAnimationsFromPlayerIndex(2);
-            Player2.SetAnimationsFromPlayerIndex(3);
+            InitializePlayers();
 
             InitializeCollisions();
 
+        }
+
+        private void AddInputDevicesIfEmpty()
+        {
+            // this means the game is skipping the join screen
+            if(PlayerInputDevices.Count == 0)
+            {
+                var inputDevice = new UiInputDevice();
+                inputDevice.BackingObject = InputManager.Keyboard;
+                PlayerInputDevices.Add(inputDevice);
+
+                inputDevice = new UiInputDevice();
+                inputDevice.BackingObject = InputManager.Xbox360GamePads[0];
+                PlayerInputDevices.Add(inputDevice);
+
+            }
+        }
+
+        private void InitializePlayers()
+        {
+            int index = 0;
+            foreach (var device in PlayerInputDevices)
+            {
+                var player = new Player();
+
+                player.X = 1000;
+                player.Y = -500 - 100;
+
+                player.SetAnimationsFromPlayerIndex(index);
+
+                player.InitializeInputFrom(device.BackingObject);
+
+                this.PlayerList.Add(player);
+
+
+
+                index++;
+            }
         }
 
         private void InitializeCollisions()
@@ -44,6 +83,8 @@ namespace RocketBoxers.Screens
             var playerVsDamageArea = CollisionManager.Self.CreateRelationship(PlayerList, DamageAreaList);
             playerVsDamageArea.CollisionOccurred += HandlePlayerVsDamageArea;
 
+            var playerVsPlayerCollision = CollisionManager.Self.CreateRelationship(PlayerList, PlayerList);
+            playerVsPlayerCollision.SetMoveCollision(1, 1);
         }
 
 

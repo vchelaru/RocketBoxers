@@ -73,30 +73,45 @@ namespace RocketBoxers.Entities
             this.mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
             this.PossibleDirections = PossibleDirections.EightWay;
 
-            InitializeButtonInput();
             InitializeAnimations();
 
             InputEnabled = !DEBUG_IgnoreInput;
         }
 
-        private void InitializeButtonInput()
+        public void InitializeInputFrom(object inputDevice)
         {
-            if (InputManager.Xbox360GamePads[0].IsConnected)
+            if(inputDevice is Keyboard keyboard)
             {
-                var gamePad = InputManager.Xbox360GamePads[0];
+                InitializeInputFromKeyboard();
+            }
+            else if(inputDevice is Xbox360GamePad gamePad)
+            {
+                InitializeInputFromGamePad(gamePad);
+            }
+        }
 
-                attackInput = gamePad.GetButton(Xbox360GamePad.Button.A);
-                blockInput = gamePad.GetButton(Xbox360GamePad.Button.B);
-                specialAttackInpt = gamePad.GetButton(Xbox360GamePad.Button.X);
-                dashInput = gamePad.GetButton(Xbox360GamePad.Button.Y);
-            }
-            else
-            {
-                attackInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.A);
-                blockInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.LeftShift);
-                specialAttackInpt = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.S);
-                dashInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.D);
-            }
+        private void InitializeInputFromKeyboard()
+        {
+            this.MovementInput = FlatRedBall.Input.InputManager.Keyboard.Get2DInput(
+                Microsoft.Xna.Framework.Input.Keys.Left,
+                Microsoft.Xna.Framework.Input.Keys.Right,
+                Microsoft.Xna.Framework.Input.Keys.Up,
+                Microsoft.Xna.Framework.Input.Keys.Down);
+
+            attackInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.A);
+            blockInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.LeftShift);
+            specialAttackInpt = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.S);
+            dashInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.D);
+        }
+
+        private void InitializeInputFromGamePad(Xbox360GamePad gamePad)
+        {
+            this.MovementInput = gamePad.LeftStick;
+
+            attackInput = gamePad.GetButton(Xbox360GamePad.Button.A);
+            blockInput = gamePad.GetButton(Xbox360GamePad.Button.B);
+            specialAttackInpt = gamePad.GetButton(Xbox360GamePad.Button.X);
+            dashInput = gamePad.GetButton(Xbox360GamePad.Button.Y);
         }
 
         private void InitializeAnimations()
