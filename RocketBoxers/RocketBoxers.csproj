@@ -144,7 +144,9 @@
       <DependentUpon>GameHUDRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\GameScreenGumRuntime.cs" />
-    <Compile Include="GumRuntimes\GameScreenGumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\GameScreenGumRuntime.Generated.cs">
+      <DependentUpon>GameScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
     <Compile Include="GumRuntimes\LevelSelectorRuntime.cs" />
     <Compile Include="GumRuntimes\LevelSelectorRuntime.Generated.cs">
