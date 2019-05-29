@@ -50,7 +50,7 @@ namespace RocketBoxers.Entities
 
 		}
 
-        public void TryToDamagePlayer(Player player)
+        public bool TryToDamagePlayer(Player player)
         {
             if (isActive)
             {
@@ -85,6 +85,7 @@ namespace RocketBoxers.Entities
                 }
             }
             
+            return canDealDamage;
         }
 
         private bool CanDealDamage(Player player)

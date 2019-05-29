@@ -176,6 +176,8 @@ namespace RocketBoxers.Screens
                     marker.CurrentSelectionState = SelectionMarkerRuntime.SelectionState.LockedIn;
                     marker.CharacterFrame.LockedInAnimation.Play();
 
+                    marker.InputDevice.Color = (PlayerColor)marker.SelectedCharacterIndex;
+
                     TestForReadyOnAnimation();
 
                 }
@@ -229,8 +231,6 @@ namespace RocketBoxers.Screens
                 }
             }
         }
-
-
 
         #endregion
 

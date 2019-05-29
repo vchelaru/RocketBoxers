@@ -257,6 +257,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>PlayerColorState</Type>
+      <Name>PlayerColorState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <IsFile>true</IsFile>
       <Type>string</Type>
       <Name>PlayerIconSpriteInstance.SourceFile</Name>
@@ -425,10 +430,15 @@
     <State>
       <Name>Player1</Name>
       <Variable>
-        <Type>string</Type>
-        <Name>PlayerLabel.Text</Name>
-        <Value xsi:type="xsd:string">PLAYER 1</Value>
-        <ExposedAsName>PlayerLabelText</ExposedAsName>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Blue</Name>
+        <Value xsi:type="xsd:int">42</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Green</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -439,15 +449,10 @@
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>int</Type>
-        <Name>ColoredRectangleInstance.Blue</Name>
-        <Value xsi:type="xsd:int">42</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>ColoredRectangleInstance.Green</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Type>string</Type>
+        <Name>PlayerLabel.Text</Name>
+        <Value xsi:type="xsd:string">PLAYER 1</Value>
+        <ExposedAsName>PlayerLabelText</ExposedAsName>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -489,6 +494,12 @@
       </Variable>
       <Variable>
         <Type>int</Type>
+        <Name>ColoredRectangleInstance.Green</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
         <Name>ColoredRectangleInstance.Red</Name>
         <Value xsi:type="xsd:int">161</Value>
         <SetsValue>true</SetsValue>
@@ -498,12 +509,6 @@
         <Name>PlayerLabel.Text</Name>
         <Value xsi:type="xsd:string">PLAYER 3</Value>
         <ExposedAsName>PlayerLabelText</ExposedAsName>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>ColoredRectangleInstance.Green</Name>
-        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -533,6 +538,69 @@
         <Name>PlayerLabel.Text</Name>
         <Value xsi:type="xsd:string">PLAYER 4</Value>
         <ExposedAsName>PlayerLabelText</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>PlayerColor</Name>
+    <State>
+      <Name>Yellow</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>PlayerIconSpriteInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PlayerIconSpriteInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">224</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Red</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>PlayerIconSpriteInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PlayerIconSpriteInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">224</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Green</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>PlayerIconSpriteInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PlayerIconSpriteInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">288</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Blue</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>PlayerIconSpriteInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">64</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PlayerIconSpriteInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">288</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

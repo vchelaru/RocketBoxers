@@ -8,9 +8,23 @@ using System.Threading.Tasks;
 
 namespace RocketBoxers.Input
 {
+    public enum PlayerColor
+    {
+        Yellow,
+        Red,
+        Green,
+        Blue
+    }
+
     public class UiInputDevice
     {
+        /// <summary>
+        /// The backing input object like a Keyboard or 
+        /// Xbox360GamePad
+        /// </summary>
         public object BackingObject { get; set; }
+
+        public PlayerColor Color { get; set; }
 
         public IPressableInput Up { get; set; }
         public IPressableInput Down { get; set; }
