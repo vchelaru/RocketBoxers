@@ -472,6 +472,7 @@
           <Name>FallingDuration</Name>
           <Type>float</Type>
           <DefaultValue xsi:type="xsd:float">2</DefaultValue>
+          <IsShared>true</IsShared>
         </CustomVariable>
       </CustomVariables>
       <ImplementsIVisible>true</ImplementsIVisible>

@@ -151,9 +151,17 @@ namespace RocketBoxers.Screens
 
                     iconToUpdate.PercentDamageBounceAnimation.Play();
 
-                    iconToUpdate.DisplayedPercentage = ((int)(player.DamageTaken * 100)).ToString();
+                    RefreshDamageDisplay(player);
                 }
             }
+        }
+
+        private void RefreshDamageDisplay(Player player)
+        {
+            var index = PlayerList.IndexOf(player);
+            var iconToUpdate = GameHUDInstance.PlayerGameIcons[index];
+
+            iconToUpdate.DisplayedPercentage = ((int)(player.DamageTaken * 100)).ToString();
         }
 
         private void DoFallOff(Player player)
@@ -161,6 +169,9 @@ namespace RocketBoxers.Screens
             var randomSpawn = FlatRedBallServices.Random.In(RespawnList);
 
             player.PerformFallOff(randomSpawn);
+
+            this.Call(() => RefreshDamageDisplay(player)).After(Player.FallingDuration);
+
         }
 
         #endregion
