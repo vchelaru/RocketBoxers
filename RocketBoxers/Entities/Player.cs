@@ -31,6 +31,7 @@ namespace RocketBoxers.Entities
         AnimationLayer attackHoldAnimationLayer;
         AnimationLayer attackAnimationLayer;
         AnimationLayer getHitAnimationLayer;
+        AnimationLayer fallingAnimationLayer;
 
         //AttackEffect animation controllerS
         AnimationController attackSpriteAnimationController;
@@ -44,6 +45,7 @@ namespace RocketBoxers.Entities
         IPressableInput blockInput;
 
         DamageArea currentAttackDamageArea;
+        Respawn currentSpawnArea;
 
         static AnimationChainList P2Animations;
         static AnimationChainList P3Animations;
@@ -51,6 +53,8 @@ namespace RocketBoxers.Entities
 
         public bool IsInvincible => isInvincible;
         bool isInvincible = false;
+        double fallStart = 0;
+        Vector2 fallingSpriteScale;
 
         static List<AnimationChainList> AllAnimationChains;
 
@@ -118,6 +122,11 @@ namespace RocketBoxers.Entities
         {
             InitilizeSpriteInstanceController();
             InitilizeAttackSpriteController();
+            //To manually scale the sprite to simulate falling we calculate the scale of the first frame of the falling animation.
+            //This is kinda gross but has to be done for the monthly timeframe.
+            var fallingFirstFrame = YellowCharacterAnimations["Falling"][0];
+            fallingSpriteScale.X = (fallingFirstFrame.RightCoordinate - fallingFirstFrame.LeftCoordinate) * fallingFirstFrame.Texture.Width * .5f;
+            fallingSpriteScale.Y = (fallingFirstFrame.BottomCoordinate - fallingFirstFrame.TopCoordinate)* fallingFirstFrame.Texture.Height * .5f;
         }
 
         public void SetAnimationsFromPlayerIndex(int index)
@@ -137,6 +146,7 @@ namespace RocketBoxers.Entities
                     SpriteInstance.AnimationChains = P4Animations;
                     break;
             }
+            TeamIndex = index;
         }
 
         private void InitilizeAttackSpriteController()
@@ -213,6 +223,15 @@ namespace RocketBoxers.Entities
                     InputEnabled = false;
             };
             animationController.Layers.Add(getHitAnimationLayer);
+
+            fallingAnimationLayer = new AnimationLayer();
+            fallingAnimationLayer.OnAnimationFinished = () =>
+            {
+                TryToRespawn();
+                SetMovement(DataTypes.TopDownValues.Normal);
+            };
+            animationController.Layers.Add(fallingAnimationLayer);
+
         }
 
         #endregion
@@ -226,6 +245,7 @@ namespace RocketBoxers.Entities
                 InputActivity();
             animationController.Activity();
             attackSpriteAnimationController.Activity();
+
         }
 
         private void InputActivity()
@@ -302,6 +322,10 @@ namespace RocketBoxers.Entities
         {
             var damageToDeal = blockInput.IsDown ? attackData.DamageToDeal * BaseBlockDamageReduction : attackData.DamageToDeal;
             DamageTaken += damageToDeal;
+            if(currentAttackDamageArea != null)
+            {
+                currentAttackDamageArea.DisableDamageArea();
+            }
             ReactToDamage( attackData, attackerLocation, shouldLaunch);
         }
 
@@ -328,20 +352,43 @@ namespace RocketBoxers.Entities
             }
         }
 
-        public void TryToRespawn(Respawn respawnLocation)
+        public void PerformFallOff(Respawn respawnLocation)
         {
-            XVelocity = 0;
-            YVelocity = 0;
-            XAcceleration = 0;
-            YAcceleration = 0;
+            if (currentSpawnArea == null)
+            {
+                currentSpawnArea = respawnLocation;
+                foreach (var layer in animationController.Layers)
+                {
+                    layer.StopPlay();
+                }
+                fallStart = FlatRedBall.Screens.ScreenManager.CurrentScreen.PauseAdjustedCurrentTime;
+                
+                XVelocity = 0;
+                YVelocity = 0;
+                XAcceleration = 0;
+                YAcceleration = 0;
+
+                SetMovement(DataTypes.TopDownValues.Stopped);
+                fallingAnimationLayer.PlayDuration("Falling", FallingDuration);
+            }
+        }
+
+        private void TryToRespawn()
+        {
             DamageTaken = 0;
-
-            X = respawnLocation.X;
-            Y = respawnLocation.Y;
-            getHitAnimationLayer.StopPlay();
-
+            fallStart = 0;
+            X = currentSpawnArea.X;
+            Y = currentSpawnArea.Y;
             isInvincible = true;
-            this.Call(() => { isInvincible = false; }).After(RespawnInvincibilityTime);
+            currentSpawnArea = null;
+            IsOnGround = true;
+
+            ForceUpdateDependenciesDeep();
+
+            this.Call(() => 
+            {
+                isInvincible = false;
+            }).After(RespawnInvincibilityTime);
         }
 
         #endregion
@@ -400,10 +447,21 @@ namespace RocketBoxers.Entities
             frameOffset.X = AttackEffectSprite.CurrentChain[AttackEffectSprite.CurrentFrameIndex].RelativeX;
             frameOffset.Y = AttackEffectSprite.CurrentChain[AttackEffectSprite.CurrentFrameIndex].RelativeY;
 
-            AttackEffectSprite.RelativePosition = effectSpriteRelativeOffset + frameOffset;
+            var attackOffset = effectSpriteRelativeOffset + frameOffset;
             if(currentAttackDamageArea != null)
             {
-                currentAttackDamageArea.Position = AttackEffectSprite.Position;
+                currentAttackDamageArea.Position = attackOffset + Position;
+            }
+
+            AttackEffectSprite.RelativePosition = attackOffset + SpriteInstance.RelativePosition;
+
+            if(fallingAnimationLayer.HasPriority)
+            {
+                var seconds = FlatRedBall.Screens.ScreenManager.CurrentScreen.PauseAdjustedSecondsSince(fallStart);
+                var firstRatio = seconds / FallingDuration;
+                var ratio = (float)Math.Max(1 - firstRatio, 0);
+                SpriteInstance.ScaleX = fallingSpriteScale.X * ratio;
+                SpriteInstance.ScaleY = fallingSpriteScale.Y * ratio;
             }
         }
 

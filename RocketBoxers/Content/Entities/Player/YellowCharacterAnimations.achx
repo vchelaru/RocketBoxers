@@ -1185,6 +1185,7 @@
       <RightCoordinate>448</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>32</RelativeY>
     </Frame>
     <Frame>
       <TextureName>../../Levels/tilesheet.png</TextureName>
@@ -1193,6 +1194,7 @@
       <RightCoordinate>480</RightCoordinate>
       <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>64</BottomCoordinate>
+      <RelativeY>32</RelativeY>
     </Frame>
   </AnimationChain>
 </AnimationChainArraySave>

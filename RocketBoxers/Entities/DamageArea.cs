@@ -21,6 +21,7 @@ namespace RocketBoxers.Entities
 
         Dictionary<Player, PlayerHitData> damagedPlayers = new Dictionary<Player, PlayerHitData>();
         public Player OwningPlayer;
+        bool isActive = true;
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
@@ -51,42 +52,49 @@ namespace RocketBoxers.Entities
 
         public void TryToDamagePlayer(Player player)
         {
-            bool canDealDamage = false;
-            if(!player.IsInvincible)
+            if (isActive)
             {
-
-                //Check if the player has been hit
-                double lastHitTime = FlatRedBall.Screens.ScreenManager.CurrentScreen.PauseAdjustedCurrentTime;
-                PlayerHitData currentHit = new PlayerHitData();
-                if(!damagedPlayers.ContainsKey(player))
+                bool canDealDamage = false;
+                if (!player.IsInvincible)
                 {
-                    canDealDamage = true;
-                    int remainingHits = AttackData.HitsAllowed;
-                    currentHit = new PlayerHitData() { RemainingHits = remainingHits, LastHitTime = lastHitTime };
-                    damagedPlayers.Add(player, currentHit);
 
-                }
-                else if(CanDealDamage(player))
-                {
-                    canDealDamage = true;
-                    currentHit = damagedPlayers[player];
-                    currentHit.LastHitTime = lastHitTime;
-                }
+                    //Check if the player has been hit
+                    double lastHitTime = FlatRedBall.Screens.ScreenManager.CurrentScreen.PauseAdjustedCurrentTime;
+                    PlayerHitData currentHit = new PlayerHitData();
+                    if (!damagedPlayers.ContainsKey(player))
+                    {
+                        canDealDamage = true;
+                        int remainingHits = AttackData.HitsAllowed;
+                        currentHit = new PlayerHitData() { RemainingHits = remainingHits, LastHitTime = lastHitTime };
+                        damagedPlayers.Add(player, currentHit);
 
-                if (canDealDamage)
-                {
-                    currentHit.RemainingHits--;
-                    player.TakeHit(AttackData, OwningPlayer.Position, currentHit.RemainingHits <= 0);
-                    damagedPlayers[player] = currentHit;
+                    }
+                    else if (CanDealDamage(player))
+                    {
+                        canDealDamage = true;
+                        currentHit = damagedPlayers[player];
+                        currentHit.LastHitTime = lastHitTime;
+                    }
+
+                    if (canDealDamage)
+                    {
+                        currentHit.RemainingHits--;
+                        player.TakeHit(AttackData, OwningPlayer.Position, currentHit.RemainingHits <= 0);
+                        damagedPlayers[player] = currentHit;
+                    }
                 }
             }
-
             
         }
 
         private bool CanDealDamage(Player player)
         {
             return FlatRedBall.Screens.ScreenManager.CurrentScreen.PauseAdjustedSecondsSince(damagedPlayers[player].LastHitTime) > AttackData.DelayBetweenHits;
+        }
+
+        public void DisableDamageArea()
+        {
+            isActive = false;
         }
 
         private static void CustomLoadStaticContent(string contentManagerName)

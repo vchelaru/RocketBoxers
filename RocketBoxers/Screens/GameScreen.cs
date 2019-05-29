@@ -132,7 +132,7 @@ namespace RocketBoxers.Screens
         {
             var randomSpawn = FlatRedBallServices.Random.In(RespawnList);
 
-            player.TryToRespawn(randomSpawn);
+            player.PerformFallOff(randomSpawn);
         }
 
         #endregion

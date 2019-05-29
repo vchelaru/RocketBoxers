@@ -40,7 +40,6 @@ namespace RocketBoxers.Screens
         {
             switch(claim.EntityName)
             {
-
             }
         }
     }
