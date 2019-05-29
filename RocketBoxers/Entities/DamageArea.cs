@@ -49,7 +49,7 @@ namespace RocketBoxers.Entities
 
 		}
 
-        public void TryToDamagePlayer(Player player)
+        public bool TryToDamagePlayer(Player player)
         {
             bool canDealDamage = false;
             if(!player.IsInvincible)
@@ -81,7 +81,7 @@ namespace RocketBoxers.Entities
                 }
             }
 
-            
+            return canDealDamage;
         }
 
         private bool CanDealDamage(Player player)

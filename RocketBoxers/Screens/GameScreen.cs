@@ -19,9 +19,13 @@ namespace RocketBoxers.Screens
 {
 	public partial class GameScreen
 	{
+        #region Fields/Properties
+
         public static List<UiInputDevice> PlayerInputDevices = new List<UiInputDevice>();
 
         CollisionRelationship playerVsGround;
+
+        #endregion
 
         void CustomInitialize()
         {
@@ -41,7 +45,10 @@ namespace RocketBoxers.Screens
 
             for(int i = 0; i < PlayerInputDevices.Count; i++)
             {
-                GameHUDInstance.PlayerGameIcons[i].CurrentPlayerColorState = (GumRuntimes.PlayerGameIconRuntime.PlayerColor)(PlayerInputDevices[i].Color);
+                var icon = GameHUDInstance.PlayerGameIcons[i];
+                icon.CurrentPlayerColorState = (GumRuntimes.PlayerGameIconRuntime.PlayerColor)(PlayerInputDevices[i].Color);
+
+                icon.DisplayedPercentage = "0";
             }
         }
 
@@ -51,10 +58,12 @@ namespace RocketBoxers.Screens
             if(PlayerInputDevices.Count == 0)
             {
                 var inputDevice = new UiInputDevice();
+                inputDevice.Color = PlayerColor.Yellow;
                 inputDevice.BackingObject = InputManager.Keyboard;
                 PlayerInputDevices.Add(inputDevice);
 
                 inputDevice = new UiInputDevice();
+                inputDevice.Color = PlayerColor.Red;
                 inputDevice.BackingObject = InputManager.Xbox360GamePads[0];
                 PlayerInputDevices.Add(inputDevice);
 
@@ -69,6 +78,7 @@ namespace RocketBoxers.Screens
 
                 player.X = 1000;
                 player.Y = -500 - 100;
+                player.TeamIndex = PlayerList.Count;
 
                 player.SetAnimationsFromPlayerIndex((int)device.Color);
 
@@ -131,7 +141,18 @@ namespace RocketBoxers.Screens
         {
             if(player.TeamIndex != damageArea.TeamIndex)
             {
-                damageArea.TryToDamagePlayer(player);
+                var dealtDamage = damageArea.TryToDamagePlayer(player);
+
+                if(dealtDamage)
+                {
+                    var index = PlayerList.IndexOf(player);
+
+                    var iconToUpdate = GameHUDInstance.PlayerGameIcons[index];
+
+                    iconToUpdate.PercentDamageBounceAnimation.Play();
+
+                    iconToUpdate.DisplayedPercentage = ((int)(player.DamageTaken * 100)).ToString();
+                }
             }
         }
 
