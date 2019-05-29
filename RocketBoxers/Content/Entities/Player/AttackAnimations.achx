@@ -398,4 +398,31 @@
       <BottomCoordinate>176</BottomCoordinate>
     </Frame>
   </AnimationChain>
+  <AnimationChain>
+    <Name>DamageEffectRight</Name>
+    <Frame>
+      <TextureName>../../Levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>576</LeftCoordinate>
+      <RightCoordinate>640</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>64</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../Levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>576</LeftCoordinate>
+      <RightCoordinate>640</RightCoordinate>
+      <TopCoordinate>64</TopCoordinate>
+      <BottomCoordinate>128</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../Levels/tilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>576</LeftCoordinate>
+      <RightCoordinate>640</RightCoordinate>
+      <TopCoordinate>128</TopCoordinate>
+      <BottomCoordinate>192</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
 </AnimationChainArraySave>
