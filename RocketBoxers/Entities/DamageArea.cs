@@ -52,9 +52,10 @@ namespace RocketBoxers.Entities
 
         public bool TryToDamagePlayer(Player player)
         {
+            bool canDealDamage = false;
+
             if (isActive)
             {
-                bool canDealDamage = false;
                 if (!player.IsInvincible)
                 {
 
