@@ -31,6 +31,18 @@ namespace RocketBoxers.Screens
 
             InitializeCollisions();
 
+            InitializeUi();
+        }
+
+        private void InitializeUi()
+        {
+            GameHUDInstance.CurrentNumberOfPlayersState =
+                (GumRuntimes.GameHUDRuntime.NumberOfPlayers)(PlayerList.Count - 1);
+
+            for(int i = 0; i < PlayerInputDevices.Count; i++)
+            {
+                GameHUDInstance.PlayerGameIcons[i].CurrentPlayerColorState = (GumRuntimes.PlayerGameIconRuntime.PlayerColor)(PlayerInputDevices[i].Color);
+            }
         }
 
         private void AddInputDevicesIfEmpty()
@@ -51,7 +63,6 @@ namespace RocketBoxers.Screens
 
         private void InitializePlayers()
         {
-            int index = 0;
             foreach (var device in PlayerInputDevices)
             {
                 var player = new Player();
@@ -59,15 +70,11 @@ namespace RocketBoxers.Screens
                 player.X = 1000;
                 player.Y = -500 - 100;
 
-                player.SetAnimationsFromPlayerIndex(index);
+                player.SetAnimationsFromPlayerIndex((int)device.Color);
 
                 player.InitializeInputFrom(device.BackingObject);
 
                 this.PlayerList.Add(player);
-
-
-
-                index++;
             }
         }
 

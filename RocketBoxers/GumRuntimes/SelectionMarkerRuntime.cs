@@ -16,6 +16,8 @@ namespace RocketBoxers.GumRuntimes
             LockedIn
         }
 
+        public int SelectedCharacterIndex { get; set; }
+
         private SelectionState currentSelectionStateButUseProperty;
         public SelectionState CurrentSelectionState
         {
@@ -87,7 +89,9 @@ namespace RocketBoxers.GumRuntimes
 
                 this.Parent = this.Parent.Parent.Children[newIndex];
 
-                switch(newIndex)
+                SelectedCharacterIndex = newIndex;
+
+                switch (newIndex)
                 {
                     case 0:
                         CharacterFrame.CurrentCharacterNumberState = SelectedCharacterFrameRuntime.CharacterNumber.Character1;
