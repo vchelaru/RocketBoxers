@@ -213,6 +213,8 @@
     <Compile Include="GumRuntimes\WrapUpRuntime.Generated.cs">
       <DependentUpon>WrapUpRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\WrapUpScreenGumRuntime.cs" />
+    <Compile Include="GumRuntimes\WrapUpScreenGumRuntime.Generated.cs" />
     <Compile Include="Input\UiInputDevice.cs" />
     <Compile Include="Messages\ClaimEntityMessage.Generated.cs" />
     <Compile Include="Network\NetworkLogger.cs" />
@@ -249,6 +251,10 @@
     <Compile Include="Screens\TitleScreen.cs" />
     <Compile Include="Screens\TitleScreen.Generated.cs">
       <DependentUpon>TitleScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\WrapUpScreen.cs" />
+    <Compile Include="Screens\WrapUpScreen.Generated.cs">
+      <DependentUpon>WrapUpScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup\CameraSetup.cs" />
     <Compile Include="Setup\GameNetworkConfiguration.Generated.cs" />
@@ -555,6 +561,10 @@
     <None Include="content\gumproject\screens\titlescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TitleScreenGum</Name>
+    </None>
+    <None Include="content\gumproject\screens\wrapupscreengum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>WrapUpScreenGum</Name>
     </None>
     <None Include="content\gumproject\standards\circle.gutx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
