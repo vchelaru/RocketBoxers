@@ -56,7 +56,7 @@ namespace RocketBoxers.Entities
 
             if (isActive)
             {
-                if (!player.IsInvincible)
+                if (!player.IsInvincible && !player.IsFalling)
                 {
 
                     //Check if the player has been hit

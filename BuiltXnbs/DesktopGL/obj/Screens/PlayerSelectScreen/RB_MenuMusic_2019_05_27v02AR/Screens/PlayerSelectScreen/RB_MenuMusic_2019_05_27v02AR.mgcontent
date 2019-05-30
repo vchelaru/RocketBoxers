@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Administrator/Documents/GitHub/RocketBoxers/RocketBoxers/Content/Screens/PlayerSelectScreen/RB_MenuMusic_2019_05_27v02AR.mp3</SourceFile>
-  <SourceTime>2019-05-29T22:44:10.6430945-05:00</SourceTime>
-  <DestFile>C:/Users/Administrator/Documents/GitHub/RocketBoxers/BuiltXnbs/DesktopGL/Screens/PlayerSelectScreen/RB_MenuMusic_2019_05_27v02AR.xnb</DestFile>
-  <DestTime>2019-05-29T22:44:34.6196681-05:00</DestTime>
+  <SourceFile>C:/Users/blay4/Documents/FRBProjects/Games/RocketBoxers/RocketBoxers/Content/Screens/PlayerSelectScreen/RB_MenuMusic_2019_05_27v02AR.mp3</SourceFile>
+  <SourceTime>2019-05-29T21:57:59.7100516-06:00</SourceTime>
+  <DestFile>C:/Users/blay4/Documents/FRBProjects/Games/RocketBoxers/BuiltXnbs/DesktopGL/Screens/PlayerSelectScreen/RB_MenuMusic_2019_05_27v02AR.xnb</DestFile>
+  <DestTime>2019-05-29T21:59:14.6977004-06:00</DestTime>
   <Importer>Mp3Importer</Importer>
-  <ImporterTime>2019-03-05T16:23:08-06:00</ImporterTime>
+  <ImporterTime>2017-03-01T08:05:36-07:00</ImporterTime>
   <Processor>SongProcessor</Processor>
-  <ProcessorTime>2019-03-05T16:23:08-06:00</ProcessorTime>
+  <ProcessorTime>2017-03-01T08:05:36-07:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/Administrator/Documents/GitHub/RocketBoxers/BuiltXnbs/DesktopGL/Screens/PlayerSelectScreen/RB_MenuMusic_2019_05_27v02AR.ogg</string>
+    <string>C:/Users/blay4/Documents/FRBProjects/Games/RocketBoxers/BuiltXnbs/DesktopGL/Screens/PlayerSelectScreen/RB_MenuMusic_2019_05_27v02AR.ogg</string>
   </BuildOutput>
 </PipelineBuildEvent>

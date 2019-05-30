@@ -214,7 +214,9 @@
       <DependentUpon>WrapUpRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\WrapUpScreenGumRuntime.cs" />
-    <Compile Include="GumRuntimes\WrapUpScreenGumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\WrapUpScreenGumRuntime.Generated.cs">
+      <DependentUpon>WrapUpScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Input\UiInputDevice.cs" />
     <Compile Include="Messages\ClaimEntityMessage.Generated.cs" />
     <Compile Include="Network\NetworkLogger.cs" />

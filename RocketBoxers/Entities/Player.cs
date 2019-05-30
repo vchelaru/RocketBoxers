@@ -9,6 +9,7 @@ using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace RocketBoxers.Entities
 {
@@ -152,6 +153,7 @@ namespace RocketBoxers.Entities
 
         private void InitilizeAttackSpriteController()
         {
+            AttackEffectSprite.Animate = false;
             attackSpriteAnimationController = new AnimationController(AttackEffectSprite);
 
             var attackEffectDefaultLayer = new AnimationLayer();
@@ -159,6 +161,10 @@ namespace RocketBoxers.Entities
             attackSpriteAnimationController.Layers.Add(attackEffectDefaultLayer);
 
             attackEffectAnimationLayer = new AnimationLayer();
+            attackEffectAnimationLayer.OnAnimationFinished = () =>
+            {
+                AttackEffectSprite.Animate = false;
+            };
             attackSpriteAnimationController.Layers.Add(attackEffectAnimationLayer);
         }
 
@@ -271,6 +277,7 @@ namespace RocketBoxers.Entities
                 {
                     attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
                     SetMovement(DataTypes.TopDownValues.Attacking);
+                    AttackEffectSprite.Animate = true;
                 }
                 else if (dashInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
                 {
@@ -281,6 +288,8 @@ namespace RocketBoxers.Entities
                 {
                     BeginSpecialAttack();
                     SetMovement(DataTypes.TopDownValues.SpecialAttack);
+                    AttackEffectSprite.Animate = true;
+
                 }
             }
         }
@@ -291,9 +300,22 @@ namespace RocketBoxers.Entities
             var chainName = MakeAnimationChainName("Dash");
             var movement = TopDownValues[DataTypes.TopDownValues.DashAttack];
             attackHoldAnimationLayer.PlayDuration(chainName, movement.DecelerationTime);
-
+            
             SetAttackOffset(attackData.CollisionOffset);
             CreateAttackDamageArea(attackData, movement.DecelerationTime);
+
+            var newDustEffect = SpriteManager.AddParticleSprite(tilesheet);
+            if (LayerProvidedByContainer != null)
+            {
+                SpriteManager.AddToLayer(newDustEffect, this.LayerProvidedByContainer);
+            }
+            newDustEffect.AnimationChains = AttackAnimations;
+            newDustEffect.CurrentChainName = "Dash";
+            newDustEffect.TextureScale = 1;
+            newDustEffect.Position = Position;
+            newDustEffect.Animate = true;
+
+            this.Call(() => { SpriteManager.RemoveSprite(newDustEffect); }).After(newDustEffect.CurrentChain.TotalLength);
         }
 
         private void BeginBasicAttack()

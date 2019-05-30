@@ -4,9 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/blay4/Documents/FRBProjects/Games/RocketBoxers/RocketBoxers/Content/Screens/TestLevel1/RB_BattleMusic1_2019_05_29v04AR.mp3</File>
     <File>C:/Users/Administrator/Documents/GitHub/RocketBoxers/RocketBoxers/Content/Screens/TestLevel1/RB_BattleMusic1_2019_05_29v04AR.mp3</File>
   </SourceFiles>
-  <DestFiles>
-    <File xsi:nil="true" />
-  </DestFiles>
 </SourceFileCollection>
