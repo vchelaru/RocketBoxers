@@ -56,6 +56,7 @@ namespace RocketBoxers.Entities
         public bool IsInvincible { get; private set; }
         double fallStart = 0;
         float defaultTextureScale;
+        bool isPostHitRecovery = false;
 
         static List<AnimationChainList> AllAnimationChains;
 
@@ -219,7 +220,7 @@ namespace RocketBoxers.Entities
             getHitAnimationLayer.OnAnimationFinished = () =>
             {
                 SetMovement(DataTypes.TopDownValues.Normal);
-                InputEnabled = false;
+                this.Call(() => { isPostHitRecovery = false; }).After(PostHitRecoveryDuration);
             };
             animationController.Layers.Add(getHitAnimationLayer);
 
@@ -246,7 +247,6 @@ namespace RocketBoxers.Entities
             animationController.Activity();
 
             attackSpriteAnimationController.Activity();
-
             DoInvisincibilityActivity();
         }
 
@@ -270,7 +270,7 @@ namespace RocketBoxers.Entities
                 if (attackInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
                 {
                     attackAnimationLayer.PlayOnce(MakeAnimationChainName("Attack"));
-                    SetMovement(DataTypes.TopDownValues.Stopped);
+                    SetMovement(DataTypes.TopDownValues.Attacking);
                 }
                 else if (dashInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
                 {
@@ -280,7 +280,7 @@ namespace RocketBoxers.Entities
                 else if (specialAttackInpt.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
                 {
                     BeginSpecialAttack();
-                    SetMovement(DataTypes.TopDownValues.Stopped);
+                    SetMovement(DataTypes.TopDownValues.SpecialAttack);
                 }
             }
         }
@@ -358,6 +358,7 @@ namespace RocketBoxers.Entities
 
                     var launchDirection = TopDownDirectionExtensions.FromDirection(new Vector2(launchVector.X, launchVector.Y), PossibleDirections.EightWay);
                     mDirectionFacing = TopDownDirectionExtensions.Mirror(launchDirection);
+                    isPostHitRecovery = true;
                 }
                 else
                 {

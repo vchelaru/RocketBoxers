@@ -100,7 +100,7 @@ namespace RocketBoxers.Screens
         {
             player.TryToRespawn();
 
-
+            RefreshDamageDisplay(player);
         }
 
         private void InitializeCollisions()
