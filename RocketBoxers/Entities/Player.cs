@@ -53,10 +53,9 @@ namespace RocketBoxers.Entities
 
         public bool IsFalling { get; private set; }
 
-        public bool IsInvincible => isInvincible;
-        bool isInvincible = false;
+        public bool IsInvincible { get; private set; }
         double fallStart = 0;
-        Vector2 fallingSpriteScale;
+        float defaultTextureScale;
 
         static List<AnimationChainList> AllAnimationChains;
 
@@ -84,8 +83,6 @@ namespace RocketBoxers.Entities
             this.PossibleDirections = PossibleDirections.EightWay;
 
             InitializeAnimations();
-
-            InputEnabled = !DEBUG_IgnoreInput;
         }
 
         public void InitializeInputFrom(object inputDevice)
@@ -128,11 +125,8 @@ namespace RocketBoxers.Entities
         {
             InitilizeSpriteInstanceController();
             InitilizeAttackSpriteController();
-            //To manually scale the sprite to simulate falling we calculate the scale of the first frame of the falling animation.
-            //This is kinda gross but has to be done for the monthly timeframe.
-            var fallingFirstFrame = YellowCharacterAnimations["Falling"][0];
-            fallingSpriteScale.X = (fallingFirstFrame.RightCoordinate - fallingFirstFrame.LeftCoordinate) * fallingFirstFrame.Texture.Width * .5f;
-            fallingSpriteScale.Y = (fallingFirstFrame.BottomCoordinate - fallingFirstFrame.TopCoordinate)* fallingFirstFrame.Texture.Height * .5f;
+
+            defaultTextureScale = SpriteInstance.TextureScale;
         }
 
         public void SetAnimationsFromPlayerIndex(int index)
@@ -225,8 +219,7 @@ namespace RocketBoxers.Entities
             getHitAnimationLayer.OnAnimationFinished = () =>
             {
                 SetMovement(DataTypes.TopDownValues.Normal);
-                if (DEBUG_IgnoreInput)
-                    InputEnabled = false;
+                InputEnabled = false;
             };
             animationController.Layers.Add(getHitAnimationLayer);
 
@@ -249,9 +242,25 @@ namespace RocketBoxers.Entities
             //Uncomment once animations are created.
             if (!DEBUG_IgnoreInput)
                 InputActivity();
+
             animationController.Activity();
+
             attackSpriteAnimationController.Activity();
 
+            DoInvisincibilityActivity();
+        }
+
+        private void DoInvisincibilityActivity()
+        {
+            if(IsInvincible)
+            {
+                var currentTimeInt = ((int)(TimeManager.CurrentTime * FlashesPerSecondWhenInvincible));
+                this.SpriteInstance.Visible = currentTimeInt % 2 == 0;
+            }
+            else
+            {
+                this.SpriteInstance.Visible = true;
+            }
         }
 
         private void InputActivity()
@@ -387,15 +396,16 @@ namespace RocketBoxers.Entities
             fallStart = 0;
             X = currentSpawnArea.X;
             Y = currentSpawnArea.Y;
-            isInvincible = true;
+            IsInvincible = true;
             currentSpawnArea = null;
             IsOnGround = true;
+            SpriteInstance.TextureScale = defaultTextureScale;
 
             ForceUpdateDependenciesDeep();
 
             this.Call(() => 
             {
-                isInvincible = false;
+                IsInvincible = false;
             }).After(RespawnInvincibilityTime);
         }
 
@@ -466,10 +476,9 @@ namespace RocketBoxers.Entities
             if(fallingAnimationLayer.HasPriority)
             {
                 var seconds = FlatRedBall.Screens.ScreenManager.CurrentScreen.PauseAdjustedSecondsSince(fallStart);
-                var firstRatio = seconds / FallingDuration;
-                var ratio = (float)Math.Max(1 - firstRatio, 0);
-                SpriteInstance.ScaleX = fallingSpriteScale.X * ratio;
-                SpriteInstance.ScaleY = fallingSpriteScale.Y * ratio;
+                var fallingRatio = seconds / FallingDuration;
+                var textureRatio = (float)Math.Max(1 - fallingRatio, 0);
+                SpriteInstance.TextureScale = defaultTextureScale * textureRatio;
             }
         }
 

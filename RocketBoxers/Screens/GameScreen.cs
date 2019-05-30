@@ -38,6 +38,8 @@ namespace RocketBoxers.Screens
             InitializeCollisions();
 
             InitializeUi();
+
+            SpriteManager.OrderedSortType = FlatRedBall.Graphics.SortType.ZSecondaryParentY;
         }
 
         private void InitializeUi()
@@ -119,7 +121,6 @@ namespace RocketBoxers.Screens
 
         #endregion
 
-
         #region Activity
 
         void CustomActivity(bool firstTimeCalled)
@@ -127,7 +128,28 @@ namespace RocketBoxers.Screens
             CollisionActivity();
 
             DebugActivity();
+
+            DoEndLevelActivity();
 		}
+
+        private void DoEndLevelActivity()
+        {
+            var numberOfLivingPlayers = PlayerList.Count(item => item.StockCount > 0);
+
+            if(PlayerList.Count == 1 && numberOfLivingPlayers == 0)
+            {
+                DoEndLevel();
+            }
+            else if(PlayerList.Count > 1 && numberOfLivingPlayers < 2)
+            {
+                DoEndLevel();
+            }
+        }
+
+        private void DoEndLevel()
+        {
+            MoveToScreen(typeof(WrapUpScreen));
+        }
 
         private void DebugActivity()
         {
