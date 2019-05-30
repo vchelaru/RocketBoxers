@@ -53,8 +53,7 @@ namespace RocketBoxers.Entities
 
         public bool IsFalling { get; private set; }
 
-        public bool IsInvincible => isInvincible || fallingAnimationLayer.HasPriority;
-        bool isInvincible = false;
+        public bool IsInvincible { get; private set; }
         double fallStart = 0;
         float defaultTextureScale;
         bool isPostHitRecovery = false;
@@ -241,10 +240,27 @@ namespace RocketBoxers.Entities
 
         private void CustomActivity()
 		{
+            //Uncomment once animations are created.
+            if (!DEBUG_IgnoreInput)
+                InputActivity();
 
-            InputActivity();
             animationController.Activity();
+
             attackSpriteAnimationController.Activity();
+            DoInvisincibilityActivity();
+        }
+
+        private void DoInvisincibilityActivity()
+        {
+            if(IsInvincible)
+            {
+                var currentTimeInt = ((int)(TimeManager.CurrentTime * FlashesPerSecondWhenInvincible));
+                this.SpriteInstance.Visible = currentTimeInt % 2 == 0;
+            }
+            else
+            {
+                this.SpriteInstance.Visible = true;
+            }
         }
 
         private void InputActivity()
@@ -381,7 +397,7 @@ namespace RocketBoxers.Entities
             fallStart = 0;
             X = currentSpawnArea.X;
             Y = currentSpawnArea.Y;
-            isInvincible = true;
+            IsInvincible = true;
             currentSpawnArea = null;
             IsOnGround = true;
             SpriteInstance.TextureScale = defaultTextureScale;
@@ -390,7 +406,7 @@ namespace RocketBoxers.Entities
 
             this.Call(() => 
             {
-                isInvincible = false;
+                IsInvincible = false;
             }).After(RespawnInvincibilityTime);
         }
 

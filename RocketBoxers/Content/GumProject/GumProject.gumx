@@ -32,6 +32,10 @@
     <Name>TitleScreenGum</Name>
     <ElementType>Screen</ElementType>
   </ScreenReference>
+  <ScreenReference>
+    <Name>WrapUpScreenGum</Name>
+    <ElementType>Screen</ElementType>
+  </ScreenReference>
   <ComponentReference>
     <Name>CharacterGrid</Name>
     <ElementType>Component</ElementType>
