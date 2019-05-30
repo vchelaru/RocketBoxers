@@ -425,16 +425,6 @@
           <Properties>
             <PropertySave>
               <Name>Type</Name>
-              <ValueAsString>bool</ValueAsString>
-            </PropertySave>
-          </Properties>
-          <Name>DEBUG_IgnoreInput</Name>
-          <Type>bool</Type>
-        </CustomVariable>
-        <CustomVariable>
-          <Properties>
-            <PropertySave>
-              <Name>Type</Name>
               <ValueAsString>float</ValueAsString>
             </PropertySave>
           </Properties>
