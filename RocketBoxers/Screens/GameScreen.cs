@@ -38,6 +38,8 @@ namespace RocketBoxers.Screens
             InitializeCollisions();
 
             InitializeUi();
+
+            SpriteManager.OrderedSortType = FlatRedBall.Graphics.SortType.ZSecondaryParentY;
         }
 
         private void InitializeUi()
@@ -118,7 +120,6 @@ namespace RocketBoxers.Screens
         }
 
         #endregion
-
 
         #region Activity
 
