@@ -153,6 +153,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>StockCount</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>WarpUpSats</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

@@ -20,6 +20,20 @@
         <string>GLUE</string>
       </Tags>
       <Source>GLUE</Source>
+      <CustomVariables>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>int</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>MaxStockCount</Name>
+          <Type>int</Type>
+          <DefaultValue xsi:type="xsd:int">4</DefaultValue>
+          <IsShared>true</IsShared>
+        </CustomVariable>
+      </CustomVariables>
       <Name>Screens\GameScreen</Name>
       <ReferencedFiles>
         <ReferencedFileSave>
