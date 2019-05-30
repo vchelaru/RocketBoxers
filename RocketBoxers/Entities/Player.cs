@@ -84,8 +84,6 @@ namespace RocketBoxers.Entities
             this.PossibleDirections = PossibleDirections.EightWay;
 
             InitializeAnimations();
-
-            InputEnabled = !DEBUG_IgnoreInput;
         }
 
         public void InitializeInputFrom(object inputDevice)
@@ -222,8 +220,7 @@ namespace RocketBoxers.Entities
             getHitAnimationLayer.OnAnimationFinished = () =>
             {
                 SetMovement(DataTypes.TopDownValues.Normal);
-                if (DEBUG_IgnoreInput)
-                    InputEnabled = false;
+                InputEnabled = false;
             };
             animationController.Layers.Add(getHitAnimationLayer);
 
@@ -243,9 +240,8 @@ namespace RocketBoxers.Entities
 
         private void CustomActivity()
 		{
-            //Uncomment once animations are created.
-            if (!DEBUG_IgnoreInput)
-                InputActivity();
+
+            InputActivity();
             animationController.Activity();
             attackSpriteAnimationController.Activity();
 

@@ -189,7 +189,9 @@
     </Compile>
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\StockCountRuntime.cs" />
-    <Compile Include="GumRuntimes\StockCountRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\StockCountRuntime.Generated.cs">
+      <DependentUpon>StockCountRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.cs" />
     <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.Generated.cs">
       <DependentUpon>TestScreenGumOnlyRuntime.cs</DependentUpon>
