@@ -79,6 +79,8 @@ namespace RocketBoxers.Screens
             {
                 var player = new Player();
 
+                player.RequestRespawn += HandleRequestRespawn;
+
                 player.X = 1000;
                 player.Y = -500 - 100;
                 player.TeamIndex = PlayerList.Count;
@@ -90,6 +92,13 @@ namespace RocketBoxers.Screens
 
                 this.PlayerList.Add(player);
             }
+        }
+
+        private void HandleRequestRespawn(Player player)
+        {
+            player.TryToRespawn();
+
+
         }
 
         private void InitializeCollisions()
@@ -136,7 +145,7 @@ namespace RocketBoxers.Screens
 
             foreach(var player in PlayerList)
             {
-                if(player.IsOnGround == false)
+                if(player.IsOnGround == false && player.IsFalling == false)
                 {
                     DoFallOff(player);
                 }

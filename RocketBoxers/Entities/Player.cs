@@ -51,6 +51,8 @@ namespace RocketBoxers.Entities
         static AnimationChainList P3Animations;
         static AnimationChainList P4Animations;
 
+        public bool IsFalling { get; private set; }
+
         public bool IsInvincible => isInvincible;
         bool isInvincible = false;
         double fallStart = 0;
@@ -66,6 +68,8 @@ namespace RocketBoxers.Entities
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
         /// added to managers will not have this method called.
         /// </summary>
+
+        public event Action<Player> RequestRespawn;
 
         #endregion
 
@@ -229,7 +233,7 @@ namespace RocketBoxers.Entities
             fallingAnimationLayer = new AnimationLayer();
             fallingAnimationLayer.OnAnimationFinished = () =>
             {
-                TryToRespawn();
+                RequestRespawn(this);
                 SetMovement(DataTypes.TopDownValues.Normal);
             };
             animationController.Layers.Add(fallingAnimationLayer);
@@ -358,6 +362,7 @@ namespace RocketBoxers.Entities
         {
             if (currentSpawnArea == null)
             {
+                IsFalling = true;
                 currentSpawnArea = respawnLocation;
                 foreach (var layer in animationController.Layers)
                 {
@@ -375,8 +380,9 @@ namespace RocketBoxers.Entities
             }
         }
 
-        private void TryToRespawn()
+        public void TryToRespawn()
         {
+            IsFalling = false;
             DamageTaken = 0;
             fallStart = 0;
             X = currentSpawnArea.X;
