@@ -214,7 +214,9 @@
       <DependentUpon>WrapUpRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\WrapUpScreenGumRuntime.cs" />
-    <Compile Include="GumRuntimes\WrapUpScreenGumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\WrapUpScreenGumRuntime.Generated.cs">
+      <DependentUpon>WrapUpScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Input\UiInputDevice.cs" />
     <Compile Include="Messages\ClaimEntityMessage.Generated.cs" />
     <Compile Include="Network\NetworkLogger.cs" />
@@ -349,6 +351,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>RB_BattleMusic1_2019_05_29v04AR</Name>
       <Link>content\screens\testlevel1\rb_battlemusic1_2019_05_29v04ar.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\titlescreen\rb_menumusic_2019_05_27v02ar.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_MenuMusic_2019_05_27v02AR</Name>
+      <Link>content\screens\titlescreen\rb_menumusic_2019_05_27v02ar.ogg</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\titlescreen\rb_menumusic_2019_05_27v02ar.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_MenuMusic_2019_05_27v02AR</Name>
+      <Link>content\screens\titlescreen\rb_menumusic_2019_05_27v02ar.xnb</Link>
     </None>
     <None Include="content\entities\player\attackanimations.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
