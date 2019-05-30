@@ -189,7 +189,9 @@
     </Compile>
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\StockCountRuntime.cs" />
-    <Compile Include="GumRuntimes\StockCountRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\StockCountRuntime.Generated.cs">
+      <DependentUpon>StockCountRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.cs" />
     <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.Generated.cs">
       <DependentUpon>TestScreenGumOnlyRuntime.cs</DependentUpon>
@@ -322,6 +324,26 @@
     <Content Include="Content\shader.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="..\builtxnbs\desktopgl\screens\playerselectscreen\rb_menumusic_2019_05_27v02ar.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_MenuMusic_2019_05_27v02AR</Name>
+      <Link>content\screens\playerselectscreen\rb_menumusic_2019_05_27v02ar.ogg</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\playerselectscreen\rb_menumusic_2019_05_27v02ar.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_MenuMusic_2019_05_27v02AR</Name>
+      <Link>content\screens\playerselectscreen\rb_menumusic_2019_05_27v02ar.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\testlevel1\rb_battlemusic1_2019_05_29v04ar.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_BattleMusic1_2019_05_29v04AR</Name>
+      <Link>content\screens\testlevel1\rb_battlemusic1_2019_05_29v04ar.ogg</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\testlevel1\rb_battlemusic1_2019_05_29v04ar.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_BattleMusic1_2019_05_29v04AR</Name>
+      <Link>content\screens\testlevel1\rb_battlemusic1_2019_05_29v04ar.xnb</Link>
+    </None>
     <None Include="content\entities\player\attackanimations.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>AttackAnimations</Name>
