@@ -188,6 +188,8 @@
       <DependentUpon>SelectScreenReadyRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\StockCountRuntime.cs" />
+    <Compile Include="GumRuntimes\StockCountRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.cs" />
     <Compile Include="GumRuntimes\TestScreenGumOnlyRuntime.Generated.cs">
       <DependentUpon>TestScreenGumOnlyRuntime.cs</DependentUpon>
@@ -459,6 +461,10 @@
     <None Include="content\gumproject\components\selectscreenready.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>selectscreenready</Name>
+    </None>
+    <None Include="content\gumproject\components\stockcount.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>stockcount</Name>
     </None>
     <None Include="content\gumproject\components\warpupsats.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

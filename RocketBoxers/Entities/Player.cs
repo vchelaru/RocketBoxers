@@ -58,6 +58,8 @@ namespace RocketBoxers.Entities
 
         static List<AnimationChainList> AllAnimationChains;
 
+        public int StockCount { get; set; }
+
         public bool IsOnGround { get; set; }
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).

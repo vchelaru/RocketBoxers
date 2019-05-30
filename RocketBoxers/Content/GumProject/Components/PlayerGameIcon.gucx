@@ -352,6 +352,30 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>StockContainer.Children Layout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>StockContainer.Height</Name>
+      <Value xsi:type="xsd:float">14</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>StockContainer.Width</Name>
+      <Value xsi:type="xsd:float">78</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>StockContainer.X</Name>
+      <Value xsi:type="xsd:float">70</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>X Origin</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -367,6 +391,30 @@
       <Type>PositionUnitType</Type>
       <Name>Y Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>StockCountInstance.Parent</Name>
+      <Value xsi:type="xsd:string">StockContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>StockCountInstance1.Parent</Name>
+      <Value xsi:type="xsd:string">StockContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>StockCountInstance2.Parent</Name>
+      <Value xsi:type="xsd:string">StockContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>StockCountInstance3.Parent</Name>
+      <Value xsi:type="xsd:string">StockContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <VariableList xsi:type="VariableListSaveOfString">
@@ -628,6 +676,31 @@
   <Instance>
     <Name>PlayerLabel</Name>
     <BaseType>Text</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>StockContainer</Name>
+    <BaseType>Container</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>StockCountInstance</Name>
+    <BaseType>StockCount</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>StockCountInstance1</Name>
+    <BaseType>StockCount</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>StockCountInstance2</Name>
+    <BaseType>StockCount</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>StockCountInstance3</Name>
+    <BaseType>StockCount</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

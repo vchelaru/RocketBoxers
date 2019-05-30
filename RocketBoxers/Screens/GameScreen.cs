@@ -27,6 +27,8 @@ namespace RocketBoxers.Screens
 
         #endregion
 
+        #region Initialize Methods
+
         void CustomInitialize()
         {
             AddInputDevicesIfEmpty();
@@ -49,6 +51,7 @@ namespace RocketBoxers.Screens
                 icon.CurrentPlayerColorState = (GumRuntimes.PlayerGameIconRuntime.PlayerColor)(PlayerInputDevices[i].Color);
 
                 icon.DisplayedPercentage = "0";
+                icon.SetStockCount(PlayerList[i].StockCount);
             }
         }
 
@@ -79,6 +82,7 @@ namespace RocketBoxers.Screens
                 player.X = 1000;
                 player.Y = -500 - 100;
                 player.TeamIndex = PlayerList.Count;
+                player.StockCount = MaxStockCount;
 
                 player.SetAnimationsFromPlayerIndex((int)device.Color);
 
@@ -103,6 +107,8 @@ namespace RocketBoxers.Screens
             var playerVsPlayerCollision = CollisionManager.Self.CreateRelationship(PlayerList, PlayerList);
             playerVsPlayerCollision.SetMoveCollision(1, 1);
         }
+
+        #endregion
 
 
         #region Activity
@@ -163,6 +169,13 @@ namespace RocketBoxers.Screens
 
             iconToUpdate.DisplayedPercentage = ((int)(player.DamageTaken * 100)).ToString();
         }
+        private void RefreshStockDisplay(Player player)
+        {
+            var index = PlayerList.IndexOf(player);
+            var iconToUpdate = GameHUDInstance.PlayerGameIcons[index];
+
+            iconToUpdate.SetStockCount(player.StockCount);
+        }
 
         private void DoFallOff(Player player)
         {
@@ -170,9 +183,17 @@ namespace RocketBoxers.Screens
 
             player.PerformFallOff(randomSpawn);
 
-            this.Call(() => RefreshDamageDisplay(player)).After(Player.FallingDuration);
+            this.Call(() =>
+            {
+                player.StockCount--;
+                RefreshDamageDisplay(player);
+
+                RefreshStockDisplay(player);
+
+            }).After(Player.FallingDuration);
 
         }
+
 
         #endregion
 
