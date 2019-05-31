@@ -4,9 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>E:/Projects/GothicVania/Game/Storyvania-master/RocketBoxers/RocketBoxers/Content/Screens/TitleScreen/RB_MenuMusic_2019_05_27v02AR.mp3</File>
     <File>C:/Users/Administrator/Documents/GitHub/RocketBoxers/RocketBoxers/Content/Screens/TitleScreen/RB_MenuMusic_2019_05_27v02AR.mp3</File>
   </SourceFiles>
-  <DestFiles>
-    <File xsi:nil="true" />
-  </DestFiles>
 </SourceFileCollection>

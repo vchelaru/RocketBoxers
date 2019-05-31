@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Administrator/Documents/GitHub/RocketBoxers/RocketBoxers/Content/Screens/TitleScreen/RB_MenuMusic_2019_05_27v02AR.mp3</SourceFile>
-  <SourceTime>2019-05-29T22:44:10.6430945-05:00</SourceTime>
-  <DestFile>C:/Users/Administrator/Documents/GitHub/RocketBoxers/BuiltXnbs/DesktopGL/Screens/TitleScreen/RB_MenuMusic_2019_05_27v02AR.xnb</DestFile>
-  <DestTime>2019-05-29T23:01:05.0953275-05:00</DestTime>
+  <SourceFile>E:/Projects/GothicVania/Game/Storyvania-master/RocketBoxers/RocketBoxers/Content/Screens/TitleScreen/RB_MenuMusic_2019_05_27v02AR.mp3</SourceFile>
+  <SourceTime>2019-05-30T00:46:49.3765988-04:00</SourceTime>
+  <DestFile>E:/Projects/GothicVania/Game/Storyvania-master/RocketBoxers/BuiltXnbs/DesktopGL/Screens/TitleScreen/RB_MenuMusic_2019_05_27v02AR.xnb</DestFile>
+  <DestTime>2019-05-30T00:48:10.1042161-04:00</DestTime>
   <Importer>Mp3Importer</Importer>
-  <ImporterTime>2019-03-05T16:23:08-06:00</ImporterTime>
+  <ImporterTime>2018-07-03T18:47:38-04:00</ImporterTime>
   <Processor>SongProcessor</Processor>
-  <ProcessorTime>2019-03-05T16:23:08-06:00</ProcessorTime>
+  <ProcessorTime>2018-07-03T18:47:38-04:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/Administrator/Documents/GitHub/RocketBoxers/BuiltXnbs/DesktopGL/Screens/TitleScreen/RB_MenuMusic_2019_05_27v02AR.ogg</string>
+    <string>E:/Projects/GothicVania/Game/Storyvania-master/RocketBoxers/BuiltXnbs/DesktopGL/Screens/TitleScreen/RB_MenuMusic_2019_05_27v02AR.ogg</string>
   </BuildOutput>
 </PipelineBuildEvent>

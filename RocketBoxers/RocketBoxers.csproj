@@ -99,6 +99,10 @@
       <DependentUpon>CharacterGridTileRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\CircleRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CityArenaBackgroundRuntime.cs" />
+    <Compile Include="GumRuntimes\CityArenaBackgroundRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CityArenaLightsRuntime.cs" />
+    <Compile Include="GumRuntimes\CityArenaLightsRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\CountdownRuntime.cs" />
@@ -378,6 +382,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>YellowCharacterAnimations</Name>
     </None>
+    <None Include="content\gumproject\arenatestsk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>arenatestsk</Name>
+    </None>
     <None Include="content\gumproject\characterselectbg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>characterselectbg</Name>
@@ -389,6 +397,14 @@
     <None Include="content\gumproject\components\charactergridtile.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>charactergridtile</Name>
+    </None>
+    <None Include="content\gumproject\components\cityarenabackground.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>cityarenabackground</Name>
+    </None>
+    <None Include="content\gumproject\components\cityarenalights.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>cityarenalights</Name>
     </None>
     <None Include="content\gumproject\components\countdown.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
