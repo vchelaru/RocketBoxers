@@ -337,6 +337,26 @@
     <Content Include="Content\shader.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="..\builtxnbs\desktopgl\screens\playerselectscreen\boom_blueplayer.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Boom_BluePlayer</Name>
+      <Link>content\screens\playerselectscreen\boom_blueplayer.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\playerselectscreen\boom_greenplayer.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Boom_GreenPlayer</Name>
+      <Link>content\screens\playerselectscreen\boom_greenplayer.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\playerselectscreen\boom_redplayer.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Boom_RedPlayer</Name>
+      <Link>content\screens\playerselectscreen\boom_redplayer.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\playerselectscreen\boom_yellowplayer.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Boom_YellowPlayer</Name>
+      <Link>content\screens\playerselectscreen\boom_yellowplayer.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\screens\playerselectscreen\rb_menumusic_2019_05_27v02ar.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>RB_MenuMusic_2019_05_27v02AR</Name>
@@ -346,6 +366,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>RB_MenuMusic_2019_05_27v02AR</Name>
       <Link>content\screens\playerselectscreen\rb_menumusic_2019_05_27v02ar.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\playerselectscreen\rb_pss_boom.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_PSS_Boom</Name>
+      <Link>content\screens\playerselectscreen\rb_pss_boom.xnb</Link>
     </None>
     <None Include="..\builtxnbs\desktopgl\screens\testlevel1\rb_battlemusic1_2019_05_29v04ar.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
