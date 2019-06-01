@@ -193,6 +193,36 @@
           <RuntimeType>Microsoft.Xna.Framework.Media.Song</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Screens/PlayerSelectScreen/Boom_RedPlayer.wav</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Screens/PlayerSelectScreen/Boom_GreenPlayer.wav</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Screens/PlayerSelectScreen/Boom_YellowPlayer.wav</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Screens/PlayerSelectScreen/Boom_BluePlayer.wav</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Screens/PlayerSelectScreen/RB_PSS_Boom.wav</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
       </ReferencedFiles>
       <NamedObjects>
         <NamedObjectSave>

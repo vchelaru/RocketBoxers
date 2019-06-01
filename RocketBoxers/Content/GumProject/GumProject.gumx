@@ -45,10 +45,6 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
-    <Name>CityArenaBackground</Name>
-    <ElementType>Component</ElementType>
-  </ComponentReference>
-  <ComponentReference>
     <Name>CityArenaLights</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
