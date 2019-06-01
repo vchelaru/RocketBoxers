@@ -45,6 +45,23 @@
       </ReferencedFiles>
       <NamedObjects>
         <NamedObjectSave>
+          <CustomProperty>
+            <Type>FlatRedBall.Graphics.SortType</Type>
+            <Member>SortType</Member>
+            <ValueAsInt>4</ValueAsInt>
+          </CustomProperty>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>Layer</SourceClassType>
+          <InstanceName>PlayerLayer</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+          <LayerOn>HudLayer</LayerOn>
+          <Is2D>true</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
           <SourceType>FlatRedBallType</SourceType>
           <SourceFile />
           <SourceName />
@@ -630,11 +647,6 @@
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
         <NamedObjectSave>
-          <CustomProperty>
-            <Type>float</Type>
-            <Member>Z</Member>
-            <ValueAsFloat>0.1</ValueAsFloat>
-          </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
             <Member>TextureScale</Member>

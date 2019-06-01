@@ -17,7 +17,7 @@ using RocketBoxers.Input;
 
 namespace RocketBoxers.Screens
 {
-	public partial class GameScreen
+    public partial class GameScreen
 	{
         #region Fields/Properties
 
@@ -92,6 +92,8 @@ namespace RocketBoxers.Screens
 
                 player.InitializeInputFrom(device.BackingObject);
 
+                player.MoveToLayer(PlayerLayer);
+
                 this.PlayerList.Add(player);
             }
         }
@@ -130,7 +132,7 @@ namespace RocketBoxers.Screens
             DebugActivity();
 
             DoEndLevelActivity();
-		}
+        }
 
         private void DoEndLevelActivity()
         {

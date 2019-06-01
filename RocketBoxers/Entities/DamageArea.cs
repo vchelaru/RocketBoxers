@@ -29,7 +29,6 @@ namespace RocketBoxers.Entities
         /// </summary>
 		private void CustomInitialize()
 		{
-            Collision.Visible = true;
 		}
 
 		private void CustomActivity()
@@ -42,9 +41,13 @@ namespace RocketBoxers.Entities
             // Deal launching damage on any remaining hits
             foreach(var hitPlayers in damagedPlayers)
             {
-                if(hitPlayers.Value.RemainingHits > 0)
+                //Only perform last hit if a plyer is still colliding with the collision
+                if (this.CollideAgainst(hitPlayers.Key))
                 {
-                    hitPlayers.Key.TakeHit(AttackData, OwningPlayer.Position, true);
+                    if (hitPlayers.Value.RemainingHits > 0)
+                    {
+                        hitPlayers.Key.TakeHit(AttackData, OwningPlayer.Position, true);
+                    }
                 }
             }
 
