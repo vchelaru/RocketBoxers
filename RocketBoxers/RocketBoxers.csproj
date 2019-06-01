@@ -99,7 +99,6 @@
       <DependentUpon>CharacterGridTileRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\CircleRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\CityArenaBackgroundRuntime.cs" />
     <Compile Include="GumRuntimes\CityArenaLightsRuntime.cs" />
     <Compile Include="GumRuntimes\CityArenaLightsRuntime.Generated.cs">
       <DependentUpon>CityArenaLightsRuntime.cs</DependentUpon>
