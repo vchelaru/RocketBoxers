@@ -6,3 +6,4 @@ RocketBoxers/bin/
 *.aeproperties
 *.Generated.Event.cs
 
+BuiltXnbs/DesktopGL/obj/

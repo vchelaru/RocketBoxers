@@ -17,6 +17,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ScreenLocationState</Type>
+      <Name>ScreenLocationState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>State</Type>
       <Name>State</Name>
       <SetsValue>true</SetsValue>
@@ -148,12 +153,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>VerticalAlignment</Type>
       <Name>Y Origin</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -166,6 +165,36 @@
       <SetsValue>true</SetsValue>
     </Variable>
   </State>
+  <Category>
+    <Name>ScreenLocation</Name>
+    <State>
+      <Name>Off</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>WarpUpSatsInstance.Y</Name>
+        <Value xsi:type="xsd:float">-520</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>WarpUpSatsInstance1.Y</Name>
+        <Value xsi:type="xsd:float">-520</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>WarpUpSatsInstance2.Y</Name>
+        <Value xsi:type="xsd:float">-520</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>WarpUpSatsInstance3.Y</Name>
+        <Value xsi:type="xsd:float">-520</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>WarpUpSatsInstance</Name>
     <BaseType>WarpUpSats</BaseType>

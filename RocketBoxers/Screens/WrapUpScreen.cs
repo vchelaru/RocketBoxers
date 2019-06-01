@@ -11,8 +11,7 @@ using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
-
-
+using Gum.Wireframe;
 
 namespace RocketBoxers.Screens
 {
@@ -21,11 +20,37 @@ namespace RocketBoxers.Screens
 
 		void CustomInitialize()
 		{
+            InitializeUi();
+
+            // give it time to load:
+            WrapUpInstance.CurrentScreenLocationState = GumRuntimes.WrapUpRuntime.ScreenLocation.Off;
+            this.Call(() =>
+            {
+                WrapUpInstance.AnimateInStatsAnimation.Play();
 
 
+            }).After(.6f);
 		}
 
-		void CustomActivity(bool firstTimeCalled)
+        private void InitializeUi()
+        {
+            var numberOfPlayers = GameScreen.PlayerInputDevices.Count;
+
+            if(numberOfPlayers == 0)
+            {
+                numberOfPlayers = 2;// for debugging
+            }
+
+            var children = WrapUpInstance.Children;
+
+            for(int i = 0; i < children.Count; i++)
+            {
+                (children[i] as GraphicalUiElement).Visible =
+                    i < numberOfPlayers;
+            }
+        }
+
+        void CustomActivity(bool firstTimeCalled)
 		{
 
 

@@ -100,9 +100,13 @@
     </Compile>
     <Compile Include="GumRuntimes\CircleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\CityArenaBackgroundRuntime.cs" />
-    <Compile Include="GumRuntimes\CityArenaBackgroundRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CityArenaBackgroundRuntime.Generated.cs">
+      <DependentUpon>CityArenaBackgroundRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\CityArenaLightsRuntime.cs" />
-    <Compile Include="GumRuntimes\CityArenaLightsRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CityArenaLightsRuntime.Generated.cs">
+      <DependentUpon>CityArenaLightsRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\CountdownRuntime.cs" />
@@ -381,10 +385,6 @@
     <None Include="content\entities\player\yellowcharacteranimations.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>YellowCharacterAnimations</Name>
-    </None>
-    <None Include="content\gumproject\arenatestsk.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>arenatestsk</Name>
     </None>
     <None Include="content\gumproject\characterselectbg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

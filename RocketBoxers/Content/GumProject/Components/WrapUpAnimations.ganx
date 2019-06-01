@@ -4,7 +4,14 @@
     <AnimationSave>
       <Loops>false</Loops>
       <Name>AnimateInStats</Name>
-      <States />
+      <States>
+        <AnimatedStateSave>
+          <StateName>ScreenLocation/Off</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
       <Animations>
         <AnimationReferenceSave>
           <Name>WarpUpSatsInstance.SlideDown</Name>
