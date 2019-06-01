@@ -100,9 +100,6 @@
     </Compile>
     <Compile Include="GumRuntimes\CircleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\CityArenaBackgroundRuntime.cs" />
-    <Compile Include="GumRuntimes\CityArenaBackgroundRuntime.Generated.cs">
-      <DependentUpon>CityArenaBackgroundRuntime.cs</DependentUpon>
-    </Compile>
     <Compile Include="GumRuntimes\CityArenaLightsRuntime.cs" />
     <Compile Include="GumRuntimes\CityArenaLightsRuntime.Generated.cs">
       <DependentUpon>CityArenaLightsRuntime.cs</DependentUpon>
@@ -397,10 +394,6 @@
     <None Include="content\gumproject\components\charactergridtile.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>charactergridtile</Name>
-    </None>
-    <None Include="content\gumproject\components\cityarenabackground.gucx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>cityarenabackground</Name>
     </None>
     <None Include="content\gumproject\components\cityarenalights.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
