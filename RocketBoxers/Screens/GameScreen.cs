@@ -62,14 +62,13 @@ namespace RocketBoxers.Screens
             // this means the game is skipping the join screen
             if(PlayerInputDevices.Count == 0)
             {
-                var inputDevice = new UiInputDevice();
+                var inputDevice = UiInputDevice.FromKeyboard();
                 inputDevice.Color = PlayerColor.Yellow;
-                inputDevice.BackingObject = InputManager.Keyboard;
                 PlayerInputDevices.Add(inputDevice);
 
-                inputDevice = new UiInputDevice();
+                inputDevice = UiInputDevice.FromGamepad(
+                    InputManager.Xbox360GamePads[0]);
                 inputDevice.Color = PlayerColor.Red;
-                inputDevice.BackingObject = InputManager.Xbox360GamePads[0];
                 PlayerInputDevices.Add(inputDevice);
 
             }

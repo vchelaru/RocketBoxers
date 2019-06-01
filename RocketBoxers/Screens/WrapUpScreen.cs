@@ -12,11 +12,13 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
 using Gum.Wireframe;
+using RocketBoxers.GumRuntimes;
 
 namespace RocketBoxers.Screens
 {
 	public partial class WrapUpScreen
 	{
+        List<WarpUpSatsRuntime> statsRuntime = new List<WarpUpSatsRuntime>();
 
 		void CustomInitialize()
 		{
@@ -36,24 +38,42 @@ namespace RocketBoxers.Screens
         {
             var numberOfPlayers = GameScreen.PlayerInputDevices.Count;
 
-            if(numberOfPlayers == 0)
-            {
-                numberOfPlayers = 2;// for debugging
-            }
-
             var children = WrapUpInstance.Children;
 
-            for(int i = 0; i < children.Count; i++)
+            statsRuntime = children
+                .Select(item => item as WarpUpSatsRuntime)
+                .ToList();
+
+            for(int i = 0; i < statsRuntime.Count; i++)
             {
-                (children[i] as GraphicalUiElement).Visible =
+                statsRuntime[i].Visible =
                     i < numberOfPlayers;
+
+                if(i < GameScreen.PlayerInputDevices.Count)
+                {
+                    statsRuntime[i].Device = GameScreen.PlayerInputDevices[i];
+                }
             }
         }
 
         void CustomActivity(bool firstTimeCalled)
 		{
+            var areAllReady = statsRuntime
+                .Where(item => item.Visible)
+                .All(item => item.IsReady);
+
+            var didAnyPush = statsRuntime.Any(item => item.Device?.Confirm.WasJustPressed == true);
+
+            if(areAllReady && didAnyPush)
+            {
+                MoveToScreen(typeof(PlayerSelectScreen));
+            }
 
 
+            foreach(var item in statsRuntime)
+            {
+                item.CustomActivity();
+            }
 		}
 
 		void CustomDestroy()

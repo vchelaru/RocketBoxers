@@ -81,5 +81,18 @@ namespace RocketBoxers.Input
             return toReturn;
 
         }
+
+        public void Clear()
+        {
+            if(BackingObject is FlatRedBall.Input.Keyboard keyboard)
+            {
+                keyboard.Clear();
+            }
+            else if(BackingObject is Xbox360GamePad gamePad)
+            {
+                gamePad.Clear();
+            }
+        }
+
     }
 }
