@@ -41,9 +41,28 @@ namespace RocketBoxers.Screens
 
             InitializeUi();
 
-            JoinedInputDevices = new List<UiInputDevice>();
+            InitializeJoinedInputDevices();
 
 		}
+
+        private void InitializeJoinedInputDevices()
+        {
+            JoinedInputDevices = new List<UiInputDevice>();
+
+            if(GameScreen.PlayerInputDevices.Count > 0)
+            {
+                foreach(var device in GameScreen.PlayerInputDevices)
+                {
+                    var matchingReference = AllInputDevices.FirstOrDefault(item => item.BackingObject == device.BackingObject);
+
+                    matchingReference.Color = device.Color;
+
+                    var marker = JoinWith(matchingReference);
+
+                    marker.SetIndex((int)device.Color);
+                }
+            }
+        }
 
         private void InitializeUi()
         {
@@ -138,7 +157,7 @@ namespace RocketBoxers.Screens
             }
         }
 
-        private void JoinWith(UiInputDevice device)
+        private SelectionMarkerRuntime JoinWith(UiInputDevice device)
         {
             var firstAvailableMarker = SelectionMarkers
                 .FirstOrDefault(item => 
@@ -163,7 +182,7 @@ namespace RocketBoxers.Screens
                 firstAvailableFrame.CurrentCharacterSelectAnimationStatesState = SelectedCharacterFrameRuntime.CharacterSelectAnimationStates.NoSelection;
                 firstAvailableFrame.CharacterSelectionAnimation.Play();
             }
-
+            return firstAvailableMarker;
         }
 
         private void LockInActivity()

@@ -74,11 +74,11 @@ namespace RocketBoxers.GumRuntimes
 
             if(changed)
             {
-                if(column < 0)
+                if (column < 0)
                 {
                     column = columnCount - 1;
                 }
-                if(row < 0)
+                if (row < 0)
                 {
                     row = rowCount - 1;
                 }
@@ -86,31 +86,35 @@ namespace RocketBoxers.GumRuntimes
                 column = column % columnCount;
 
                 var newIndex = column + row * columnCount;
-
-                this.Parent = this.Parent.Parent.Children[newIndex];
-
-                SelectedCharacterIndex = newIndex;
-
-                switch (newIndex)
-                {
-                    case 0:
-                        CharacterFrame.CurrentCharacterNumberState = SelectedCharacterFrameRuntime.CharacterNumber.Character1;
-                        break;
-                    case 1:
-                        CharacterFrame.CurrentCharacterNumberState = SelectedCharacterFrameRuntime.CharacterNumber.Character2;
-                        break;
-                    case 2:
-                        CharacterFrame.CurrentCharacterNumberState = SelectedCharacterFrameRuntime.CharacterNumber.Character3;
-                        break;
-                    case 3:
-                        CharacterFrame.CurrentCharacterNumberState = SelectedCharacterFrameRuntime.CharacterNumber.Character4;
-                        break;
-                }
-
-                CharacterFrame.CharacterSelectionAnimation.Play();
+                SetIndex(newIndex);
             }
 
 
+        }
+
+        public void SetIndex(int newIndex)
+        {
+            this.Parent = this.Parent.Parent.Children[newIndex];
+
+            SelectedCharacterIndex = newIndex;
+
+            switch (newIndex)
+            {
+                case 0:
+                    CharacterFrame.CurrentCharacterNumberState = SelectedCharacterFrameRuntime.CharacterNumber.Character1;
+                    break;
+                case 1:
+                    CharacterFrame.CurrentCharacterNumberState = SelectedCharacterFrameRuntime.CharacterNumber.Character2;
+                    break;
+                case 2:
+                    CharacterFrame.CurrentCharacterNumberState = SelectedCharacterFrameRuntime.CharacterNumber.Character3;
+                    break;
+                case 3:
+                    CharacterFrame.CurrentCharacterNumberState = SelectedCharacterFrameRuntime.CharacterNumber.Character4;
+                    break;
+            }
+
+            CharacterFrame.CharacterSelectionAnimation.Play();
         }
     }
 }
