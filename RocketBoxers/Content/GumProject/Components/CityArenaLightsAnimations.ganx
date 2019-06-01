@@ -8,19 +8,37 @@
         <AnimatedStateSave>
           <StateName>SmallLightColorStates/blue</StateName>
           <Time>0</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <InterpolationType>Instant</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>SmallLightColorStates/white</StateName>
+          <Time>0.1</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>SmallLightColorStates/white</StateName>
           <Time>0.2</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <InterpolationType>Instant</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>SmallLightColorStates/blue</StateName>
+          <Time>0.3</Time>
+          <InterpolationType>Instant</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>SmallLightColorStates/blue</StateName>
+          <Time>0.4</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>SmallLightColorStates/white</StateName>
-          <Time>0.4</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <Time>0.5</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
@@ -29,21 +47,53 @@
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>BigLightsPinkToWhiteFlash</Name>
+      <States>
         <AnimatedStateSave>
-          <StateName>SmallLightColorStates/blue</StateName>
-          <Time>0.8</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <StateName>BigLightColorStates/pink</StateName>
+          <Time>0</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
-          <StateName>SmallLightColorStates/white</StateName>
-          <Time>1</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <StateName>BigLightColorStates/white</StateName>
+          <Time>0.1</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
-          <StateName>SmallLightColorStates/blue</StateName>
-          <Time>1.2</Time>
+          <StateName>BigLightColorStates/pink</StateName>
+          <Time>0.2</Time>
+          <InterpolationType>Instant</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>BigLightColorStates/white</StateName>
+          <Time>0.3</Time>
+          <InterpolationType>Instant</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>BigLightColorStates/pink</StateName>
+          <Time>0.4</Time>
+          <InterpolationType>Instant</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>BigLightColorStates/white</StateName>
+          <Time>0.5</Time>
+          <InterpolationType>Instant</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>BigLightColorStates/pink</StateName>
+          <Time>0.6</Time>
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>

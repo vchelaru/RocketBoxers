@@ -78,8 +78,6 @@ namespace RocketBoxers.Entities
 
         private void CustomInitialize()
 		{
-            //DELETE THIS AFTER SETTING UP LAYERS
-            this.Z = 10;
             this.InitializeInput();
             this.mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
             this.PossibleDirections = PossibleDirections.EightWay;

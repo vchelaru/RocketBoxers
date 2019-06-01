@@ -5,6 +5,11 @@
     <Name>Default</Name>
   </State>
   <Instance>
+    <Name>CityArenaLightsInstance</Name>
+    <BaseType>CityArenaLights</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
     <Name>GameHUDInstance</Name>
     <BaseType>GameHUD</BaseType>
     <DefinedByBase>false</DefinedByBase>
