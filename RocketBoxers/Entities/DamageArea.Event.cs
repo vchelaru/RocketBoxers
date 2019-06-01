@@ -22,11 +22,13 @@ namespace RocketBoxers.Entities
                     //Only use the x value for the radius
                     var circle = new Circle() { Radius = AttackData.CollisionDimensions.X };
                     this.Collision.Add(circle);
+                    ShapeManager.AddCircle(circle);
                     circle.AttachTo(this);
                     break;
                 case AttackCollisionShapeType.Rectangle:
                     var rectangle = new AxisAlignedRectangle() { Width = AttackData.CollisionDimensions.X, Height = AttackData.CollisionDimensions.Y };
                     this.Collision.Add(rectangle);
+                    ShapeManager.AddAxisAlignedRectangle(rectangle);
                     rectangle.AttachTo(this);
                     break;
             }

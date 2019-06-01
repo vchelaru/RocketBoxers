@@ -154,7 +154,12 @@ namespace RocketBoxers.Screens
 
         private void DebugActivity()
         {
-            //FlatRedBall.Debugging.Debugger.Write(DamageAreaList.Count);
+            string debugString = "";
+            foreach(var player in PlayerList)
+            {
+                debugString += $"Player {player.TeamIndex} - health {player.DamageTaken}\n";
+            }
+            FlatRedBall.Debugging.Debugger.Write(debugString);
         }
 
         private void CollisionActivity()

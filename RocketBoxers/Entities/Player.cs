@@ -38,7 +38,8 @@ namespace RocketBoxers.Entities
         AnimationController attackSpriteAnimationController;
         AnimationLayer attackEffectAnimationLayer;
 
-        private Vector3 effectSpriteRelativeOffset;
+        Vector3 effectSpriteRelativeOffset;
+        Vector3 collisionRelativeOffset;
 
         IPressableInput attackInput;
         IPressableInput specialAttackInpt;
@@ -303,7 +304,7 @@ namespace RocketBoxers.Entities
             var movement = TopDownValues[DataTypes.TopDownValues.DashAttack];
             attackHoldAnimationLayer.PlayDuration(chainName, movement.DecelerationTime);
             
-            SetAttackOffset(attackData.CollisionOffset);
+            SetAttackOffset(attackData);
             CreateAttackDamageArea(attackData, movement.DecelerationTime);
 
             var newDustEffect = SpriteManager.AddParticleSprite(tilesheet);
@@ -328,7 +329,7 @@ namespace RocketBoxers.Entities
             var effectChainName = MakeAnimationChainName("Flame");
             attackEffectAnimationLayer.PlayOnce(effectChainName);
 
-            SetAttackOffset(attackData.CollisionOffset);
+            SetAttackOffset(attackData);
             CreateAttackDamageArea(attackData, AttackAnimations[effectChainName].TotalLength);
 
         }
@@ -353,7 +354,7 @@ namespace RocketBoxers.Entities
             attackHoldAnimationLayer.PlayLoop("Special", attackData.AnimationLoopCount);
             attackEffectAnimationLayer.PlayLoop("FlameSpecial", attackData.AnimationLoopCount);
             AttackEffectSprite.CurrentFrameIndex = 0;
-            SetAttackOffset(attackData.CollisionOffset);
+            SetAttackOffset(attackData);
             CreateAttackDamageArea(attackData, AttackAnimations["FlameSpecial"].TotalLength, attackData.AnimationLoopCount);
         }
 
@@ -491,12 +492,13 @@ namespace RocketBoxers.Entities
             frameOffset.Y = AttackEffectSprite.CurrentChain[AttackEffectSprite.CurrentFrameIndex].RelativeY;
 
             var attackOffset = effectSpriteRelativeOffset + frameOffset;
+            AttackEffectSprite.RelativePosition = attackOffset + SpriteInstance.RelativePosition;
+
             if(currentAttackDamageArea != null)
             {
-                currentAttackDamageArea.Position = attackOffset + Position;
+                currentAttackDamageArea.Position = frameOffset + collisionRelativeOffset + Position;
             }
 
-            AttackEffectSprite.RelativePosition = attackOffset + SpriteInstance.RelativePosition;
 
             if(fallingAnimationLayer.HasPriority)
             {
@@ -532,7 +534,7 @@ namespace RocketBoxers.Entities
             return null;
         }
 
-        private void SetAttackOffset(Vector3 attackOffsets)
+        private void SetAttackOffset(DataTypes.AttackData attackData)
         {
             var direction = new Vector3();
 
@@ -565,7 +567,8 @@ namespace RocketBoxers.Entities
             }
 
             direction.Normalize();
-            effectSpriteRelativeOffset = direction * attackOffsets;
+            effectSpriteRelativeOffset = direction * attackData.EffectOffset;
+            collisionRelativeOffset = direction * attackData.CollisionOffset;
         }
 
         private void SetMovement(string movement)
