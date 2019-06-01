@@ -56,6 +56,7 @@ namespace RocketBoxers.Entities
 
         public bool IsInvincible { get; private set; }
         double fallStart = 0;
+        double invincibilityTimeStart = 0;
         float defaultTextureScale;
         bool isPostHitRecovery = false;
 
@@ -244,9 +245,10 @@ namespace RocketBoxers.Entities
 
         private void CustomActivity()
 		{
-            //Uncomment once animations are created.
-            if (!DEBUG_IgnoreInput)
+            if (!IsFalling)
+            {
                 InputActivity();
+            }
 
             animationController.Activity();
 
@@ -260,6 +262,8 @@ namespace RocketBoxers.Entities
             {
                 var currentTimeInt = ((int)(TimeManager.CurrentTime * FlashesPerSecondWhenInvincible));
                 this.SpriteInstance.Visible = currentTimeInt % 2 == 0;
+
+                IsInvincible = FlatRedBall.Screens.ScreenManager.CurrentScreen.PauseAdjustedSecondsSince(invincibilityTimeStart) < RespawnInvincibilityTime;
             }
             else
             {
@@ -407,6 +411,8 @@ namespace RocketBoxers.Entities
 
                 SetMovement(DataTypes.TopDownValues.Stopped);
                 fallingAnimationLayer.PlayDuration("Falling", FallingDuration);
+                ShadowSprite.Visible = false;
+                IsInvincible = false;
             }
         }
 
@@ -421,13 +427,11 @@ namespace RocketBoxers.Entities
             currentSpawnArea = null;
             IsOnGround = true;
             SpriteInstance.TextureScale = defaultTextureScale;
+            ShadowSprite.Visible = true;
+
+            invincibilityTimeStart = FlatRedBall.Screens.ScreenManager.CurrentScreen.PauseAdjustedCurrentTime;
 
             ForceUpdateDependenciesDeep();
-
-            this.Call(() => 
-            {
-                IsInvincible = false;
-            }).After(RespawnInvincibilityTime);
         }
 
         #endregion
