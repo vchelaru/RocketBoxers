@@ -154,7 +154,12 @@ namespace RocketBoxers.Screens
 
         private void DebugActivity()
         {
-            //FlatRedBall.Debugging.Debugger.Write(DamageAreaList.Count);
+            string debugString = "";
+            foreach(var player in PlayerList)
+            {
+                debugString += $"Player {player.TeamIndex} - health {player.DamageTaken}\n";
+            }
+            FlatRedBall.Debugging.Debugger.Write(debugString);
         }
 
         private void CollisionActivity()
@@ -199,7 +204,9 @@ namespace RocketBoxers.Screens
             var index = PlayerList.IndexOf(player);
             var iconToUpdate = GameHUDInstance.PlayerGameIcons[index];
 
-            iconToUpdate.DisplayedPercentage = ((int)(player.DamageTaken * 100)).ToString();
+            float damageMultiplied = player.DamageTaken * 100;
+            
+            iconToUpdate.DisplayedPercentage = Math.Ceiling(damageMultiplied).ToString();
         }
         private void RefreshStockDisplay(Player player)
         {

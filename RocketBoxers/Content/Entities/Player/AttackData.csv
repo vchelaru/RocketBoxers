@@ -1,4 +1,4 @@
-"Name (string, required)",DamageToDeal (float),HitsAllowed (int),DelayBetweenHits (float),HitReactMin (float),CollsionShapeType (RocketBoxers.Entities.AttackCollisionShapeType),AnimationLoopCount (int),CollisionDimensions (Vector3),CollisionOffset (Vector3)
-Attack,.01,1,0,.25,Rectangle,2,"new Vector3(X=32, Y=32)","new Vector3(X=16, Y=16)"
-Special,.03,4,.5,.25,Circle,4,"new Vector3(X=24, Y=5)","new Vector3(X=0, Y=0)"
-Dash,.05,1,0,.25,Circle,1,"new Vector3(X=16, Y =0)","new Vector3(X= 8, Y=8)"
+"Name (string, required)",DamageToDeal (float),HitsAllowed (int),DelayBetweenHits (float),HitReactMin (float),CollsionShapeType (RocketBoxers.Entities.AttackCollisionShapeType),AnimationLoopCount (int),CollisionDimensions (Vector3),EffectOffset (Vector3),CollisionOffset (Vector3)
+Attack,.01,1,0,.25,Rectangle,2,"new Vector3(X=32, Y=32)","new Vector3(X=16, Y=16)","new Vector3(X=18, Y=26)"
+Special,.03,4,.5,.25,Circle,4,"new Vector3(X=24, Y=5)","new Vector3(X=0, Y=0)","new Vector3(X=0, Y=10)"
+Dash,.02,1,.2,.25,Circle,1,"new Vector3(X=16, Y =0)","new Vector3(X= 8, Y=8)","new Vector3(X= 8, Y=8)"

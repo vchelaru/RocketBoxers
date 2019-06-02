@@ -75,9 +75,9 @@ namespace RocketBoxers.Entities
                     }
                     else if (CanDealDamage(player))
                     {
-                        canDealDamage = true;
                         currentHit = damagedPlayers[player];
                         currentHit.LastHitTime = lastHitTime;
+                        canDealDamage = currentHit.RemainingHits > 0;
                     }
 
                     if (canDealDamage)
