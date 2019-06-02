@@ -204,7 +204,9 @@ namespace RocketBoxers.Screens
             var index = PlayerList.IndexOf(player);
             var iconToUpdate = GameHUDInstance.PlayerGameIcons[index];
 
-            iconToUpdate.DisplayedPercentage = ((int)(player.DamageTaken * 100)).ToString();
+            float damageMultiplied = player.DamageTaken * 100;
+            
+            iconToUpdate.DisplayedPercentage = Math.Ceiling(damageMultiplied).ToString();
         }
         private void RefreshStockDisplay(Player player)
         {

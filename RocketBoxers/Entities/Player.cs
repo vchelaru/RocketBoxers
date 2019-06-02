@@ -211,6 +211,10 @@ namespace RocketBoxers.Entities
                     {
                         SetMovement(DataTypes.TopDownValues.Blocking);
                     }
+                    if(MovementInput.Magnitude > 0)
+                    {
+                        mDirectionFacing = TopDownDirectionExtensions.FromDirection(MovementInput.X, MovementInput.Y, PossibleDirections.EightWay);
+                    }
                     return MakeAnimationChainName("Block");
                 }
                 else if(blockInput.WasJustReleased)
