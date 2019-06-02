@@ -364,6 +364,8 @@ namespace RocketBoxers.Entities
 
         public void TakeHit(DataTypes.AttackData attackData, Vector3 attackerLocation, bool shouldLaunch)
         {
+            StopAllAnimations();
+
             var damageToDeal = blockInput.IsDown ? attackData.DamageToDeal * BaseBlockDamageReduction : attackData.DamageToDeal;
             DamageTaken += damageToDeal;
             if(currentAttackDamageArea != null)
@@ -397,16 +399,27 @@ namespace RocketBoxers.Entities
             }
         }
 
+        private void StopAllAnimations()
+        {
+            foreach (var layer in animationController.Layers)
+            {
+                layer.StopPlay();
+            }
+
+            foreach(var layer in attackSpriteAnimationController.Layers)
+            {
+                layer.StopPlay();
+            }
+        }
+
         public void PerformFallOff(Respawn respawnLocation)
         {
             if (currentSpawnArea == null)
             {
                 IsFalling = true;
                 currentSpawnArea = respawnLocation;
-                foreach (var layer in animationController.Layers)
-                {
-                    layer.StopPlay();
-                }
+                StopAllAnimations();
+
                 fallStart = FlatRedBall.Screens.ScreenManager.CurrentScreen.PauseAdjustedCurrentTime;
                 
                 XVelocity = 0;
