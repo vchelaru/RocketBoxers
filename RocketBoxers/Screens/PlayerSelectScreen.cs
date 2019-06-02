@@ -153,6 +153,8 @@ namespace RocketBoxers.Screens
                 if(possible.Confirm.WasJustPressed)
                 {
                     JoinWith(possible);
+
+                    TestForReadyOffAnimation();
                 }
             }
         }
@@ -219,6 +221,8 @@ namespace RocketBoxers.Screens
                     JoinedInputDevices.Remove(marker.InputDevice);
 
                     marker.InputDevice = null;
+
+                    TestForReadyOnAnimation();
                 }
             }
         }
