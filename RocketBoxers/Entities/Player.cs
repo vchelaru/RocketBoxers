@@ -31,6 +31,7 @@ namespace RocketBoxers.Entities
         AnimationController animationController;
         AnimationLayer attackHoldAnimationLayer;
         AnimationLayer attackAnimationLayer;
+        AnimationLayer stunAnimationlayer;
         AnimationLayer getHitAnimationLayer;
         AnimationLayer fallingAnimationLayer;
 
@@ -60,6 +61,8 @@ namespace RocketBoxers.Entities
         double invincibilityTimeStart = 0;
         float defaultTextureScale;
         bool isPostHitRecovery = false;
+
+        string lastAttack;
 
         DataTypes.TopDownValues normalMovement;
 
@@ -205,7 +208,7 @@ namespace RocketBoxers.Entities
             attackHoldAnimationLayer = new AnimationLayer();
             attackHoldAnimationLayer.OnAnimationFinished = () =>
             {
-                SetMovement(DataTypes.TopDownValues.Normal);
+                stunAnimationlayer.PlayDuration(MakeAnimationChainName("Attack", "Hold"), AttackData[lastAttack].StunTime);
             };
             animationController.Layers.Add(attackHoldAnimationLayer);
 
@@ -232,6 +235,13 @@ namespace RocketBoxers.Entities
                 return null;
             };
             animationController.Layers.Add(blockingLayer);
+
+            stunAnimationlayer = new AnimationLayer();
+            stunAnimationlayer.OnAnimationFinished = () =>
+            {
+                SetMovement(DataTypes.TopDownValues.Normal);
+            };
+            animationController.Layers.Add(stunAnimationlayer);
 
             getHitAnimationLayer = new AnimationLayer();
             getHitAnimationLayer.OnAnimationFinished = () =>
@@ -285,7 +295,7 @@ namespace RocketBoxers.Entities
 
         private void InputActivity()
         {
-            if (!blockInput.IsDown && !getHitAnimationLayer.HasPriority)
+            if (!blockInput.IsDown && !getHitAnimationLayer.HasPriority && !stunAnimationlayer.HasPriority)
             {
                 if (attackInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
                 {
@@ -311,6 +321,17 @@ namespace RocketBoxers.Entities
         private void BeginDashAttack()
         {
             var attackData = AttackData[DataTypes.AttackData.Dash];
+
+            //Set the movement to the current direction of the player input.
+            //We should allow this as a form of recovery to help players if they get launched faster than expected.
+            if (MovementInput.Magnitude > 0)
+            {
+                mDirectionFacing = TopDownDirectionExtensions.FromDirection(MovementInput.X, MovementInput.Y, PossibleDirections.EightWay);
+            }
+
+            XVelocity = 0;
+            YVelocity = 0;
+
             var chainName = MakeAnimationChainName("Dash");
             var movement = TopDownValues[DataTypes.TopDownValues.DashAttack];
             attackHoldAnimationLayer.PlayDuration(chainName, movement.DecelerationTime);
@@ -352,7 +373,8 @@ namespace RocketBoxers.Entities
             currentAttackDamageArea.AttackData = attackData;
             currentAttackDamageArea.TeamIndex = TeamIndex;
             currentAttackDamageArea.OwningPlayer = this;
-            
+
+            lastAttack = attackData.Name;
             this.Call(() =>
             {
                 newDamageArea.Destroy();
