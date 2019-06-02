@@ -61,6 +61,8 @@ namespace RocketBoxers.Entities
         float defaultTextureScale;
         bool isPostHitRecovery = false;
 
+        DataTypes.TopDownValues normalMovement;
+
         static List<AnimationChainList> AllAnimationChains;
 
         public int StockCount { get; set; }
@@ -83,6 +85,7 @@ namespace RocketBoxers.Entities
             this.InitializeInput();
             this.mCurrentMovement = TopDownValues[DataTypes.TopDownValues.Normal];
             this.PossibleDirections = PossibleDirections.EightWay;
+            normalMovement = TopDownValues[DataTypes.TopDownValues.Normal];
 
             InitializeAnimations();
         }
@@ -185,6 +188,10 @@ namespace RocketBoxers.Entities
             {
                 if (MovementInput.Magnitude > WalkingDeadzone)
                 {
+                    if(CurrentMovement != normalMovement)
+                    {
+                        mCurrentMovement = normalMovement;
+                    }
                     return MakeAnimationChainName("Walk");
                 }
                 return null;
@@ -229,7 +236,7 @@ namespace RocketBoxers.Entities
             getHitAnimationLayer = new AnimationLayer();
             getHitAnimationLayer.OnAnimationFinished = () =>
             {
-                SetMovement(DataTypes.TopDownValues.Normal);
+                SetMovement(DataTypes.TopDownValues.NormalNoFacingUpdate);
                 this.Call(() => { isPostHitRecovery = false; }).After(PostHitRecoveryDuration);
             };
             animationController.Layers.Add(getHitAnimationLayer);
@@ -375,20 +382,21 @@ namespace RocketBoxers.Entities
             ReactToDamage( attackData, attackerLocation, shouldLaunch);
         }
 
-        private void ReactToDamage(DataTypes.AttackData attackData, Vector3 colliderLocation, bool shouldLaunch)
+        private void ReactToDamage(DataTypes.AttackData attackData, Vector3 attackerLocation, bool shouldLaunch)
         {
+            var launchVector = Position - attackerLocation;
+            var launchDirection = TopDownDirectionExtensions.FromDirection(launchVector.X, launchVector.Y, PossibleDirections.EightWay);
+            mDirectionFacing = TopDownDirectionExtensions.Mirror(launchDirection);
             if (!blockInput.IsDown)
             {
                 var launchDuration = shouldLaunch ? OnDamageLaunchDuration * DamageTaken : attackData.HitReactMin;
                 if (shouldLaunch)
                 {
-                    var launchVector = Position - colliderLocation;
                     launchVector.Normalize();
                     Velocity = launchVector;
                     SetMovement(DataTypes.TopDownValues.Damaged);
 
-                    var launchDirection = TopDownDirectionExtensions.FromDirection(new Vector2(launchVector.X, launchVector.Y), PossibleDirections.EightWay);
-                    mDirectionFacing = TopDownDirectionExtensions.Mirror(launchDirection);
+                    
                     isPostHitRecovery = true;
                 }
                 else
@@ -396,6 +404,8 @@ namespace RocketBoxers.Entities
                     SetMovement(DataTypes.TopDownValues.Stopped);
                 }
                 getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
+                attackEffectAnimationLayer.PlayOnce(MakeAnimationChainName("DamageEffect"));
+                AttackEffectSprite.Animate = true;
             }
         }
 
