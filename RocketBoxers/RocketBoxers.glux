@@ -920,7 +920,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
-  <StartUpScreen>Screens\TestLevel1</StartUpScreen>
+  <StartUpScreen>Screens\TitleScreen</StartUpScreen>
   <ResolutionPresets />
   <PerformanceSettingsSave>
     <ThrowExceptionOnPostInitializeContentLoad>false</ThrowExceptionOnPostInitializeContentLoad>
