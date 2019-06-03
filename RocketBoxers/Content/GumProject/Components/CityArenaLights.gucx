@@ -256,7 +256,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight.Alpha</Name>
-      <Value xsi:type="xsd:int">100</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -293,7 +293,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight.Texture Left</Name>
-      <Value xsi:type="xsd:int">448</Value>
+      <Value xsi:type="xsd:int">480</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -359,7 +359,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight1.Alpha</Name>
-      <Value xsi:type="xsd:int">100</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -396,7 +396,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight1.Texture Left</Name>
-      <Value xsi:type="xsd:int">448</Value>
+      <Value xsi:type="xsd:int">480</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -462,7 +462,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight10.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -499,7 +499,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight10.Texture Left</Name>
-      <Value xsi:type="xsd:int">448</Value>
+      <Value xsi:type="xsd:int">480</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -565,7 +565,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight2.Alpha</Name>
-      <Value xsi:type="xsd:int">100</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -602,7 +602,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight2.Texture Left</Name>
-      <Value xsi:type="xsd:int">448</Value>
+      <Value xsi:type="xsd:int">480</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -668,7 +668,19 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight3.Alpha</Name>
-      <Value xsi:type="xsd:int">100</Value>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>GlowLight3.Blue</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>GlowLight3.Green</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -681,6 +693,12 @@
       <Type>DimensionUnitType</Type>
       <Name>GlowLight3.Height Units</Name>
       <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>GlowLight3.Red</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -705,7 +723,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight3.Texture Left</Name>
-      <Value xsi:type="xsd:int">448</Value>
+      <Value xsi:type="xsd:int">480</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -730,6 +748,12 @@
       <Type>DimensionUnitType</Type>
       <Name>GlowLight3.Width Units</Name>
       <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>GlowLight3.Wrap</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -874,7 +898,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight5.Alpha</Name>
-      <Value xsi:type="xsd:int">100</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -911,7 +935,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight5.Texture Left</Name>
-      <Value xsi:type="xsd:int">448</Value>
+      <Value xsi:type="xsd:int">480</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -977,7 +1001,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight6.Alpha</Name>
-      <Value xsi:type="xsd:int">100</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1014,7 +1038,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight6.Texture Left</Name>
-      <Value xsi:type="xsd:int">448</Value>
+      <Value xsi:type="xsd:int">480</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1080,7 +1104,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight7.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1117,7 +1141,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight7.Texture Left</Name>
-      <Value xsi:type="xsd:int">448</Value>
+      <Value xsi:type="xsd:int">480</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1183,7 +1207,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight8.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1220,7 +1244,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight8.Texture Left</Name>
-      <Value xsi:type="xsd:int">448</Value>
+      <Value xsi:type="xsd:int">480</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1286,7 +1310,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight9.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1323,7 +1347,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GlowLight9.Texture Left</Name>
-      <Value xsi:type="xsd:int">448</Value>
+      <Value xsi:type="xsd:int">480</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
