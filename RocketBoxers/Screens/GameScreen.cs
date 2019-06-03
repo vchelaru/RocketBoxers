@@ -40,6 +40,40 @@ namespace RocketBoxers.Screens
             InitializeUi();
 
             SpriteManager.OrderedSortType = FlatRedBall.Graphics.SortType.ZSecondaryParentY;
+
+            StartCountdown();
+        }
+
+        private void StartCountdown()
+        {
+            foreach(var player in PlayerList)
+            {
+                player.InputEnabled = false;
+            }
+
+            GameCountdownInstance.CurrentAnimationStatesState = GumRuntimes.GameCountdownRuntime.AnimationStates.ThreeStart;
+            this.Call(() =>
+            {
+                GameCountdownInstance.CountdownThreeAnimation.Play();
+                GameCountdownInstance.CountdownTwoAnimation.PlayAfter(1);
+                GameCountdownInstance.CountdownOneAnimation.PlayAfter(2);
+                GameCountdownInstance.CountdownGoAnimation.PlayAfter(3);
+
+                this.Call(() =>
+                {
+                    for(int i = 0; i < PlayerInputDevices.Count; i++)
+                    {
+                        var player = PlayerList[i];
+                        player.InitializeInputFrom(
+                            PlayerInputDevices[i].BackingObject);
+                        player.InputEnabled = true;
+                    }
+                }).After(3);
+
+            }).After(1);
+
+
+
         }
 
         private void InitializeUi()
@@ -89,9 +123,11 @@ namespace RocketBoxers.Screens
 
                 player.SetAnimationsFromPlayerIndex((int)device.Color);
 
-                player.InitializeInputFrom(device.BackingObject);
+                // don't do it yet, do it after the game starts:
+                //player.InitializeInputFrom(device.BackingObject);
 
                 player.MoveToLayer(PlayerLayer);
+                
 
                 this.PlayerList.Add(player);
             }

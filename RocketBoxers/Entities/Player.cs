@@ -215,7 +215,7 @@ namespace RocketBoxers.Entities
             var blockingLayer = new AnimationLayer();
             blockingLayer.EveryFrameAction = () =>
             {
-                if (blockInput.IsDown)
+                if (blockInput?.IsDown == true)
                 {
                     if (blockInput.WasJustPressed)
                     {
@@ -227,7 +227,7 @@ namespace RocketBoxers.Entities
                     }
                     return MakeAnimationChainName("Block");
                 }
-                else if(blockInput.WasJustReleased)
+                else if(blockInput?.WasJustReleased == true)
                 {
                    SetMovement(DataTypes.TopDownValues.Normal);
                 }
@@ -295,7 +295,7 @@ namespace RocketBoxers.Entities
 
         private void InputActivity()
         {
-            if (!blockInput.IsDown && !getHitAnimationLayer.HasPriority && !stunAnimationlayer.HasPriority)
+            if (blockInput?.IsDown == false && !getHitAnimationLayer.HasPriority && !stunAnimationlayer.HasPriority)
             {
                 if (attackInput.WasJustPressed && !attackHoldAnimationLayer.HasPriority)
                 {
