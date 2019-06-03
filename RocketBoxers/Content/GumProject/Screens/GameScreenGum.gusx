@@ -14,4 +14,9 @@
     <BaseType>GameHUD</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
+  <Instance>
+    <Name>GameCountdownInstance</Name>
+    <BaseType>GameCountdown</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
 </ScreenSave>
