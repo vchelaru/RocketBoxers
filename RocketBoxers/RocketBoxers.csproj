@@ -338,6 +338,11 @@
     <Content Include="Content\shader.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="..\builtxnbs\desktopgl\entities\player\gethit1.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GetHit1</Name>
+      <Link>content\entities\player\gethit1.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\screens\playerselectscreen\boom_blueplayer.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Boom_BluePlayer</Name>
@@ -713,6 +718,10 @@
     <None Include="content\gumproject\uispritesheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>uispritesheet</Name>
+    </None>
+    <None Include="content\gumproject\wrapupbg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>wrapupbg</Name>
     </None>
     <None Include="content\levels\testlevel.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
