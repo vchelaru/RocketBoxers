@@ -373,6 +373,11 @@
       <Name>RB_PSS_Boom</Name>
       <Link>content\screens\playerselectscreen\rb_pss_boom.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\screens\testlevel1\gethit1.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GetHit1</Name>
+      <Link>content\screens\testlevel1\gethit1.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\screens\testlevel1\rb_battlemusic1_2019_05_29v04ar.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>RB_BattleMusic1_2019_05_29v04AR</Name>
