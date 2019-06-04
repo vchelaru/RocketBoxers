@@ -328,7 +328,6 @@
           <RuntimeType>Microsoft.Xna.Framework.Media.Song</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
-<<<<<<< HEAD
         <ReferencedFileSave>
           <Properties>
             <PropertySave>
@@ -341,8 +340,6 @@
           <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
-=======
->>>>>>> 6e5d54aa15d97268292f4f17a43db7175a4213e7
       </ReferencedFiles>
       <NamedObjects>
         <NamedObjectSave>
