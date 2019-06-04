@@ -60,7 +60,7 @@ namespace RocketBoxers
             var networkConfiguration = new GameNetworkConfiguration();
             RedGrin.NetworkManager.Self.Initialize(networkConfiguration, null);
 
-			FlatRedBall.Screens.ScreenManager.Start(typeof(RocketBoxers.Screens.TestLevel1));
+			FlatRedBall.Screens.ScreenManager.Start(typeof(RocketBoxers.Screens.TitleScreen));
 
             //global::RenderingLibrary.Graphics.Renderer.NormalBlendState =
             //    BlendState.NonPremultiplied;

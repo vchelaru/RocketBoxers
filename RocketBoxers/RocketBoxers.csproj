@@ -403,6 +403,16 @@
       <Name>RB_MenuMusic_2019_05_27v02AR</Name>
       <Link>content\screens\titlescreen\rb_menumusic_2019_05_27v02ar.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\screens\wrapupscreen\rb_wrapupscreen_2019_06_03v03ar.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_WrapUpScreen_2019_06_03v03AR</Name>
+      <Link>content\screens\wrapupscreen\rb_wrapupscreen_2019_06_03v03ar.ogg</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\wrapupscreen\rb_wrapupscreen_2019_06_03v03ar.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_WrapUpScreen_2019_06_03v03AR</Name>
+      <Link>content\screens\wrapupscreen\rb_wrapupscreen_2019_06_03v03ar.xnb</Link>
+    </None>
     <None Include="content\entities\player\attackanimations.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>AttackAnimations</Name>
