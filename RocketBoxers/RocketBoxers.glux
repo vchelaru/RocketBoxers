@@ -328,6 +328,12 @@
           <RuntimeType>Microsoft.Xna.Framework.Media.Song</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Screens/TestLevel1/GetHit1.wav</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
       </ReferencedFiles>
       <NamedObjects>
         <NamedObjectSave>
@@ -929,7 +935,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
-  <StartUpScreen>Screens\TitleScreen</StartUpScreen>
+  <StartUpScreen>Screens\TestLevel1</StartUpScreen>
   <ResolutionPresets />
   <PerformanceSettingsSave>
     <ThrowExceptionOnPostInitializeContentLoad>false</ThrowExceptionOnPostInitializeContentLoad>
