@@ -10,6 +10,7 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RocketBoxers.Input;
 
 namespace RocketBoxers.Entities
 {
@@ -71,6 +72,8 @@ namespace RocketBoxers.Entities
         public int StockCount { get; set; }
 
         public bool IsOnGround { get; set; }
+        public UiInputDevice InputDevice { get; private set; }
+
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
@@ -80,6 +83,7 @@ namespace RocketBoxers.Entities
         public event Action<Player> RequestRespawn;
 
         #endregion
+
 
         #region Initialize Methods
 
@@ -93,13 +97,14 @@ namespace RocketBoxers.Entities
             InitializeAnimations();
         }
 
-        public void InitializeInputFrom(object inputDevice)
+        public void InitializeInputFrom(UiInputDevice inputDevice)
         {
-            if(inputDevice is Keyboard keyboard)
+            this.InputDevice = inputDevice;
+            if(inputDevice.BackingObject is Keyboard keyboard)
             {
                 InitializeInputFromKeyboard();
             }
-            else if(inputDevice is Xbox360GamePad gamePad)
+            else if(inputDevice.BackingObject is Xbox360GamePad gamePad)
             {
                 InitializeInputFromGamePad(gamePad);
             }
@@ -427,8 +432,13 @@ namespace RocketBoxers.Entities
                 }
                 getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
                 attackEffectAnimationLayer.PlayOnce(MakeAnimationChainName("DamageEffect"));
+                //Makes sure the effect sprite restarts if the end attack of a special causes damage when the animation is still running.
+                AttackEffectSprite.CurrentFrameIndex = 0;
+
                 AttackEffectSprite.Animate = true;
             }
+
+            GetHit1.Play();
         }
 
         private void StopAllAnimations()

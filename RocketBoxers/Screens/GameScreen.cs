@@ -14,6 +14,7 @@ using FlatRedBall.Localization;
 using FlatRedBall.Math.Collision;
 using RocketBoxers.Entities;
 using RocketBoxers.Input;
+using RocketBoxers.Gameplay;
 
 namespace RocketBoxers.Screens
 {
@@ -65,7 +66,7 @@ namespace RocketBoxers.Screens
                     {
                         var player = PlayerList[i];
                         player.InitializeInputFrom(
-                            PlayerInputDevices[i].BackingObject);
+                            PlayerInputDevices[i]);
                         player.InputEnabled = true;
                     }
                 }).After(3);
@@ -110,6 +111,8 @@ namespace RocketBoxers.Screens
 
         private void InitializePlayers()
         {
+            AllStats.Reset();
+
             foreach (var device in PlayerInputDevices)
             {
                 var player = new Player();
@@ -135,9 +138,19 @@ namespace RocketBoxers.Screens
 
         private void HandleRequestRespawn(Player player)
         {
-            player.TryToRespawn();
+            player.StockCount--;
+            if (player.StockCount == 0)
+            {
+                AllStats.For(player).TimeDied = this.PauseAdjustedCurrentTime;
+            }
+            else
+            {
+                RefreshDamageDisplay(player);
 
-            RefreshDamageDisplay(player);
+                RefreshStockDisplay(player);
+
+                player.TryToRespawn();
+            }
         }
 
         private void InitializeCollisions()
@@ -163,8 +176,6 @@ namespace RocketBoxers.Screens
         void CustomActivity(bool firstTimeCalled)
 		{
             CollisionActivity();
-
-            DebugActivity();
 
             DoEndLevelActivity();
         }
@@ -244,6 +255,7 @@ namespace RocketBoxers.Screens
             
             iconToUpdate.DisplayedPercentage = Math.Ceiling(damageMultiplied).ToString();
         }
+
         private void RefreshStockDisplay(Player player)
         {
             var index = PlayerList.IndexOf(player);
@@ -257,18 +269,7 @@ namespace RocketBoxers.Screens
             var randomSpawn = FlatRedBallServices.Random.In(RespawnList);
 
             player.PerformFallOff(randomSpawn);
-
-            this.Call(() =>
-            {
-                player.StockCount--;
-                RefreshDamageDisplay(player);
-
-                RefreshStockDisplay(player);
-
-            }).After(Player.FallingDuration);
-
         }
-
 
         #endregion
 
