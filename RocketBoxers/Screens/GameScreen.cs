@@ -177,8 +177,6 @@ namespace RocketBoxers.Screens
 		{
             CollisionActivity();
 
-            DebugActivity();
-
             DoEndLevelActivity();
         }
 

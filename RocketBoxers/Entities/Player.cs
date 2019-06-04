@@ -432,8 +432,13 @@ namespace RocketBoxers.Entities
                 }
                 getHitAnimationLayer.PlayDuration(MakeAnimationChainName("Damage"), launchDuration);
                 attackEffectAnimationLayer.PlayOnce(MakeAnimationChainName("DamageEffect"));
+                //Makes sure the effect sprite restarts if the end attack of a special causes damage when the animation is still running.
+                AttackEffectSprite.CurrentFrameIndex = 0;
+
                 AttackEffectSprite.Animate = true;
             }
+
+            GetHit1.Play();
         }
 
         private void StopAllAnimations()

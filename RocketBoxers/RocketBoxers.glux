@@ -328,12 +328,6 @@
           <RuntimeType>Microsoft.Xna.Framework.Media.Song</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
-        <ReferencedFileSave>
-          <Name>Screens/TestLevel1/GetHit1.wav</Name>
-          <IsSharedStatic>true</IsSharedStatic>
-          <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
-          <ProjectsToExcludeFrom />
-        </ReferencedFileSave>
       </ReferencedFiles>
       <NamedObjects>
         <NamedObjectSave>
@@ -818,6 +812,12 @@
           <Name>Entities/Player/AttackData.csv</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <CreatesDictionary>true</CreatesDictionary>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/Player/GetHit1.wav</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
       </ReferencedFiles>
