@@ -154,7 +154,7 @@ namespace RocketBoxers.Screens
                 {
                     JoinWith(possible);
 
-                    TestForReadyOffAnimation();
+                    TestForLeavingReadyState();
                 }
             }
         }
@@ -197,9 +197,27 @@ namespace RocketBoxers.Screens
                     marker.CurrentSelectionState = SelectionMarkerRuntime.SelectionState.LockedIn;
                     marker.CharacterFrame.LockedInAnimation.Play();
 
-                    marker.InputDevice.Color = (PlayerColor)marker.SelectedCharacterIndex;
+                    var playerColor = (PlayerColor)marker.SelectedCharacterIndex;
 
-                    TestForReadyOnAnimation();
+                    marker.InputDevice.Color = playerColor;
+
+                    switch(playerColor)
+                    {
+                        case PlayerColor.Blue:
+                            Boom_BluePlayer.Play();
+                            break;
+                        case PlayerColor.Green:
+                            Boom_GreenPlayer.Play();
+                            break;
+                        case PlayerColor.Red:
+                            Boom_RedPlayer.Play();
+                            break;
+                        case PlayerColor.Yellow:
+                            Boom_YellowPlayer.Play();
+                            break;
+                    }
+
+                    TestForGoingToReadyState();
 
                 }
                 else if(marker.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.LockedIn &&
@@ -209,7 +227,7 @@ namespace RocketBoxers.Screens
                     marker.CharacterFrame.StopAnimations();
                     marker.CharacterFrame.CurrentLockedInStateState = SelectedCharacterFrameRuntime.LockedInState.NotLockedIn;
 
-                    TestForReadyOffAnimation();
+                    TestForLeavingReadyState();
                 }
                 else if(marker.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.Selecting &&
                     marker.InputDevice.Back.WasJustPressed)
@@ -222,12 +240,12 @@ namespace RocketBoxers.Screens
 
                     marker.InputDevice = null;
 
-                    TestForReadyOnAnimation();
+                    TestForGoingToReadyState();
                 }
             }
         }
 
-        private void TestForReadyOnAnimation()
+        private void TestForGoingToReadyState()
         {
             if(haveAllLockedIn == false)
             {
@@ -236,12 +254,13 @@ namespace RocketBoxers.Screens
                 if(areAnySelecting == false)
                 {
                     ReadyInstance.AnimateOnAnimation.Play();
+                    RB_PSS_Boom.Play();
                     haveAllLockedIn = true;
                 }
             }
         }
 
-        private void TestForReadyOffAnimation()
+        private void TestForLeavingReadyState()
         {
             if(haveAllLockedIn)
             {
