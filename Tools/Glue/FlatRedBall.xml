@@ -2249,6 +2249,12 @@
             <param name="down">The key to use for the down direction.</param>
             <returns>The I2DInput instance which can be used to read input.</returns>
         </member>
+        <member name="M:FlatRedBall.Input.KeyboardStateProcessor.Clear">
+            <summary>
+            Clears the keyboard states, simulating the keyboard
+            not having any values down or pressed
+            </summary>
+        </member>
         <member name="F:FlatRedBall.Input.Mouse.mXAt100Units">
             <summary>
             The camera-relative X coordinate position of the Mouse at 100 units away.

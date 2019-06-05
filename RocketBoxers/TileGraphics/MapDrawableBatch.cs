@@ -477,11 +477,12 @@ namespace FlatRedBall.TileGraphics
             foreach (var quad in quads)
             {
                 Vector2 tileDimensions = new Vector2(quadWidth, quadHeight);
-                if(quad.OverridingWidth != null)
+                Vector2 tileDimensions = new Vector2(quadWidth, quadHeight);
+                if (quad.OverridingWidth != null)
                 {
                     tileDimensions.X = quad.OverridingWidth.Value;
                 }
-                if(quad.OverridingHeight != null)
+                if (quad.OverridingHeight != null)
                 {
                     tileDimensions.Y = quad.OverridingHeight.Value;
                 }
