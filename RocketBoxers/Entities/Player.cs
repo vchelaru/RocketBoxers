@@ -52,8 +52,11 @@ namespace RocketBoxers.Entities
         Respawn currentSpawnArea;
 
         static AnimationChainList P2Animations;
+        static AnimationChainList P2EffectAnimations;
         static AnimationChainList P3Animations;
+        static AnimationChainList P3EffectAnimations;
         static AnimationChainList P4Animations;
+        static AnimationChainList P4EffectAnimations;
 
         public bool IsFalling { get; private set; }
 
@@ -148,15 +151,19 @@ namespace RocketBoxers.Entities
             {
                 case 0:
                     SpriteInstance.AnimationChains = YellowCharacterAnimations;
+                    AttackEffectSprite.AnimationChains = AttackAnimations;
                     break;
                 case 1:
                     SpriteInstance.AnimationChains = P2Animations;
+                    AttackEffectSprite.AnimationChains = P2EffectAnimations;
                     break;
                 case 2:
                     SpriteInstance.AnimationChains = P3Animations;
+                    AttackEffectSprite.AnimationChains = P3EffectAnimations;
                     break;
                 case 3:
                     SpriteInstance.AnimationChains = P4Animations;
+                    AttackEffectSprite.AnimationChains = P4EffectAnimations;
                     break;
             }
             TeamIndex = index;
@@ -517,6 +524,18 @@ namespace RocketBoxers.Entities
                         frame.BottomCoordinate += 256.0f / frame.Texture.Height;
                     }
                 }
+                P2EffectAnimations = AttackAnimations.Clone();
+                foreach(var animation in P2EffectAnimations)
+                {
+                    if(animation.Name.Contains("Flame"))
+                    {
+                        foreach(var frame in animation)
+                        {
+                            frame.TopCoordinate += 256.0f / frame.Texture.Height;
+                            frame.BottomCoordinate += 256.0f / frame.Texture.Height;
+                        }
+                    }
+                }
 
                 P3Animations = YellowCharacterAnimations.Clone();
                 foreach (var animation in P3Animations)
@@ -528,6 +547,19 @@ namespace RocketBoxers.Entities
                     }
                 }
 
+                P3EffectAnimations = AttackAnimations.Clone();
+                foreach (var animation in P3EffectAnimations)
+                {
+                    if (animation.Name.Contains("Flame"))
+                    {
+                        foreach (var frame in animation)
+                        {
+                            frame.TopCoordinate += 2 * 256.0f / frame.Texture.Height;
+                            frame.BottomCoordinate += 2 * 256.0f / frame.Texture.Height;
+                        }
+                    }
+                }
+
                 P4Animations = YellowCharacterAnimations.Clone();
                 foreach (var animation in P4Animations)
                 {
@@ -535,6 +567,19 @@ namespace RocketBoxers.Entities
                     {
                         frame.TopCoordinate += 3 * 256.0f / frame.Texture.Height;
                         frame.BottomCoordinate += 3 * 256.0f / frame.Texture.Height;
+                    }
+                }
+
+                P4EffectAnimations = AttackAnimations.Clone();
+                foreach (var animation in P4EffectAnimations)
+                {
+                    if (animation.Name.Contains("Flame"))
+                    {
+                        foreach (var frame in animation)
+                        {
+                            frame.TopCoordinate += 3 * 256.0f / frame.Texture.Height;
+                            frame.BottomCoordinate += 3 * 256.0f / frame.Texture.Height;
+                        }
                     }
                 }
             }
