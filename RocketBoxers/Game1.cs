@@ -43,15 +43,18 @@ namespace RocketBoxers
 
         protected override void Initialize()
         {
-            #if IOS
+#if IOS
             var bounds = UIKit.UIScreen.MainScreen.Bounds;
             var nativeScale = UIKit.UIScreen.MainScreen.Scale;
             var screenWidth = (int)(bounds.Width * nativeScale);
             var screenHeight = (int)(bounds.Height * nativeScale);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
-            #endif
-        
+#endif
+
+            TMXGlueLib.DataTypes.ReducedTileMapInfo.FastCreateFromTmx = true;
+
+
             FlatRedBallServices.InitializeFlatRedBall(this, graphics);
 
 			GlobalContent.Initialize();
@@ -60,7 +63,7 @@ namespace RocketBoxers
             var networkConfiguration = new GameNetworkConfiguration();
             RedGrin.NetworkManager.Self.Initialize(networkConfiguration, null);
 
-			FlatRedBall.Screens.ScreenManager.Start(typeof(RocketBoxers.Screens.TestLevel1));
+			FlatRedBall.Screens.ScreenManager.Start(typeof(RocketBoxers.Screens.PlayerSelectScreen));
 
             //global::RenderingLibrary.Graphics.Renderer.NormalBlendState =
             //    BlendState.NonPremultiplied;

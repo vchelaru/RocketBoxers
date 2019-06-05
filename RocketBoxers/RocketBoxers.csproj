@@ -77,6 +77,10 @@
     <Compile Include="Gameplay\AllStats.cs" />
     <Compile Include="Gameplay\IndividualStats.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
+    <Compile Include="GumRuntimes\Arena1GumRuntime.cs" />
+    <Compile Include="GumRuntimes\Arena1GumRuntime.Generated.cs">
+      <DependentUpon>Arena1GumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\Behaviors\IButtonBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\ICheckBoxBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IComboBoxBehavior.Generated.cs" />
@@ -141,6 +145,8 @@
       <DependentUpon>TreeViewToggleButtonRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\DefaultForms\UserControlRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\ForestGumRuntime.cs" />
+    <Compile Include="GumRuntimes\ForestGumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\GameCountdownRuntime.cs" />
     <Compile Include="GumRuntimes\GameCountdownRuntime.Generated.cs">
       <DependentUpon>GameCountdownRuntime.cs</DependentUpon>
@@ -230,6 +236,14 @@
     <Compile Include="Performance\PoolList.Generated.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\Arena1.cs" />
+    <Compile Include="Screens\Arena1.Generated.cs">
+      <DependentUpon>Arena1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ForestArena.cs" />
+    <Compile Include="Screens\ForestArena.Generated.cs">
+      <DependentUpon>forestarena.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\GameScreen.Generated.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
@@ -377,11 +391,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>RB_PSS_Boom</Name>
       <Link>content\screens\playerselectscreen\rb_pss_boom.xnb</Link>
-    </None>
-    <None Include="..\builtxnbs\desktopgl\screens\testlevel1\gethit1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>GetHit1</Name>
-      <Link>content\screens\testlevel1\gethit1.xnb</Link>
     </None>
     <None Include="..\builtxnbs\desktopgl\screens\testlevel1\rb_battlemusic1_2019_05_29v04ar.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -617,6 +626,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>rbuisheet</Name>
     </None>
+    <None Include="content\gumproject\screens\arena1gum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Arena1Gum</Name>
+    </None>
+    <None Include="content\gumproject\screens\forestgum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ForestGum</Name>
+    </None>
     <None Include="content\gumproject\screens\gamescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>gamescreengum</Name>
@@ -724,6 +741,14 @@
     <None Include="content\gumproject\wrapupbg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>wrapupbg</Name>
+    </None>
+    <None Include="content\levels\arenatestsk.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ArenaTestSK</Name>
+    </None>
+    <None Include="content\levels\forest.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Forest</Name>
     </None>
     <None Include="content\levels\testlevel.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
