@@ -31,6 +31,9 @@ namespace RocketBoxers.Input
         public IPressableInput Left { get; set; }
         public IPressableInput Right { get; set; }
 
+        public IPressableInput LeftTrigger { get; set; }
+        public IPressableInput RightTrigger { get; set; }
+
         public IPressableInput Confirm { get; set; }
         public IPressableInput Back { get; set; }
 
@@ -51,6 +54,9 @@ namespace RocketBoxers.Input
             toReturn.Confirm = keyboard.GetKey(Keys.Enter);
             toReturn.Back = keyboard.GetKey(Keys.Escape)
                 .Or(keyboard.GetKey(Keys.Back));
+
+            toReturn.LeftTrigger = keyboard.GetKey(Keys.A);
+            toReturn.RightTrigger = keyboard.GetKey(Keys.D);
 
             return toReturn;
         }
@@ -78,6 +84,8 @@ namespace RocketBoxers.Input
             toReturn.Back = gamePad.GetButton(Xbox360GamePad.Button.Back)
                 .Or(gamePad.GetButton(Xbox360GamePad.Button.B));
 
+            toReturn.LeftTrigger = gamePad.GetButton(Xbox360GamePad.Button.LeftTrigger);
+            toReturn.RightTrigger = gamePad.GetButton(Xbox360GamePad.Button.RightTrigger);
             return toReturn;
 
         }
