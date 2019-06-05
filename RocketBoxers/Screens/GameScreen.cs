@@ -136,8 +136,9 @@ namespace RocketBoxers.Screens
 
                 player.RequestRespawn += HandleRequestRespawn;
 
-                player.X = 1000;
-                player.Y = -500 - 100;
+                var randomRespawn = FlatRedBallServices.Random.In(RespawnList);
+                player.X = randomRespawn.X;
+                player.Y = randomRespawn.Y;
                 player.TeamIndex = PlayerList.Count;
                 player.StockCount = MaxStockCount;
 
