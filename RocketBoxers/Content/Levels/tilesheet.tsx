@@ -56,4 +56,5 @@
    <property name="Ground" value=""/>
   </properties>
  </tile>
+ <tile id="383" type="Respawn"/>
 </tileset>

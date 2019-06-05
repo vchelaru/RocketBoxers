@@ -5,6 +5,11 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>CharacterColorState</Type>
+      <Name>CharacterColorState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>CharacterPortraitInstance.Alpha</Name>
       <Value xsi:type="xsd:int">255</Value>
@@ -490,54 +495,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>int</Type>
-      <Name>StatTextInstance1.FontSize</Name>
-      <Value xsi:type="xsd:int">15</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>StatTextInstance1.Parent</Name>
-      <Value xsi:type="xsd:string">StatTitleTextInstance1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>StatTextInstance1.Text</Name>
-      <Value xsi:type="xsd:string">10</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>StatTextInstance1.X</Name>
-      <Value xsi:type="xsd:float">10</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>StatTextInstance1.Y</Name>
-      <Value xsi:type="xsd:float">20</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>StatTitleTextInstance1.Text</Name>
-      <Value xsi:type="xsd:string">KO's</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>StatTitleTextInstance1.X</Name>
-      <Value xsi:type="xsd:float">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>StatTitleTextInstance1.Y</Name>
-      <Value xsi:type="xsd:float">190</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
       <Name>TextInstance.Font</Name>
       <Value xsi:type="xsd:string">Arial</Value>
@@ -896,6 +853,117 @@
       </Variable>
     </State>
   </Category>
+  <Category>
+    <Name>CharacterColor</Name>
+    <State>
+      <Name>Yellow</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">352</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Red</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">352</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Green</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">512</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Blue</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Height</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Left</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Top</Name>
+        <Value xsi:type="xsd:int">512</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CharacterPortraitInstance.Texture Width</Name>
+        <Value xsi:type="xsd:int">160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>NineSliceInstance</Name>
     <BaseType>NineSlice</BaseType>
@@ -923,16 +991,6 @@
   </Instance>
   <Instance>
     <Name>PlayerNumberTextInstance</Name>
-    <BaseType>Text</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>StatTitleTextInstance1</Name>
-    <BaseType>Text</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>StatTextInstance1</Name>
     <BaseType>Text</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>

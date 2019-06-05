@@ -13,14 +13,20 @@ using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
 using Gum.Wireframe;
 using RocketBoxers.GumRuntimes;
+using RocketBoxers.Input;
+using RocketBoxers.Gameplay;
 
 namespace RocketBoxers.Screens
 {
 	public partial class WrapUpScreen
 	{
+        #region Fields/Properties
+
         List<WarpUpSatsRuntime> statsRuntime = new List<WarpUpSatsRuntime>();
 
-		void CustomInitialize()
+        #endregion
+
+        void CustomInitialize()
 		{
             InitializeUi();
 
@@ -44,6 +50,9 @@ namespace RocketBoxers.Screens
                 .Select(item => item as WarpUpSatsRuntime)
                 .ToList();
 
+            Dictionary<UiInputDevice, double> deaths = new Dictionary<UiInputDevice, double>();
+
+
             for(int i = 0; i < statsRuntime.Count; i++)
             {
                 statsRuntime[i].Visible =
@@ -52,7 +61,39 @@ namespace RocketBoxers.Screens
                 if(i < GameScreen.PlayerInputDevices.Count)
                 {
                     statsRuntime[i].Device = GameScreen.PlayerInputDevices[i];
+                    statsRuntime[i].CurrentCharacterColorState =
+                        (WarpUpSatsRuntime.CharacterColor)GameScreen.PlayerInputDevices[i].Color;
+                    statsRuntime[i].CurrentPlayerNumberState =
+                        (WarpUpSatsRuntime.PlayerNumber)i;
+                    var stats = AllStats.For(GameScreen.PlayerInputDevices[i].Color);
+                    deaths.Add(GameScreen.PlayerInputDevices[i],
+                        stats.TimeDied);
                 }
+            }
+
+            var kvps = deaths
+                .OrderBy(item => item.Value > 0 )
+                .ThenByDescending(item => item.Value)
+                .ToList();
+
+            WarpUpSatsRuntime StatsFrom(UiInputDevice device) =>
+                statsRuntime.FirstOrDefault(item => item.Device.Color == device.Color);
+
+            if (kvps.Count > 0)
+            {
+                StatsFrom(kvps[0].Key).CurrentRankState = WarpUpSatsRuntime.Rank._1st;
+            }
+            if (kvps.Count > 1)
+            {
+                StatsFrom(kvps[1].Key).CurrentRankState = WarpUpSatsRuntime.Rank._2nd;
+            }
+            if (kvps.Count > 2)
+            {
+                StatsFrom(kvps[2].Key).CurrentRankState = WarpUpSatsRuntime.Rank._3rd;
+            }
+            if (kvps.Count > 3)
+            {
+                StatsFrom(kvps[3].Key).CurrentRankState = WarpUpSatsRuntime.Rank._4th;
             }
         }
 

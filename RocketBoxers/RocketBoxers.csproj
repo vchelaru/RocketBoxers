@@ -77,6 +77,8 @@
     <Compile Include="Gameplay\AllStats.cs" />
     <Compile Include="Gameplay\IndividualStats.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
+    <Compile Include="GumRuntimes\Arena1GumRuntime.cs" />
+    <Compile Include="GumRuntimes\Arena1GumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IButtonBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\ICheckBoxBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IComboBoxBehavior.Generated.cs" />
@@ -230,6 +232,10 @@
     <Compile Include="Performance\PoolList.Generated.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\Arena1.cs" />
+    <Compile Include="Screens\Arena1.Generated.cs">
+      <DependentUpon>Arena1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\GameScreen.Generated.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
@@ -398,6 +404,16 @@
       <Name>RB_MenuMusic_2019_05_27v02AR</Name>
       <Link>content\screens\titlescreen\rb_menumusic_2019_05_27v02ar.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\screens\wrapupscreen\rb_wrapupscreen_2019_06_03v03ar.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_WrapUpScreen_2019_06_03v03AR</Name>
+      <Link>content\screens\wrapupscreen\rb_wrapupscreen_2019_06_03v03ar.ogg</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\screens\wrapupscreen\rb_wrapupscreen_2019_06_03v03ar.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RB_WrapUpScreen_2019_06_03v03AR</Name>
+      <Link>content\screens\wrapupscreen\rb_wrapupscreen_2019_06_03v03ar.xnb</Link>
+    </None>
     <None Include="content\entities\player\attackanimations.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>AttackAnimations</Name>
@@ -554,14 +570,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>wrapup</Name>
     </None>
-    <None Include="content\gumproject\fontcache\font15arial.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>font15arial</Name>
-    </None>
-    <None Include="content\gumproject\fontcache\font15arial_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font15Arial_0</Name>
-    </None>
     <None Include="content\gumproject\fontcache\font18arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>font18arial</Name>
@@ -609,6 +617,10 @@
     <None Include="content\gumproject\rbuisheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>rbuisheet</Name>
+    </None>
+    <None Include="content\gumproject\screens\arena1gum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Arena1Gum</Name>
     </None>
     <None Include="content\gumproject\screens\gamescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -713,6 +725,14 @@
     <None Include="content\gumproject\uispritesheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>uispritesheet</Name>
+    </None>
+    <None Include="content\gumproject\wrapupbg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>wrapupbg</Name>
+    </None>
+    <None Include="content\levels\arenatestsk.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ArenaTestSK</Name>
     </None>
     <None Include="content\levels\forest.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
