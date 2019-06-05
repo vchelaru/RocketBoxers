@@ -15,6 +15,7 @@ using FlatRedBall.Math.Collision;
 using RocketBoxers.Entities;
 using RocketBoxers.Input;
 using RocketBoxers.Gameplay;
+using FlatRedBall.TileCollisions;
 
 namespace RocketBoxers.Screens
 {
@@ -40,9 +41,17 @@ namespace RocketBoxers.Screens
 
             InitializeUi();
 
+            InitializeCamera();
+
             SpriteManager.OrderedSortType = FlatRedBall.Graphics.SortType.ZSecondaryParentY;
 
             StartCountdown();
+        }
+
+        private void InitializeCamera()
+        {
+            Camera.Main.X = 1000;
+            Camera.Main.Y = -500;
         }
 
         private void StartCountdown()
@@ -155,6 +164,12 @@ namespace RocketBoxers.Screens
 
         private void InitializeCollisions()
         {
+            //GroundCollision.AddCollisionFromTilesWithProperty(TestLevel, "Ground");
+            GroundCollision.AddMergedCollisionFromTilesWithProperty(MainTileMap, "Ground");
+            WallCollision.AddCollisionFromTilesWithProperty(MainTileMap, "Wall");
+
+            GroundCollision.Visible = false;
+
             var playerVsGroundCasted =
                 CollisionManager.Self.CreateTileRelationship(PlayerList, GroundCollision);
             playerVsGroundCasted.CollisionOccurred += (player, ground) => player.IsOnGround = true;
