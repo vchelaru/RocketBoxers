@@ -58,8 +58,8 @@ namespace RocketBoxers.Screens
 
         private void InitializeCamera()
         {
-            Camera.Main.X = 500;
-            Camera.Main.Y = -200;
+            Camera.Main.X = MainTileMap.Width/2;
+            Camera.Main.Y = -MainTileMap.Height/2;
         }
 
         private void StartCountdown()
