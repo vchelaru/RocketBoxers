@@ -146,7 +146,9 @@
     </Compile>
     <Compile Include="GumRuntimes\DefaultForms\UserControlRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ForestGumRuntime.cs" />
-    <Compile Include="GumRuntimes\ForestGumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\ForestGumRuntime.Generated.cs">
+      <DependentUpon>ForestGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\GameCountdownRuntime.cs" />
     <Compile Include="GumRuntimes\GameCountdownRuntime.Generated.cs">
       <DependentUpon>GameCountdownRuntime.cs</DependentUpon>
@@ -242,7 +244,7 @@
     </Compile>
     <Compile Include="Screens\ForestArena.cs" />
     <Compile Include="Screens\ForestArena.Generated.cs">
-      <DependentUpon>forestarena.cs</DependentUpon>
+      <DependentUpon>ForestArena.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\GameScreen.Generated.cs">
@@ -761,6 +763,14 @@
     <None Include="content\levels\tilesheet.tsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>tilesheet</Name>
+    </None>
+    <None Include="content\screens\arena1\arena1gum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Arena1Gum</Name>
+    </None>
+    <None Include="content\screens\arena1\arena1gum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Arena1Gum</Name>
     </None>
     <None Include="Libraries\DesktopGl\Debug\FlatRedBall.Forms.dll" />
     <None Include="Libraries\DesktopGl\Debug\GumCoreXnaPc.dll" />
