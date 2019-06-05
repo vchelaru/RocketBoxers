@@ -338,6 +338,11 @@
     <Content Include="Content\shader.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="..\builtxnbs\desktopgl\entities\player\gethit1.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GetHit1</Name>
+      <Link>content\entities\player\gethit1.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\screens\playerselectscreen\boom_blueplayer.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Boom_BluePlayer</Name>
@@ -372,11 +377,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>RB_PSS_Boom</Name>
       <Link>content\screens\playerselectscreen\rb_pss_boom.xnb</Link>
-    </None>
-    <None Include="..\builtxnbs\desktopgl\screens\testlevel1\gethit1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>GetHit1</Name>
-      <Link>content\screens\testlevel1\gethit1.xnb</Link>
     </None>
     <None Include="..\builtxnbs\desktopgl\screens\testlevel1\rb_battlemusic1_2019_05_29v04ar.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -713,6 +713,10 @@
     <None Include="content\gumproject\uispritesheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>uispritesheet</Name>
+    </None>
+    <None Include="content\levels\forest.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Forest</Name>
     </None>
     <None Include="content\levels\testlevel.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -14,6 +14,7 @@ using FlatRedBall.Localization;
 using RocketBoxers.Input;
 using Gum.Wireframe;
 using RocketBoxers.GumRuntimes;
+using FlatRedBall.TileGraphics;
 
 namespace RocketBoxers.Screens
 {
@@ -30,6 +31,7 @@ namespace RocketBoxers.Screens
         List<SelectionMarkerRuntime> SelectionMarkers;
 
         bool haveAllLockedIn;
+        List<LayeredTileMap> AvailableLevels = new List<LayeredTileMap>();
 
         #endregion
 
@@ -81,6 +83,22 @@ namespace RocketBoxers.Screens
             {
                 item.CurrentJoinStateState = SelectedCharacterFrameRuntime.JoinState.NotJoined;
             }
+
+            var members = typeof(PlayerSelectScreen).GetMembers(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
+            foreach(var member in members)
+            {
+                if(member.MemberType == System.Reflection.MemberTypes.Field)
+                {
+                    if(((System.Reflection.FieldInfo)member).FieldType == typeof(LayeredTileMap))
+                    {
+                        var layer = (LayeredTileMap)GetFile(member.Name);
+                        layer.Name = member.Name;
+                        AvailableLevels.Add(layer);
+                    }
+                }
+            }
+
+            LevelSelectorInstance.InitializeLevelList(AvailableLevels);
         }
 
         private void CreateAllInputDevices()
@@ -103,6 +121,7 @@ namespace RocketBoxers.Screens
 		{
 
             DoMarkerActivity();
+            DoLevelSelectActivity();
 
             // Check for proceeding to the next screen before locking in or else locking in may do both lock and proceed
             ProceedToNextScreenActivity();
@@ -111,7 +130,13 @@ namespace RocketBoxers.Screens
             LockInActivity();
 
             CheckForJoiningInputDevices();
+
+            LevelSelectorInstance.CustomActivity();
 		}
+
+        private void DoLevelSelectActivity()
+        {
+        }
 
         private void ProceedToNextScreenActivity()
         {
@@ -160,7 +185,11 @@ namespace RocketBoxers.Screens
         }
 
         private SelectionMarkerRuntime JoinWith(UiInputDevice device)
-        {
+        { 
+            if(LevelSelectorInstance.UiInput == null)
+            {
+                LevelSelectorInstance.UiInput = device;
+            }
             var firstAvailableMarker = SelectionMarkers
                 .FirstOrDefault(item => 
                     item.CurrentSelectionState == SelectionMarkerRuntime.SelectionState.Invisible);
@@ -278,7 +307,7 @@ namespace RocketBoxers.Screens
 
         void CustomDestroy()
 		{
-
+            LevelSelectorInstance.Destroy();
 
 		}
 
