@@ -16,6 +16,7 @@ using RocketBoxers.Entities;
 using RocketBoxers.Input;
 using RocketBoxers.Gameplay;
 using FlatRedBall.TileCollisions;
+using FlatRedBall.TileEntities;
 
 namespace RocketBoxers.Screens
 {
@@ -35,6 +36,8 @@ namespace RocketBoxers.Screens
         {
             AddInputDevicesIfEmpty();
 
+            CreateEntities();
+
             InitializePlayers();
 
             InitializeCollisions();
@@ -48,10 +51,15 @@ namespace RocketBoxers.Screens
             StartCountdown();
         }
 
+        private void CreateEntities()
+        {
+            TileEntityInstantiator.CreateEntitiesFrom(MainTileMap);
+        }
+
         private void InitializeCamera()
         {
-            Camera.Main.X = 1000;
-            Camera.Main.Y = -500;
+            Camera.Main.X = 500;
+            Camera.Main.Y = -200;
         }
 
         private void StartCountdown()

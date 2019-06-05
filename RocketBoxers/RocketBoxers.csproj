@@ -77,6 +77,8 @@
     <Compile Include="Gameplay\AllStats.cs" />
     <Compile Include="Gameplay\IndividualStats.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
+    <Compile Include="GumRuntimes\Arena1GumRuntime.cs" />
+    <Compile Include="GumRuntimes\Arena1GumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IButtonBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\ICheckBoxBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IComboBoxBehavior.Generated.cs" />
@@ -230,6 +232,10 @@
     <Compile Include="Performance\PoolList.Generated.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\Arena1.cs" />
+    <Compile Include="Screens\Arena1.Generated.cs">
+      <DependentUpon>Arena1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\GameScreen.Generated.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
@@ -617,6 +623,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>rbuisheet</Name>
     </None>
+    <None Include="content\gumproject\screens\arena1gum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Arena1Gum</Name>
+    </None>
     <None Include="content\gumproject\screens\gamescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>gamescreengum</Name>
@@ -724,6 +734,10 @@
     <None Include="content\gumproject\wrapupbg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>wrapupbg</Name>
+    </None>
+    <None Include="content\levels\arenatestsk.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ArenaTestSK</Name>
     </None>
     <None Include="content\levels\testlevel.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
