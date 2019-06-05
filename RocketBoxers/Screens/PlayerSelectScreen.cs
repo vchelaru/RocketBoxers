@@ -32,6 +32,7 @@ namespace RocketBoxers.Screens
 
         bool haveAllLockedIn;
         List<LayeredTileMap> AvailableLevels = new List<LayeredTileMap>();
+        List<Type> LevelClasses = new List<Type>();
 
         #endregion
 
@@ -84,19 +85,12 @@ namespace RocketBoxers.Screens
                 item.CurrentJoinStateState = SelectedCharacterFrameRuntime.JoinState.NotJoined;
             }
 
-            var members = typeof(PlayerSelectScreen).GetMembers(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
-            foreach(var member in members)
-            {
-                if(member.MemberType == System.Reflection.MemberTypes.Field)
-                {
-                    if(((System.Reflection.FieldInfo)member).FieldType == typeof(LayeredTileMap))
-                    {
-                        var layer = (LayeredTileMap)GetFile(member.Name);
-                        layer.Name = member.Name;
-                        AvailableLevels.Add(layer);
-                    }
-                }
-            }
+            
+            AvailableLevels.Add(Forest);
+            AvailableLevels.Add(ArenaTestSK);
+
+            LevelClasses.Add(typeof(ForestArena));
+            LevelClasses.Add(typeof(Arena1));
 
             LevelSelectorInstance.InitializeLevelList(AvailableLevels);
         }
@@ -155,7 +149,7 @@ namespace RocketBoxers.Screens
                 GameScreen.PlayerInputDevices.AddRange(
                     joinedInputDevices);
 
-                MoveToScreen(typeof(TestLevel1));
+                MoveToScreen(LevelClasses[LevelSelectorInstance.SelectedLevel]);
             }
         }
 
