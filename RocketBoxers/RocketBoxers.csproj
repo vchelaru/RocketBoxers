@@ -78,7 +78,9 @@
     <Compile Include="Gameplay\IndividualStats.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
     <Compile Include="GumRuntimes\Arena1GumRuntime.cs" />
-    <Compile Include="GumRuntimes\Arena1GumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\Arena1GumRuntime.Generated.cs">
+      <DependentUpon>Arena1GumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\Behaviors\IButtonBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\ICheckBoxBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IComboBoxBehavior.Generated.cs" />
