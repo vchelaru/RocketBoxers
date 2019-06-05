@@ -191,6 +191,9 @@ namespace RocketBoxers.Screens
 
             var playerVsPlayerCollision = CollisionManager.Self.CreateRelationship(PlayerList, PlayerList);
             playerVsPlayerCollision.SetMoveCollision(1, 1);
+
+            var playerVsWall = CollisionManager.Self.CreateTileRelationship(PlayerList, WallCollision);
+            playerVsWall.SetMoveCollision(0, 1);
         }
 
         #endregion
