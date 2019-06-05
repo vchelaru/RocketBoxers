@@ -177,6 +177,8 @@ namespace RocketBoxers.Screens
             GroundCollision.AddMergedCollisionFromTilesWithProperty(MainTileMap, "Ground");
             WallCollision.AddCollisionFromTilesWithProperty(MainTileMap, "Wall");
 
+            WallCollision.Visible = false;
+
             GroundCollision.Visible = false;
 
             var playerVsGroundCasted =

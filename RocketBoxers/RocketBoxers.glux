@@ -1091,6 +1091,11 @@
             <Member>Color</Member>
             <ValueAsString>Tan</ValueAsString>
           </CustomProperty>
+          <CustomProperty>
+            <Type>bool</Type>
+            <Member>Visible</Member>
+            <ValueAsBool>false</ValueAsBool>
+          </CustomProperty>
           <SourceType>FlatRedBallType</SourceType>
           <SourceClassType>Circle</SourceClassType>
           <InstanceName>CircleInstance</InstanceName>
