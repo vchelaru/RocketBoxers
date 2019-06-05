@@ -43,15 +43,18 @@ namespace RocketBoxers
 
         protected override void Initialize()
         {
-            #if IOS
+#if IOS
             var bounds = UIKit.UIScreen.MainScreen.Bounds;
             var nativeScale = UIKit.UIScreen.MainScreen.Scale;
             var screenWidth = (int)(bounds.Width * nativeScale);
             var screenHeight = (int)(bounds.Height * nativeScale);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
-            #endif
-        
+#endif
+
+            TMXGlueLib.DataTypes.ReducedTileMapInfo.FastCreateFromTmx = true;
+
+
             FlatRedBallServices.InitializeFlatRedBall(this, graphics);
 
 			GlobalContent.Initialize();

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="30" height="17" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="12">
  <tileset firstgid="1" source="tilesheet.tsx"/>
- <objectgroup id="6" name="BackgroundColor" visible="0" locked="1">
+ <objectgroup id="6" name="BackgroundColor" locked="1">
   <object id="7" gid="241" x="-18" y="570" width="997" height="582"/>
  </objectgroup>
- <objectgroup id="5" name="BackgroundGradient" visible="0">
+ <objectgroup id="5" name="BackgroundGradient">
   <object id="2" name="Gradient4" gid="177" x="-19" y="136" width="1002" height="195"/>
   <object id="3" name="Gradient3" gid="177" x="982" y="444" width="1004" height="272" rotation="180"/>
   <object id="4" name="Gradient2" gid="177" x="841" y="-133" width="971" height="357" rotation="90"/>
