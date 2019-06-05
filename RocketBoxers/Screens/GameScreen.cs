@@ -58,8 +58,8 @@ namespace RocketBoxers.Screens
 
         private void InitializeCamera()
         {
-            Camera.Main.X = 500;
-            Camera.Main.Y = -200;
+            Camera.Main.X = MainTileMap.Width/2;
+            Camera.Main.Y = -MainTileMap.Height/2;
         }
 
         private void StartCountdown()
@@ -136,8 +136,9 @@ namespace RocketBoxers.Screens
 
                 player.RequestRespawn += HandleRequestRespawn;
 
-                player.X = 1000;
-                player.Y = -500 - 100;
+                var randomRespawn = FlatRedBallServices.Random.In(RespawnList);
+                player.X = randomRespawn.X;
+                player.Y = randomRespawn.Y;
                 player.TeamIndex = PlayerList.Count;
                 player.StockCount = MaxStockCount;
 
@@ -190,6 +191,9 @@ namespace RocketBoxers.Screens
 
             var playerVsPlayerCollision = CollisionManager.Self.CreateRelationship(PlayerList, PlayerList);
             playerVsPlayerCollision.SetMoveCollision(1, 1);
+
+            var playerVsWall = CollisionManager.Self.CreateTileRelationship(PlayerList, WallCollision);
+            playerVsWall.SetMoveCollision(0, 1);
         }
 
         #endregion
