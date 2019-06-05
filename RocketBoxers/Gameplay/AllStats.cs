@@ -14,7 +14,11 @@ namespace RocketBoxers.Gameplay
         public static IndividualStats For(Player player)
         {
             var color = player.InputDevice.Color;
+            return For(color);
+        }
 
+        public static IndividualStats For(Input.PlayerColor color)
+        {
             return Stats[(int)color];
         }
 
